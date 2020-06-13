@@ -12,6 +12,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\classicalMechanicsPendulum.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\classicalMechanicsPendulum.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CSharpMath.Forms" Version="0.4.2" />
     <PackageReference Include="Microsoft.Net.Compilers" Version="3.6.0">
       <PrivateAssets>all</PrivateAssets>
