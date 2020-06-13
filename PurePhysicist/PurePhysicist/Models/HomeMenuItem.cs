@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
@@ -26,11 +27,13 @@ namespace PurePhysicist.Models
 
         public string Title { get; set; }
 
-        public bool IsDropdown { get; set; }
         /// <summary>
         /// For dropdown menu items
         /// </summary>
         public MenuItemType? ParentId { get; set; }
 
+        public bool IsTopLevel => ParentId == null;
+
+        public bool IsPageReference { get; set; } = true;
     }
 }

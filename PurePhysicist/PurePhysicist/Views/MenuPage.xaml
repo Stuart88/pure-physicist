@@ -6,9 +6,11 @@
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.MenuPage"
              Title="Menu">
-             
-    <StackLayout x:Name="MenuStack" VerticalOptions="FillAndExpand">
 
-    </StackLayout>
+    <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout x:Name="MenuStack" VerticalOptions="FillAndExpand">
+
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>

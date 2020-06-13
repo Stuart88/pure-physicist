@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,31 +23,49 @@ namespace PurePhysicist.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Home, Title="Home", IsDropdown = true },
-                new HomeMenuItem {Id = MenuItemType.Topics, Title="Topics", IsDropdown = true }, 
-                new HomeMenuItem {Id = MenuItemType.Astrophysics, Title="Astrophysics", IsDropdown = false, ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.ClassicalMechanics, Title="Classical Mechanics", IsDropdown = false, ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.Electromagnetism, Title="Electromagnetism", IsDropdown = false, ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.FluidDynamics, Title="Fluid Dynamics", IsDropdown = false, ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.Mathematics, Title="Mathematics", IsDropdown = false, ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.QuantumPhysics, Title="Quantum Physics", IsDropdown = false, ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.Thermodynamics, Title="Thermodynamics", IsDropdown = false, ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About", IsDropdown = false }
+                new HomeMenuItem {Id = MenuItemType.Home, Title="Home"},
+                new HomeMenuItem {Id = MenuItemType.Topics, Title="Topics", IsPageReference = false}, 
+                new HomeMenuItem {Id = MenuItemType.Astrophysics, Title="Astrophysics", ParentId = MenuItemType.Topics },
+                new HomeMenuItem {Id = MenuItemType.ClassicalMechanics, Title="Classical Mechanics", ParentId = MenuItemType.Topics },
+                new HomeMenuItem {Id = MenuItemType.Electromagnetism, Title="Electromagnetism", ParentId = MenuItemType.Topics },
+                new HomeMenuItem {Id = MenuItemType.FluidDynamics, Title="Fluid Dynamics", ParentId = MenuItemType.Topics },
+                new HomeMenuItem {Id = MenuItemType.Mathematics, Title="Mathematics", ParentId = MenuItemType.Topics },
+                new HomeMenuItem {Id = MenuItemType.QuantumPhysics, Title="Quantum Physics", ParentId = MenuItemType.Topics },
+                new HomeMenuItem {Id = MenuItemType.Thermodynamics, Title="Thermodynamics", ParentId = MenuItemType.Topics },
+                new HomeMenuItem {Id = MenuItemType.About, Title="About"}
             };
 
             SetupMenuItems();
-
             selectedItem = menuItems[0];
-            
+            ApplySelectedItemStyling();
+        }   
+
+        private void ApplySelectedItemStyling()
+        {
+            foreach (var item in this.MenuUiItems)
+            {
+                if (item.itemRef == selectedItem)
+                {
+                    item.frame.BorderColor = Color.CornflowerBlue;
+                }
+                else if (item.itemRef.IsTopLevel && selectedItem.ParentId == item.itemRef.Id) // is parent of selected item
+                {
+                    item.frame.BorderColor = Color.Black;
+                }
+                else
+                {
+                    item.frame.BorderColor = Color.LightGray;
+                }
+            }
         }
 
         private void SetupMenuItems()
         {
             foreach (HomeMenuItem item in menuItems.Where(item => item.ParentId == null))
             {
-                if (item.IsDropdown)
+                if (item.IsTopLevel)
                 {
-                    MenuStack.Children.Add(CreateMenuDropdown(item));
+                    MenuStack.Children.Add(CreateExpander(item));
                 }
                 else
                 {
@@ -56,7 +75,8 @@ namespace PurePhysicist.Views
             }
         }
 
-        private Expander CreateMenuDropdown(HomeMenuItem item)
+
+        private Expander CreateExpander(HomeMenuItem item)
         {
             return new Expander
             {
@@ -77,21 +97,42 @@ namespace PurePhysicist.Views
             return dropdownStack;
         }
 
+        /// <summary>
+        /// A reference of all menu items in UI. For performing style updates on interaction
+        /// </summary>
+        private List<(HomeMenuItem itemRef, Frame frame)> MenuUiItems { get; set; } = new List<(HomeMenuItem itemRef, Frame frame)>();
+
         private Frame CreateMenuItem(HomeMenuItem item)
         {
             TapGestureRecognizer tapGesture = new TapGestureRecognizer();
 
             tapGesture.Tapped += async (e, s) =>
             {
-                await RootPage.NavigateFromMenu(item.Id);
+                if (item.IsPageReference)
+                {
+                    selectedItem = item;
+                    ApplySelectedItemStyling();
+                    await RootPage.NavigateFromMenu(item.Id);
+                }
             };
 
             Frame itemFrame = new Frame
             {
-                Content = new Label {Text = item.Title}
+                Content = new Label
+                {
+                    Text = item.Title,
+                    Style = item.IsTopLevel
+                        ? (Style)Application.Current.Resources["MenuItemLabel"]
+                        : (Style)Application.Current.Resources["MenuDropdownItemLabel"]
+                },
+                Style = item.IsTopLevel
+                    ? (Style)Application.Current.Resources["MenuItemFrame"]
+                    : (Style)Application.Current.Resources["MenuDropdownItemFrame"]
             };
 
             itemFrame.GestureRecognizers.Add(tapGesture);
+
+            MenuUiItems.Add((item, itemFrame));
 
             return itemFrame;
         }

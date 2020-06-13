@@ -4,9 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PurePhysicist.Views.Topics.ClassicalMechanics.MainClassicalMechanics">
+             x:Class="PurePhysicist.Views.Topics.ClassicalMechanics.MainClassicalMechanics"
+             xmlns:local="clr-namespace:PurePhysicist.Extensions">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="Start">
+            
+            <Image x:Name="HeaderImage" Source="{local:ImageResource PurePhysicist.Images.classicalMechanicsPendulum.jpg}"
+                   Style="{StaticResource TopicsHeaderImage}"/>
+
             <Label Text="Classical Mechanics!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

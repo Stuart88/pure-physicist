@@ -68,20 +68,6 @@ namespace PurePhysicist.Views
                 _ => throw new NotImplementedException()
             };
         }
-
-        private void AddPage(MenuItemType id)
-        {
-            
-            switch (id)
-            {
-                case MenuItemType.Topics:
-                    MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                    break;
-                case MenuItemType.About:
-                    MenuPages.Add(id, new NavigationPage(new AboutPage()));
-                    break;
-            }
-        }
-
+        
     }
 }
