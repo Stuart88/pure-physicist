@@ -18,14 +18,18 @@ namespace PurePhysicist.Views.Topics
     public partial class MainTopicLayout : ContentPage
     {
         public ContentView ViewContent { get; set; }
+        public Color ThemeColour { get; set; }
         LayoutConstructorBase ConstructorBase { get; set; }
         public MainTopicLayout(LayoutConstructorBase constructor)
         {
+            this.ThemeColour = constructor.ButtonsColour;
+
+            this.BindingContext = this;
+
             InitializeComponent();
 
             SetupFromBase(constructor);
 
-            this.BindingContext = this;
 
             SetButtonSizes();
         }
@@ -42,10 +46,10 @@ namespace PurePhysicist.Views.Topics
             this.Button3.WidthRequest = size;
             this.Button4.WidthRequest = size;
 
-            this.Button1.HeightRequest = size;
-            this.Button2.HeightRequest = size;
-            this.Button3.HeightRequest = size;
-            this.Button4.HeightRequest = size;
+            this.Button1.HeightRequest = size * 0.8;
+            this.Button2.HeightRequest = size * 0.8;
+            this.Button3.HeightRequest = size * 0.8;
+            this.Button4.HeightRequest = size * 0.8;
 
             this.ButtonImage1.HeightRequest = size * 0.5;
             this.ButtonImage2.HeightRequest = size * 0.5;
@@ -74,12 +78,7 @@ namespace PurePhysicist.Views.Topics
             this.Button2.GestureRecognizers.Add(ConstructorBase.Button2Tap);
             this.Button3.GestureRecognizers.Add(ConstructorBase.Button3Tap);
             this.Button4.GestureRecognizers.Add(ConstructorBase.Button4Tap);
-
-            this.ButtonImage1.BackgroundColor = ConstructorBase.ButtonsColour;
-            this.ButtonImage2.BackgroundColor = ConstructorBase.ButtonsColour;
-            this.ButtonImage3.BackgroundColor = ConstructorBase.ButtonsColour;
-            this.ButtonImage4.BackgroundColor = ConstructorBase.ButtonsColour;
-            
+                        
             this.ViewContent = ConstructorBase.ContentsPage;
 
             OnPropertyChanged(nameof(this.ViewContent));

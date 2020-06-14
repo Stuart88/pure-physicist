@@ -32,11 +32,11 @@ namespace PurePhysicist.Views
             MenuPages.Add(MenuItemType.Topics, (NavigationPage)Detail);
         }
 
-        public async Task NavigateFromMenu(MenuItemType id, Color buttonsColour)
+        public async Task NavigateFromMenu(MenuItemType id, Color themeColour)
         {
             if (!MenuPages.ContainsKey(id))
             {
-                MenuPages.Add(id, new NavigationPage(GetPageFromId(id, buttonsColour)));
+                MenuPages.Add(id, new NavigationPage(GetPageFromId(id, themeColour)));
             }
 
             var newPage = MenuPages[id];
@@ -44,28 +44,28 @@ namespace PurePhysicist.Views
             if (newPage != null && Detail != newPage)
             {
                 Detail = newPage;
-
-                if (Device.RuntimePlatform == Device.Android)
-                    await Task.Delay(100);
-
             }
-                
+
+            if (Device.RuntimePlatform == Device.Android)
+                await Task.Delay(100);
+            
             IsPresented = false;
+
         }
 
-        private Page GetPageFromId(MenuItemType id, Color buttonsColour)
+        private Page GetPageFromId(MenuItemType id, Color themeColour)
         {
             return id switch
             {
                 MenuItemType.Home => throw new NotImplementedException(),
                 MenuItemType.Topics => throw new NotImplementedException(),
-                MenuItemType.Astrophysics => new MainTopicLayout(new Topics.Astrophysics.LayoutConstructor(buttonsColour)),
-                MenuItemType.ClassicalMechanics => new MainTopicLayout(new Topics.ClassicalMechanics.LayoutConstructor(buttonsColour)),
-                MenuItemType.Electromagnetism => new MainTopicLayout(new Topics.Electromagnetism.LayoutConstructor(buttonsColour)),
-                MenuItemType.FluidDynamics => new MainTopicLayout(new Topics.FluidDynamics.LayoutConstructor(buttonsColour)),
-                MenuItemType.Mathematics => new MainTopicLayout(new Topics.Mathematics.LayoutConstructor(buttonsColour)),
-                MenuItemType.QuantumPhysics => new MainTopicLayout(new Topics.QuantumPhysics.LayoutConstructor(buttonsColour)),
-                MenuItemType.Thermodynamics => new MainTopicLayout(new Topics.Thermodynamics.LayoutConstructor(buttonsColour)),
+                MenuItemType.Astrophysics => new MainTopicLayout(new Topics.Astrophysics.LayoutConstructor(themeColour)),
+                MenuItemType.ClassicalMechanics => new MainTopicLayout(new Topics.ClassicalMechanics.LayoutConstructor(themeColour)),
+                MenuItemType.Electromagnetism => new MainTopicLayout(new Topics.Electromagnetism.LayoutConstructor(themeColour)),
+                MenuItemType.FluidDynamics => new MainTopicLayout(new Topics.FluidDynamics.LayoutConstructor(themeColour)),
+                MenuItemType.Mathematics => new MainTopicLayout(new Topics.Mathematics.LayoutConstructor(themeColour)),
+                MenuItemType.QuantumPhysics => new MainTopicLayout(new Topics.QuantumPhysics.LayoutConstructor(themeColour)),
+                MenuItemType.Thermodynamics => new MainTopicLayout(new Topics.Thermodynamics.LayoutConstructor(themeColour)),
                 MenuItemType.About => new AboutPage(),
                 _ => throw new NotImplementedException()
             };

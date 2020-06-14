@@ -30,6 +30,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -42,27 +43,29 @@
                 <ContentView x:Name="ContentArea" Content="{Binding ViewContent}"/>
             </ScrollView>
 
-            <Frame Grid.Row="1" x:Name="Button1" Grid.Column="0" Style="{StaticResource ButtonFrame}">
+            <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="#999" Margin="0"/>
+
+            <Frame Grid.Row="2" x:Name="Button1" Grid.Column="0" Style="{StaticResource ButtonFrame}">
                 <StackLayout>
-                    <Image x:Name="ButtonImage1" Style="{StaticResource FooterButtonImage}" Source="{extensions:ImageResource Icons.menu.png}" />
+                    <Image x:Name="ButtonImage1" Style="{StaticResource FooterButtonImage}" Source="{extensions:ImageResource Icons.menu.png}" BackgroundColor="{Binding ThemeColour}"/>
                     <Label x:Name="ButtonText1" Text="Menu" Style="{StaticResource FooterButtonImageText}"/>
                 </StackLayout>
             </Frame>
-            <Frame Grid.Row="1" x:Name="Button2" Grid.Column="1" Style="{StaticResource ButtonFrame}">
+            <Frame Grid.Row="2" x:Name="Button2" Grid.Column="1" Style="{StaticResource ButtonFrame}">
                 <StackLayout>
-                    <Image x:Name="ButtonImage2" Style="{StaticResource FooterButtonImage}" Source="{extensions:ImageResource Icons.contents.png}"/>
-                    <Label x:Name="ButtonText2" Text="Contents" Style="{StaticResource FooterButtonImageText}"/>
+                    <Image x:Name="ButtonImage2" Style="{StaticResource FooterButtonImage}" Source="{extensions:ImageResource Icons.contents.png}" BackgroundColor="{Binding ThemeColour}"/>
+                    <Label x:Name="ButtonText2" Text="Learn" Style="{StaticResource FooterButtonImageText}"/>
                 </StackLayout>
             </Frame>
-            <Frame Grid.Row="1" x:Name="Button3" Grid.Column="2" Style="{StaticResource ButtonFrame}">
+            <Frame Grid.Row="2" x:Name="Button3" Grid.Column="2" Style="{StaticResource ButtonFrame}">
                 <StackLayout>
-                    <Image x:Name="ButtonImage3" Style="{StaticResource FooterButtonImage}" Source="{extensions:ImageResource Icons.fx.png}"/>
+                    <Image x:Name="ButtonImage3" Style="{StaticResource FooterButtonImage}" Source="{extensions:ImageResource Icons.fx.png}" BackgroundColor="{Binding ThemeColour}"/>
                     <Label x:Name="ButtonText3" Text="Equations" Style="{StaticResource FooterButtonImageText}"/>
                 </StackLayout>
             </Frame>
-            <Frame Grid.Row="1" x:Name="Button4" Grid.Column="3" Style="{StaticResource ButtonFrame}">
+            <Frame Grid.Row="2" x:Name="Button4" Grid.Column="3" Style="{StaticResource ButtonFrame}">
                 <StackLayout>
-                    <Image x:Name="ButtonImage4" Style="{StaticResource FooterButtonImage}" Source="{extensions:ImageResource Icons.cool.png}" />
+                    <Image x:Name="ButtonImage4" Style="{StaticResource FooterButtonImage}" Source="{extensions:ImageResource Icons.cool.png}" BackgroundColor="{Binding ThemeColour}"/>
                     <Label x:Name="ButtonText4" Text="Cool Stuff" Style="{StaticResource FooterButtonImageText}"/>
                 </StackLayout>
             </Frame>

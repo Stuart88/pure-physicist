@@ -10,11 +10,13 @@ using Xamarin.Forms.Xaml;
 namespace PurePhysicist.Views.Topics.Astrophysics
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ContentsView : ContentView
+    public partial class ContentsView : ContentView, ITopicPage
     {
         public ContentsView()
         {
             InitializeComponent();
         }
+
+        public Color ThemeColour { get; set; }
     }
 }

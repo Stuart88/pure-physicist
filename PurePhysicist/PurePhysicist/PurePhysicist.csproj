@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <None Remove="Images\classicalMechanicsPendulum.jpg" />
+    <None Remove="Images\ClassicalMechanics\newton.jpg" />
     <None Remove="Images\Icons\astro.png" />
     <None Remove="Images\Icons\classical.png" />
     <None Remove="Images\Icons\contents.png" />
@@ -29,6 +30,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Images\classicalMechanicsPendulum.jpg" />
+    <EmbeddedResource Include="Images\ClassicalMechanics\newton.jpg" />
     <EmbeddedResource Include="Images\Icons\astro.png" />
     <EmbeddedResource Include="Images\Icons\classical.png" />
     <EmbeddedResource Include="Images\Icons\contents.png" />
@@ -64,10 +66,13 @@
     <EmbeddedResource Update="Views\Topics\ClassicalMechanics\CoolStuffView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Topics\ClassicalMechanics\EquationsView.xaml">
+    <EmbeddedResource Update="Views\Topics\DerivationViewer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Topics\Electromagnetism\MainElectromagnetism.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Topics\EquationsViewBase.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Topics\FluidDynamics\MainFluidDynamics.xaml">
@@ -96,9 +101,6 @@
     </Compile>
     <Compile Update="Views\Topics\ClassicalMechanics\ContentsView.xaml.cs">
       <DependentUpon>ContentsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Topics\ClassicalMechanics\EquationsView.xaml.cs">
-      <DependentUpon>EquationsView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Topics\FluidDynamics\MainFluidDynamics.xaml.cs">
       <DependentUpon>MainFluidDynamics.xaml</DependentUpon>

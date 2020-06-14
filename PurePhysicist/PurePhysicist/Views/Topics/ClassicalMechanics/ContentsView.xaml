@@ -9,12 +9,15 @@
   <ContentView.Content>
       <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
 
-          <Image x:Name="HeaderImage" Source="{extensions:ImageResource classicalMechanicsPendulum.jpg}"
-                 Style="{StaticResource TopicsHeaderImage}"/>
+            <StackLayout BackgroundColor="LightGray">
+                <Label x:Name="ContentsTitle" Text="Classical Mechanics" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}"/>
 
-          <Label Text="Classical Mechanics"
-                 VerticalOptions="CenterAndExpand" 
-                 HorizontalOptions="CenterAndExpand" />
+                <Image x:Name="HeaderImage" Source="{extensions:ImageResource ClassicalMechanics.newton.jpg}"
+                       Style="{StaticResource TopicsHeaderImage}"/>
+
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}"/>
+
+            </StackLayout>
       </StackLayout>
     </ContentView.Content>
 </ContentView>

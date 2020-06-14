@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PurePhysicist.Views.Topics;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
@@ -13,6 +14,15 @@ namespace PurePhysicist.Helpers
             Assembly currentAssembly = Assembly.GetExecutingAssembly();
 
             return ImageSource.FromResource($"PurePhysicist.Images.{filename}", currentAssembly);
+        }
+
+        public static void AssignIds(this List<EquationItem> items)
+        {
+            int id = 0;
+            foreach (EquationItem i in items)
+            {
+                i.Id = (id++).ToString();
+            }
         }
     }
 }

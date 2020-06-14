@@ -9,10 +9,10 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics
 {
     public class LayoutConstructor : LayoutConstructorBase
     {
-        public LayoutConstructor(Color buttonsColour) :base(buttonsColour)
+        public LayoutConstructor(Color themeColour) :base(themeColour)
         {
-            this.ContentsPage = new ContentsView();
-            this.EquationsPage = new EquationsView();
+            this.ContentsPage = new ContentsView(themeColour);
+            this.EquationsPage = new EquationsViewBase("Classical Mechanics", themeColour, Equations.EquationsList);
             this.CoolStuffPage = new CoolStuffView();
         }
 

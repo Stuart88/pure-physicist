@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PurePhysicist.Views.Topics.DerivationViewer">
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <StackLayout x:Name="ViewArea" Padding="10,20,10,40">
+                    <Label x:Name="ViewerTitle" HorizontalTextAlignment="Center" FontSize="Large" Margin="0,10,0,10"/>
+
+                </StackLayout>
+            </ScrollView>
+
+            <Button Grid.Row="1" Text="Back"
+                    BackgroundColor="CornflowerBlue"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Padding="4,2,4,2" 
+                    BorderColor="White"
+                    BorderWidth="1"
+                    CornerRadius="15"
+                    HeightRequest="30"
+                    Margin="0,20,0,20"
+                    HorizontalOptions="Center"
+                    Clicked="Button_Clicked"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

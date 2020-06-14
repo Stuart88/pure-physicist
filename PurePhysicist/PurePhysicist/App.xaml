@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:forms="clr-namespace:CSharpMath.Forms;assembly=CSharpMath.Forms"
              x:Class="PurePhysicist.App">
 
     <Application.Resources>
@@ -45,7 +46,26 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
                 <Setter Property="VerticalOptions" Value="Start"/>
                 <Setter Property="Margin" Value="0"/>
-                <Setter Property="WidthRequest" Value="350"/>
+                <Setter Property="WidthRequest" Value="250"/>
+                <Setter Property="HeightRequest" Value="250"/>
+            </Style>
+            <Style TargetType="Label" x:Key="ContentsTitle">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="#444"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="Padding" Value="5,10,5,10"/>
+                <Setter Property="Margin" Value="0"/>
+            </Style>
+
+            <!-- Equations-->
+            <Style TargetType="Label" x:Key="EquationLabel">
+                <Setter Property="Padding" Value="10,0,0,0"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+            <Style TargetType="StackLayout" x:Key="EquationMain">
+                <Setter Property="BackgroundColor" Value="#eaeaea"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

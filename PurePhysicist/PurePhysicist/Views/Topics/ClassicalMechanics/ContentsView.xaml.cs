@@ -10,11 +10,17 @@ using Xamarin.Forms.Xaml;
 namespace PurePhysicist.Views.Topics.ClassicalMechanics
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ContentsView : ContentView
+    public partial class ContentsView : ContentView, ITopicPage
     {
-        public ContentsView()
+        public Color ThemeColour { get; set; }
+        public ContentsView(Color themeColour)
         {
+            this.ThemeColour = themeColour;
+            
+            this.BindingContext = this;
+            
             InitializeComponent();
+            
         }
     }
 }
