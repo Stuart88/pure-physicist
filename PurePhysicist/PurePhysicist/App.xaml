@@ -18,15 +18,14 @@
             <!--Menu-->
             <Style TargetType="Frame" x:Key="MenuItemFrame">  <!--Menu item frame-->
                 <Setter Property="BackgroundColor" Value="LightGray"/>
-                <Setter Property="Padding" Value="20"/>
+                <Setter Property="Padding" Value="15"/>
                 <Setter Property="Margin" Value="0"/>
                 <Setter Property="BorderColor" Value="LightGray"/>
             </Style>
             <Style TargetType="Frame" x:Key="MenuDropdownItemFrame"> <!--Dropdown item frame-->
-                <Setter Property="Padding" Value="20"/>
-                <Setter Property="Margin" Value="40,0,0,0"/>
-                <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="BorderColor" Value="LightGray"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Margin" Value="20,0,20,0"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource NavigationPrimary}"/>
             </Style>
             <Style TargetType="Label" x:Key="MenuItemLabel"> <!--Menu item text-->
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -34,13 +33,19 @@
             </Style>
             <Style TargetType="Label" x:Key="MenuDropdownItemLabel"> <!--Dropdown item text-->
                 <Setter Property="FontSize" Value="20"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+            <Style TargetType="Image" x:Key="MenuIcon"> <!--Menu icon-->
+                <Setter Property="HeightRequest" Value="35"/>
+                <Setter Property="WidthRequest" Value="35"/>
             </Style>
 
             <!--Topics Pages-->
             <Style TargetType="Image" x:Key="TopicsHeaderImage">
-                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
                 <Setter Property="VerticalOptions" Value="Start"/>
-                <Setter Property="WidthRequest" Value="800"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="WidthRequest" Value="350"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
@@ -24,21 +25,25 @@ namespace PurePhysicist.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Home, Title="Home"},
-                new HomeMenuItem {Id = MenuItemType.Topics, Title="Topics", IsPageReference = false}, 
-                new HomeMenuItem {Id = MenuItemType.Astrophysics, Title="Astrophysics", ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.ClassicalMechanics, Title="Classical Mechanics", ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.Electromagnetism, Title="Electromagnetism", ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.FluidDynamics, Title="Fluid Dynamics", ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.Mathematics, Title="Mathematics", ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.QuantumPhysics, Title="Quantum Physics", ParentId = MenuItemType.Topics },
-                new HomeMenuItem {Id = MenuItemType.Thermodynamics, Title="Thermodynamics", ParentId = MenuItemType.Topics },
+                new HomeMenuItem {Id = MenuItemType.Topics, Title="Topics", IsPageReference = false},
+                new HomeMenuItem(MenuItemType.Astrophysics, "astro.png") { Title="Astrophysics", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.ClassicalMechanics, "classical.png") {Title="Classical Mechanics", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.Electromagnetism,"electromag.png") { Title="Electromagnetism", ParentId = MenuItemType.Topics },
+                new HomeMenuItem(MenuItemType.FluidDynamics, "fluid.png") { Title="Fluid Dynamics", ParentId = MenuItemType.Topics },
+                new HomeMenuItem(MenuItemType.Mathematics, "maths.png") {Title="Mathematics", ParentId = MenuItemType.Topics },
+                new HomeMenuItem(MenuItemType.QuantumPhysics, "quantum.png") {Title="Quantum Physics", ParentId = MenuItemType.Topics },
+                new HomeMenuItem(MenuItemType.Thermodynamics,"thermo.png") { Title="Thermodynamics", ParentId = MenuItemType.Topics},
                 new HomeMenuItem {Id = MenuItemType.About, Title="About"}
             };
+
+            this.BackgroundColor = Color.FromRgba(255d, 255d, 255d, 0.5);
 
             SetupMenuItems();
             selectedItem = menuItems[0];
             ApplySelectedItemStyling();
-        }   
+        }
+
+       
 
         private void ApplySelectedItemStyling()
         {
@@ -46,7 +51,7 @@ namespace PurePhysicist.Views
             {
                 if (item.itemRef == selectedItem)
                 {
-                    item.frame.BorderColor = Color.CornflowerBlue;
+                    item.frame.BorderColor = Color.White;
                 }
                 else if (item.itemRef.IsTopLevel && selectedItem.ParentId == item.itemRef.Id) // is parent of selected item
                 {
@@ -54,7 +59,7 @@ namespace PurePhysicist.Views
                 }
                 else
                 {
-                    item.frame.BorderColor = Color.LightGray;
+                    item.frame.BorderColor = Color.Transparent;
                 }
             }
         }
@@ -98,7 +103,7 @@ namespace PurePhysicist.Views
         }
 
         /// <summary>
-        /// A reference of all menu items in UI. For performing style updates on interaction
+        /// A reference of all menu items in UI. For performing style updates on user interaction
         /// </summary>
         private List<(HomeMenuItem itemRef, Frame frame)> MenuUiItems { get; set; } = new List<(HomeMenuItem itemRef, Frame frame)>();
 
@@ -112,19 +117,41 @@ namespace PurePhysicist.Views
                 {
                     selectedItem = item;
                     ApplySelectedItemStyling();
-                    await RootPage.NavigateFromMenu(item.Id);
+                    await RootPage.NavigateFromMenu(item.Id, item.TopicColour);
                 }
             };
 
+            Grid itemGrid = new Grid
+            {
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+            };
+            itemGrid.RowDefinitions.Add(new RowDefinition {Height = GridLength.Auto});
+            itemGrid.ColumnDefinitions.Add(new ColumnDefinition {Width = GridLength.Star});
+
+            Label itemLabel = new Label
+            {
+                Text = item.Title,
+                Style = item.IsTopLevel
+                    ? (Style) Application.Current.Resources["MenuItemLabel"]
+                    : (Style) Application.Current.Resources["MenuDropdownItemLabel"]
+            };
+
+            itemGrid.Children.Add(itemLabel);
+            Grid.SetRow(itemLabel, 0);
+            Grid.SetColumn(itemLabel, 0);
+
+            if (item.Icon != null)
+            {
+                itemGrid.ColumnDefinitions.Add(new ColumnDefinition {Width = GridLength.Auto});
+                itemGrid.Children.Add(item.Icon);
+                Grid.SetRow(item.Icon, 0);
+                Grid.SetColumn(item.Icon, 1);
+            }
+
+
             Frame itemFrame = new Frame
             {
-                Content = new Label
-                {
-                    Text = item.Title,
-                    Style = item.IsTopLevel
-                        ? (Style)Application.Current.Resources["MenuItemLabel"]
-                        : (Style)Application.Current.Resources["MenuDropdownItemLabel"]
-                },
+                Content = itemGrid,
                 Style = item.IsTopLevel
                     ? (Style)Application.Current.Resources["MenuItemFrame"]
                     : (Style)Application.Current.Resources["MenuDropdownItemFrame"]

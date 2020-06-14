@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PurePhysicist.Views.Topics.ClassicalMechanics
+namespace PurePhysicist.Views.Topics
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainClassicalMechanics : ContentPage
+    public partial class UnderConstruction : ContentView
     {
-        public MainClassicalMechanics()
+        public UnderConstruction()
         {
             InitializeComponent();
         }

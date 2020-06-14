@@ -8,7 +8,6 @@ using Xamarin.Forms.Xaml;
 namespace PurePhysicist.Extensions
 {
     [ContentProperty(nameof(Source))]
-
     public class ImageResourceExtension : IMarkupExtension
     {
         public string Source { get; set; }
@@ -18,7 +17,8 @@ namespace PurePhysicist.Extensions
             if (Source == null)
                 return null;
 
-            return ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+            return ImageSource.FromResource($"PurePhysicist.Images.{Source}", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
         }
     }
+
 }

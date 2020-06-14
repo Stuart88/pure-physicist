@@ -13,10 +13,33 @@
 
   <ItemGroup>
     <None Remove="Images\classicalMechanicsPendulum.jpg" />
+    <None Remove="Images\Icons\astro.png" />
+    <None Remove="Images\Icons\classical.png" />
+    <None Remove="Images\Icons\contents.png" />
+    <None Remove="Images\Icons\cool.png" />
+    <None Remove="Images\Icons\electromag.png" />
+    <None Remove="Images\Icons\fluid.png" />
+    <None Remove="Images\Icons\fx.png" />
+    <None Remove="Images\Icons\maths.png" />
+    <None Remove="Images\Icons\menu.png" />
+    <None Remove="Images\Icons\quantum.png" />
+    <None Remove="Images\Icons\saturn.png" />
+    <None Remove="Images\Icons\thermo.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Images\classicalMechanicsPendulum.jpg" />
+    <EmbeddedResource Include="Images\Icons\astro.png" />
+    <EmbeddedResource Include="Images\Icons\classical.png" />
+    <EmbeddedResource Include="Images\Icons\contents.png" />
+    <EmbeddedResource Include="Images\Icons\cool.png" />
+    <EmbeddedResource Include="Images\Icons\electromag.png" />
+    <EmbeddedResource Include="Images\Icons\fluid.png" />
+    <EmbeddedResource Include="Images\Icons\fx.png" />
+    <EmbeddedResource Include="Images\Icons\maths.png" />
+    <EmbeddedResource Include="Images\Icons\menu.png" />
+    <EmbeddedResource Include="Images\Icons\quantum.png" />
+    <EmbeddedResource Include="Images\Icons\thermo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,16 +58,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\Topics\Astrophysics\MainAstrophysics.xaml">
+    <EmbeddedResource Update="Views\Topics\ClassicalMechanics\ContentsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Topics\ClassicalMechanics\MainClassicalMechanics.xaml">
+    <EmbeddedResource Update="Views\Topics\ClassicalMechanics\CoolStuffView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Topics\ClassicalMechanics\EquationsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Topics\Electromagnetism\MainElectromagnetism.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Topics\FluidDynamics\MainFluidDynamics.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Topics\MainTopicLayout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Topics\Mathematics\MainMathematics.xaml">
@@ -56,11 +85,20 @@
     <EmbeddedResource Update="Views\Topics\Thermodynamics\MainThermodynamics.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Topics\UnderConstruction.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Topics\ClassicalMechanics\MainClassicalMechanics.xaml.cs">
-      <DependentUpon>MainClassicalMechanics.xaml</DependentUpon>
+    <Compile Update="Views\Topics\Astrophysics\ContentsView.xaml.cs">
+      <DependentUpon>ContentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Topics\ClassicalMechanics\ContentsView.xaml.cs">
+      <DependentUpon>ContentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Topics\ClassicalMechanics\EquationsView.xaml.cs">
+      <DependentUpon>EquationsView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Topics\FluidDynamics\MainFluidDynamics.xaml.cs">
       <DependentUpon>MainFluidDynamics.xaml</DependentUpon>
