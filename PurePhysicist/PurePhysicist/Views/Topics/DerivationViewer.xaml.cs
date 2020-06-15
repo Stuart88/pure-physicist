@@ -23,7 +23,11 @@ namespace PurePhysicist.Views.Topics
             view.LaTeX = $@"{equationItem.EquationLatex}";
             this.ViewArea.Children.Add(view);
 
-            BoxView boxView = new BoxView { HeightRequest = 1, BackgroundColor = Color.FromHex("#999") };
+            BoxView boxView = new BoxView
+            {
+                HeightRequest = 1, BackgroundColor = Color.FromHex("#999"), 
+                Margin = new Thickness(0,20,0,20)
+            };
             this.ViewArea.Children.Add(boxView);
 
 

@@ -24,6 +24,7 @@ namespace PurePhysicist.Views.Topics
         public EquationsViewBase(){}
         public EquationsViewBase(string topicTitle, Color themeColour, List<EquationItem> equations)
         {
+
             equations.AssignIds();
             this.ThemeColour = themeColour;
             this.TopicTitle = topicTitle;

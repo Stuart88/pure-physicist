@@ -19,21 +19,23 @@
                        TextChanged="SearchBar_TextChanged"/>
             <CollectionView x:Name="EquationsList"
                             ItemsSource="{Binding EquationsFiltered}"
-                            SelectionMode="Single"
                             VerticalOptions="FillAndExpand"
-                            HeightRequest="300" x:DataType="topics:EquationsViewBase">
+                            x:DataType="topics:EquationsViewBase"
+                            ItemSizingStrategy="MeasureAllItems">
                 <CollectionView.ItemTemplate>
-                    <DataTemplate >
+                    <DataTemplate>
 
-                        <StackLayout Style="{StaticResource EquationMain}">
+                        <StackLayout Style="{StaticResource EquationMain}" BackgroundColor="{StaticResource PaperColour}">
                             
                             <BoxView HeightRequest="1" BackgroundColor="#999"/>
                             
                             <StackLayout Orientation="Horizontal">
                                 <Label Style="{StaticResource EquationLabel}" Text="{Binding LabelText}" x:DataType="topics:EquationItem" />
                             </StackLayout>
-                            
-                            <forms:MathView FontSize="40" HeightRequest="60" LaTeX="{Binding EquationLatex}" x:DataType="topics:EquationItem"/>
+
+                            <StackLayout>
+                                <forms:MathView FontSize="40"  HeightRequest="{Binding HeightRequest}" LaTeX="{Binding EquationLatex}" x:DataType="topics:EquationItem"/>
+                            </StackLayout>
                             
                             <Button HorizontalOptions="End" IsVisible="{Binding ShowDetailsButton}" ClassId="{Binding Id}" 
                                     Text="Details" x:DataType="topics:EquationItem" Clicked="DetailsButton_Clicked"
