@@ -30,7 +30,7 @@ namespace PurePhysicist.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            this.Detail = new NavigationPage(new Page());
+            this.Detail = new NavigationPage(new ContentPage(){Content = new UnderConstruction()});
 
             MenuPages.Add(MenuItemType.Topics, (NavigationPage)Detail);
         }
