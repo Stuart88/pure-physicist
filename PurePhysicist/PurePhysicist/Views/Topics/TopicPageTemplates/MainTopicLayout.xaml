@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:topics="clr-namespace:PurePhysicist.Views.Topics;assembly=PurePhysicist"
              xmlns:extensions="clr-namespace:PurePhysicist.Extensions;assembly=PurePhysicist"
+             xmlns:templates="clr-namespace:PurePhysicist.Views.Topics.Templates;assembly=PurePhysicist"
              mc:Ignorable="d"
-             x:Class="PurePhysicist.Views.Topics.MainTopicLayout" x:DataType="topics:MainTopicLayout">
+             x:Class="PurePhysicist.Views.Topics.Templates.MainTopicLayout" x:DataType="templates:MainTopicLayout">
     <ContentPage.Resources>
         <Style TargetType="Frame" x:Key="ButtonFrame">
             <Setter Property="Padding" Value="0"/>

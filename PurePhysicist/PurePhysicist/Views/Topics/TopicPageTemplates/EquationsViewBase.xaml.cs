@@ -7,11 +7,11 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+using PurePhysicist.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PurePhysicist.Views.Topics
+namespace PurePhysicist.Views.Topics.Templates
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EquationsViewBase : ContentView, ITopicPage

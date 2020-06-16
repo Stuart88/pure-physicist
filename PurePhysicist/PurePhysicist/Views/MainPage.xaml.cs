@@ -14,6 +14,7 @@ using PurePhysicist.Views.Topics.Mathematics;
 using PurePhysicist.Views.Topics.Thermodynamics;
 using PurePhysicist.Views.Topics.QuantumPhysics;
 using PurePhysicist.Views.Topics;
+using PurePhysicist.Views.Topics.Templates;
 
 namespace PurePhysicist.Views
 {
@@ -28,6 +29,8 @@ namespace PurePhysicist.Views
             InitializeComponent();
 
             MasterBehavior = MasterBehavior.Popover;
+
+            this.Detail = new NavigationPage(new Page());
 
             MenuPages.Add(MenuItemType.Topics, (NavigationPage)Detail);
         }
@@ -66,7 +69,7 @@ namespace PurePhysicist.Views
                 MenuItemType.Mathematics => new MainTopicLayout(new Topics.Mathematics.LayoutConstructor(themeColour)),
                 MenuItemType.QuantumPhysics => new MainTopicLayout(new Topics.QuantumPhysics.LayoutConstructor(themeColour)),
                 MenuItemType.Thermodynamics => new MainTopicLayout(new Topics.Thermodynamics.LayoutConstructor(themeColour)),
-                MenuItemType.About => new AboutPage(),
+                MenuItemType.About => throw new NotImplementedException(),
                 _ => throw new NotImplementedException()
             };
         }

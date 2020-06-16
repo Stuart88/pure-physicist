@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using PurePhysicist.Extensions;
+using PurePhysicist.Models;
+using PurePhysicist.Views.Topics.Templates;
 using Xamarin.Forms;
 
 namespace PurePhysicist.Views.Topics.ClassicalMechanics

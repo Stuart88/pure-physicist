@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace PurePhysicist.Views.Topics
+namespace PurePhysicist.Models
 {
     public class EquationItem
     {

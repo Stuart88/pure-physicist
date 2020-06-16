@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using PurePhysicist.Models;
 using Xamarin.Forms;
 
 namespace PurePhysicist.Views.Topics.Astrophysics

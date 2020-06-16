@@ -2,7 +2,6 @@
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using PurePhysicist.Services;
 using PurePhysicist.Views;
 
 namespace PurePhysicist
@@ -27,10 +26,6 @@ namespace PurePhysicist
 
             InitializeComponent();
 
-            if (UseMockDataStore)
-                DependencyService.Register<MockDataStore>();
-            else
-                DependencyService.Register<AzureDataStore>();
             MainPage = new MainPage();
         }
 

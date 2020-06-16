@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CSharpMath.Forms;
+using PurePhysicist.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PurePhysicist.Views.Topics
+namespace PurePhysicist.Views.Topics.Templates
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DerivationViewer : ContentPage

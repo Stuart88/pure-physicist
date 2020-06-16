@@ -66,19 +66,19 @@
     <EmbeddedResource Update="Views\Topics\ClassicalMechanics\CoolStuffView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Topics\DerivationViewer.xaml">
+    <EmbeddedResource Update="Views\Topics\TopicPageTemplates\DerivationViewer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Topics\Electromagnetism\MainElectromagnetism.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Topics\EquationsViewBase.xaml">
+    <EmbeddedResource Update="Views\Topics\TopicPageTemplates\EquationsViewBase.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Topics\FluidDynamics\MainFluidDynamics.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Topics\MainTopicLayout.xaml">
+    <EmbeddedResource Update="Views\Topics\TopicPageTemplates\MainTopicLayout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Topics\Mathematics\MainMathematics.xaml">

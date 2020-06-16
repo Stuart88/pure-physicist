@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using PurePhysicist.Models;
 
 namespace PurePhysicist.Views.Topics.ClassicalMechanics
 {

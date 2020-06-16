@@ -2,9 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using PurePhysicist.Views.Topics;
 using Xamarin.Forms;
 
-namespace PurePhysicist.Views.Topics
+namespace PurePhysicist.Models
 {
     public class LayoutConstructorBase
     {
