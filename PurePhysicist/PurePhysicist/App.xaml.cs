@@ -15,6 +15,9 @@ namespace PurePhysicist
             DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:5000";
         public static bool UseMockDataStore = true;
 
+        public static double DeviceHeight;
+        public static double DeviceWidth;
+
         public App()
         {
             Device.SetFlags(new[] {
@@ -22,6 +25,12 @@ namespace PurePhysicist
                 //"AppTheme_Experimental",
                 //"Markup_Experimental",
                 "Expander_Experimental"
+            });
+
+            MainThread.BeginInvokeOnMainThread(() =>    // iOS required this to invoke on main thread. See: https://docs.microsoft.com/en-us/xamarin/essentials/device-display?tabs=ios#platform-differences 
+            {   
+                DeviceHeight = DeviceDisplay.MainDisplayInfo.Height;
+                DeviceWidth = DeviceDisplay.MainDisplayInfo.Width;
             });
 
             InitializeComponent();
