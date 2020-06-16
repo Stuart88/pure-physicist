@@ -18,7 +18,7 @@ namespace PurePhysicist.Views.Topics.Templates
     {
         public Color ThemeColour { get; set; }
         public string TopicTitle { get; set; }
-        List<EquationItem> Equations { get; set; }
+        private List<EquationItem> Equations { get; set; }
         public ObservableCollection<EquationItem> EquationsFiltered { get; set; }
 
         public EquationsViewBase(){}
@@ -32,7 +32,7 @@ namespace PurePhysicist.Views.Topics.Templates
             this.EquationsFiltered = new ObservableCollection<EquationItem>(equations);
 
             this.BindingContext = this;
-
+            
             InitializeComponent();
         }
 
@@ -40,7 +40,12 @@ namespace PurePhysicist.Views.Topics.Templates
         {
 
             string query = ((SearchBar) sender).Text.ToLower().Replace("\'", "").Trim(); //remove apostrophes for lazy searching
-            
+
+            this.FilterEquationsList(query);
+        }
+
+        private void FilterEquationsList(string query)
+        {
             var queryWords = query.Split(' ', '-').Where(s => !string.IsNullOrEmpty(s));
 
             var filtered = (from item in this.Equations
@@ -50,9 +55,9 @@ namespace PurePhysicist.Views.Topics.Templates
                           || labelWords.Intersect(queryWords).Any()
                           || labelWords.Any(w => queryWords.Any(q => w.StartsWith(q)))
                           || label.StartsWith(query)
-                    orderby label.StartsWith(query) 
+                    orderby label.StartsWith(query)
                         //labelWords.Any(w => queryWords.Any(q => w.StartsWith(q)))
-                    descending
+                        descending
                     select item)
                 .ToList();
 

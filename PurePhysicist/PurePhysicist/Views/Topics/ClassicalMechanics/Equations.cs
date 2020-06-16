@@ -6,7 +6,7 @@ using PurePhysicist.Models;
 
 namespace PurePhysicist.Views.Topics.ClassicalMechanics
 {
-    public static class Equations
+    public class Equations
     {
         public static readonly List<EquationItem> EquationsList = new List<EquationItem>
         {
@@ -62,6 +62,37 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics
                     new DerivationStep(@"\text{gravitational potential}",40),
                     new DerivationStep(@"W_{el} = \frac{1}{2}kx_1^2 - \frac{1}{2}kx_2^2",70),
                     new DerivationStep(@"\text{elastic potential potential}",40),
+                }
+            },
+            new EquationItem("Momentum on a point")
+            {
+                EquationLatex = @"\vec{p} = m \vec{v}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\text{Net force equals rate \\ of change of momentum}", 100),
+                    new DerivationStep(@"\sum \vec{F} = \frac{d \vec{p}}{dt} \ \  \left( = m\frac{d\vec{v}}{dt} \right)", 80),
+                }
+            },
+            new EquationItem("Conservation of Momentum")
+            {
+                EquationLatex = @"m_1 u_1 + m_2 u_2 = m_1v_1 + m_2v_2",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"u = \text{velocity before}", 50),
+                    new DerivationStep(@"u = \text{velocity after}", 50),
+                }
+            },
+            new EquationItem("Elastic Collisions")
+            {
+                EquationLatex = @"\frac{1}{2}m_1 u_1^2 + \frac{1}{2} m_2 u_2^2 = \frac{1}{2} m_1v_1^2 + \frac{1}{2}m_2v_2^2",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\text{\underline{One Dimensional Elastic Collision}}", 60),
+                    new DerivationStep(@"\text{Combine with momentum conservation:}", 50),
+                    new DerivationStep(@"m_1 u_1 + m_2 u_2 = m_1v_1 + m_2v_2", 60),
+                    new DerivationStep(@"\text{Then solve to find}", 50),
+                    new DerivationStep(@"v_1 = \frac{m_1-m_2}{m_1+m_2}u_1+\frac{2m_2}{m_1+m_2}u_2", 60),
+                    new DerivationStep(@"v_2 = \frac{2m_1}{m_1+m_2}u_1+\frac{m_2-m_1}{m_1+m_2}u_2", 60),
                 }
             },
 

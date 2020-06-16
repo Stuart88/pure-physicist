@@ -36,7 +36,7 @@
                                 </StackLayout>
 
                                 <StackLayout>
-                                    <forms:MathView FontSize="40"  HeightRequest="{Binding HeightRequest}" LaTeX="{Binding EquationLatex}" x:DataType="models:EquationItem"/>
+                                    <forms:MathView FontSize="{Binding FontSize}"  HeightRequest="{Binding HeightRequest}" LaTeX="{Binding EquationLatex}" x:DataType="models:EquationItem"/>
                                 </StackLayout>
 
                                 <Button HorizontalOptions="End" IsVisible="{Binding ShowDetailsButton}" ClassId="{Binding Id}" 
