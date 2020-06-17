@@ -14,7 +14,7 @@ using PurePhysicist.Views.Topics.Mathematics;
 using PurePhysicist.Views.Topics.Thermodynamics;
 using PurePhysicist.Views.Topics.QuantumPhysics;
 using PurePhysicist.Views.Topics;
-using PurePhysicist.Views.Topics.Templates;
+using PurePhysicist.Views.Topics.TopicPageTemplates;
 
 namespace PurePhysicist.Views
 {

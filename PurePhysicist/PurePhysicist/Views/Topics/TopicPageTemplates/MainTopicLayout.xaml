@@ -4,9 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:extensions="clr-namespace:PurePhysicist.Extensions;assembly=PurePhysicist"
-             xmlns:templates="clr-namespace:PurePhysicist.Views.Topics.Templates;assembly=PurePhysicist"
+             xmlns:topicPageTemplates="clr-namespace:PurePhysicist.Views.Topics.TopicPageTemplates;assembly=PurePhysicist"
              mc:Ignorable="d"
-             x:Class="PurePhysicist.Views.Topics.Templates.MainTopicLayout" x:DataType="templates:MainTopicLayout">
+             x:Class="PurePhysicist.Views.Topics.TopicPageTemplates.MainTopicLayout" x:DataType="topicPageTemplates:MainTopicLayout">
     <ContentPage.Resources>
         <Style TargetType="Frame" x:Key="ButtonFrame">
             <Setter Property="Padding" Value="0"/>

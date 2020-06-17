@@ -8,7 +8,7 @@ using PurePhysicist.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PurePhysicist.Views.Topics.Templates
+namespace PurePhysicist.Views.Topics.TopicPageTemplates
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DerivationViewer : ContentPage

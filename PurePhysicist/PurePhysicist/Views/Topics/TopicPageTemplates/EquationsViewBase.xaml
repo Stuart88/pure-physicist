@@ -4,10 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:forms="clr-namespace:CSharpMath.Forms;assembly=CSharpMath.Forms"
-             xmlns:templates="clr-namespace:PurePhysicist.Views.Topics.Templates;assembly=PurePhysicist"
              xmlns:models="clr-namespace:PurePhysicist.Models;assembly=PurePhysicist"
+             xmlns:topicPageTemplates="clr-namespace:PurePhysicist.Views.Topics.TopicPageTemplates;assembly=PurePhysicist"
              mc:Ignorable="d"
-             x:Class="PurePhysicist.Views.Topics.Templates.EquationsViewBase">
+             x:Class="PurePhysicist.Views.Topics.TopicPageTemplates.EquationsViewBase">
   <ContentView.Content>
         <StackLayout>
             <Label x:Name="ContentsTitle" Text="{Binding TopicTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}"/>
@@ -21,7 +21,7 @@
             <ListView x:Name="EquationsList"
                             ItemsSource="{Binding EquationsFiltered}"
                             VerticalOptions="FillAndExpand"
-                            x:DataType="templates:EquationsViewBase"
+                            x:DataType="topicPageTemplates:EquationsViewBase"
                             HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
