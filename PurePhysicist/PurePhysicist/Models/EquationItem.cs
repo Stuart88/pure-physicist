@@ -17,7 +17,7 @@ namespace PurePhysicist.Models
         public string EquationLatex { get; set; }
         public string LabelText{ get; set; }
         public List<DerivationStep> DerivationStepsLatex { get; set; }
-        public EquationItem(string label, double heightRequest = 60, double fontSize = 40) 
+        public EquationItem(string label, double heightRequest = 60, float fontSize = 40) 
         {
             this.LabelText = label;
             this.HeightRequest = heightRequest;
@@ -30,7 +30,7 @@ namespace PurePhysicist.Models
     public class DerivationStep
     {
         public DerivationStep(){}
-        public DerivationStep(string latex, double heightRequest = 60, double fontSize = 40)
+        public DerivationStep(string latex, double heightRequest = 60, float fontSize = 40)
         {
             this.Latex = latex;
             this.HeightRequest = heightRequest;
@@ -38,6 +38,6 @@ namespace PurePhysicist.Models
         }
         public string Latex{ get; set; }
         public double HeightRequest{ get; set; }
-        public double FontSize { get; set; }
+        public float FontSize { get; set; }
     }
 }
