@@ -13,9 +13,12 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DerivationViewer : ContentPage
     {
+        private EquationsViewBase Parent;
 
-        public DerivationViewer(EquationItem equationItem)
+        public DerivationViewer(EquationItem equationItem, EquationsViewBase parent)
         {
+            this.Parent = parent;
+
             InitializeComponent();
 
             this.ViewerTitle.Text = equationItem.LabelText;
@@ -34,9 +37,53 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
             foreach (var s in equationItem.DerivationStepsLatex)
             {
-                MathView newview = new MathView { FontSize = s.FontSize, HeightRequest = s.HeightRequest };
-                newview.LaTeX = $@"{s.Latex}";
-                this.ViewArea.Children.Add(newview);
+                if (s.IsButton)
+                {
+                    StackLayout infoArea = new StackLayout
+                    {
+                        Orientation = StackOrientation.Horizontal
+                    };
+                    Label forTheAbove = new Label
+                    {
+                        Text = $"For the above: ",
+                        VerticalOptions = LayoutOptions.Center,
+                        VerticalTextAlignment = TextAlignment.Center,
+                    };
+                    Label infoLabel = new Label
+                    {
+                        Text = $"See \"{s.ButtonNavigation}\"",
+                        VerticalOptions = LayoutOptions.Center,
+                        VerticalTextAlignment = TextAlignment.Center,
+                    };
+                    Button infoButton = new Button
+                    {
+                        Text = "PEEK",
+                        Padding = new Thickness(5,0,5,0),
+                        Margin = new Thickness(5,0,0,0),
+                        VerticalOptions = LayoutOptions.Center,
+                        FontSize = 14,
+                        HeightRequest = 30
+                    };
+                    infoButton.Clicked += async (sender, args) =>
+                    {
+                        var equationToShow = this.Parent.Equations.FirstOrDefault(x => x.LabelText == s.ButtonNavigation);
+                        if (equationToShow != null)
+                        {
+                            await this.Navigation.PushModalAsync(new DerivationViewer(equationToShow, this.Parent));
+                        }
+                    };
+                    infoArea.Children.Add(forTheAbove);
+                    infoArea.Children.Add(infoLabel);
+                    infoArea.Children.Add(infoButton);
+                    this.ViewArea.Children.Add(infoArea);
+                }
+                else
+                {
+
+                    MathView newview = new MathView {FontSize = s.FontSize, HeightRequest = s.HeightRequest};
+                    newview.LaTeX = $@"{s.Latex}";
+                    this.ViewArea.Children.Add(newview);
+                }
             }
         }
 

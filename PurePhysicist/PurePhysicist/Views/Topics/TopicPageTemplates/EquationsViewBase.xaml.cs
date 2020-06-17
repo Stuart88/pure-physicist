@@ -18,7 +18,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
     {
         public Color ThemeColour { get; set; }
         public string TopicTitle { get; set; }
-        private List<EquationItem> Equations { get; set; }
+        public List<EquationItem> Equations { get; set; }
         public ObservableCollection<EquationItem> EquationsFiltered { get; set; }
 
         public EquationsViewBase(){}
@@ -75,7 +75,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
             if (selected != null)
             {
-                await this.Navigation.PushModalAsync(new DerivationViewer(selected));
+                await this.Navigation.PushModalAsync(new DerivationViewer(selected, this));
             }
 
             ((Button)sender).IsEnabled = true;

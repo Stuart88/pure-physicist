@@ -30,14 +30,25 @@ namespace PurePhysicist.Models
     public class DerivationStep
     {
         public DerivationStep(){}
-        public DerivationStep(string latex, double heightRequest = 60, float fontSize = 40)
+
+        /// <param name="latex">Latex code for equation</param>
+        /// <param name="isButton">If this will act as a button to navigate to another equation</param>
+        /// <param name="buttonNavivation">The label text of the equation to navigate</param>
+        public DerivationStep(string latex, double heightRequest = 60, float fontSize = 40, bool isButton = false, string buttonNavivation = "")
         {
             this.Latex = latex;
             this.HeightRequest = heightRequest;
             this.FontSize = fontSize;
+            this.IsButton = isButton;
+            this.ButtonNavigation = buttonNavivation;
         }
         public string Latex{ get; set; }
         public double HeightRequest{ get; set; }
         public float FontSize { get; set; }
+        public bool IsButton { get; set; }
+        /// <summary>
+        /// Label title of the equation the button should navigate to
+        /// </summary>
+        public string ButtonNavigation { get; set; }
     }
 }
