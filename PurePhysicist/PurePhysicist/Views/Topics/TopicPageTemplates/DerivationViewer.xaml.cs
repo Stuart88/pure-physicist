@@ -15,13 +15,14 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
     {
         private EquationsViewBase Parent;
 
-        public DerivationViewer(EquationItem equationItem, EquationsViewBase parent)
+        public DerivationViewer(EquationItem equationItem, EquationsViewBase parent, string backToName = "List")
         {
             this.Parent = parent;
 
             InitializeComponent();
 
             this.ViewerTitle.Text = equationItem.LabelText;
+            this.BackButton.Text = $"Back to {backToName}";
 
             MathView view = new MathView(){FontSize = equationItem.FontSize, HeightRequest = equationItem.HeightRequest};
             view.LaTeX = $@"{equationItem.EquationLatex}";
@@ -58,18 +59,17 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
                     Button infoButton = new Button
                     {
                         Text = "PEEK",
-                        Padding = new Thickness(5,0,5,0),
-                        Margin = new Thickness(5,0,0,0),
+                        Style = (Style)Application.Current.Resources["BlueButton"],
                         VerticalOptions = LayoutOptions.Center,
                         FontSize = 14,
-                        HeightRequest = 30
+                       
                     };
                     infoButton.Clicked += async (sender, args) =>
                     {
                         var equationToShow = this.Parent.Equations.FirstOrDefault(x => x.LabelText == s.ButtonNavigation);
                         if (equationToShow != null)
                         {
-                            await this.Navigation.PushModalAsync(new DerivationViewer(equationToShow, this.Parent));
+                            await this.Navigation.PushModalAsync(new DerivationViewer(equationToShow, this.Parent, equationItem.LabelText));
                         }
                     };
                     infoArea.Children.Add(forTheAbove);
