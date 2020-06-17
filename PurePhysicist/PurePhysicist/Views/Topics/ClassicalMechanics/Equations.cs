@@ -95,7 +95,147 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics
                     new DerivationStep(@"v_2 = \frac{2m_1}{m_1+m_2}u_1+\frac{m_2-m_1}{m_1+m_2}u_2", 60),
                 }
             },
+            new EquationItem("Centre of Mass", 80)
+            {
+                EquationLatex = @"\vec{r}_{cm} = \frac{\sum m_i \vec{r}_{i}}{\sum m_i}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\vec{r}_{cm} = \frac{m_1 \vec{r}_{1} + m_2 \vec{r}_{2} + m_3 \vec{r}_{3} + ...}{m_1 + m_2 + m_3 + ...}", 80),
+                }
+            },
+            new EquationItem("Rotational Motion", 80)
+            {
+                EquationLatex = @"\omega_z = \frac{d \theta}{dt}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\text{\underline{Analogy with Linear Motion}}", 60),
+                    new DerivationStep(@"v = \frac{d s}{d t}", 60),
+                    new DerivationStep(@"\omega_z = \frac{d \theta}{dt}",60),
+                    new DerivationStep(@"\underline{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }"),
+                    new DerivationStep(@"s = s_0 + ut + \frac{1}{2}a t ^2", 60),
+                    new DerivationStep(@"\theta = \theta_0 + \omega_{0_z} t + \frac{1}{2}\alpha_z t ^2", 60),
+                    new DerivationStep(@"\underline{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }"),
+                    new DerivationStep(@"v = u +at", 60),
+                    new DerivationStep(@"\omega_z = \omega_{0_z} + \alpha_z t", 60),
+                    new DerivationStep(@"\underline{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }"),
+                    new DerivationStep(@"v^2 = u^2 +2a(s - s_0)", 60),
+                    new DerivationStep(@"\omega_z^2 = \omega_{0_z}^2 +2\alpha_z(\theta - \theta_0)", 60),
+                    new DerivationStep(@"\underline{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }"),
+                    new DerivationStep(@"\text{(all for constant \alpha_z only)}", 60),
+                }
+            },
+            new EquationItem("Relating Angular and Linear Motion", 60)
+            {
+                EquationLatex = @"v = r \omega",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"a_{tangential} = \frac{dv}{dt} = r \frac{d \omega}{dt} = r \alpha", 80),
+                    new DerivationStep(@"a_{radial} = \frac{v^2}{r} = \omega^2 r", 80),
+                }
+            },
+            new EquationItem("Moment of Inertia")
+            {
+                EquationLatex = @"I = \sum_i m_i {r_i}^2",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\text{Two point masses separated by distance x}", 40, 30),
+                    new DerivationStep(@"I = \frac{m_1 m_2}{m_1 + m_2} x^2 = \mu x^2"),
+                    new DerivationStep(@"\underline{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }"),
+                    new DerivationStep(@"\text{Thin cylindrical shell with open ends,\\ radius r and mass m}", 40, 30),
+                    new DerivationStep(@"I \approx m r^2"),
+                    new DerivationStep(@"\underline{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }"),
+                    new DerivationStep(@"\text{Solid cylinder, radius r,\\ height h, mass m}", 40, 30),
+                    new DerivationStep(@"I_z = \frac{1}{2}mr^2"),
+                    new DerivationStep(@"I_x = I_y = \frac{1}{12}m(3r^2 + h^2)"),
+                    new DerivationStep(@"\underline{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }"),
+                    new DerivationStep(@"\text{Hollow sphere,\\ radius r and mass m}", 40, 30),
+                    new DerivationStep(@"I = \frac{2}{3} m r^2"),
+                    new DerivationStep(@"\underline{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }"),
+                    new DerivationStep(@"\text{Solid sphere,\\ radius r and mass m}", 40, 30),
+                    new DerivationStep(@"I = \frac{2}{5} m r^2"),
+                    new DerivationStep(@"\underline{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }"),
+                }
+            },
+            new EquationItem("Rotational Kinetic Energy", 80) {EquationLatex = @"K = \frac{1}{2}I \omega^2"},
+            new EquationItem("Torque", 60) {EquationLatex = @"\vec{\tau} = \vec{r} \times \vec{F}"},
+            new EquationItem("Newton's 2nd Law (rotational)", 60) {EquationLatex = @"\sum \tau_z = I \alpha_z"},
+            new EquationItem("Kinetic Energy of Rotational and Linear Motion", 80) {EquationLatex = @"K = \frac{1}{2}Mv^2 + \frac{1}{2}I \omega^2"},
+            new EquationItem("Work Done by a Torque", 80)
+            {
+                EquationLatex = @"W = \int_{\theta_1}^{\theta_2} \tau_z \ d \theta",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"W_{total} = \frac{1}{2} I {\omega_{2}}^2 - \frac{1}{2} I {\omega_{1}}^2", 60),
+                }
+            },
+            new EquationItem("Angular Momentum", 80)
+            {
+                EquationLatex = @"\vec{L} = I \vec{\omega}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\text{Relation to torque}", 40),
+                    new DerivationStep(@"\sum \vec{\tau} = \frac{d \vec{L}}{dt}", 80),
+                }
+            },
+            new EquationItem("Gyroscopic Precession Angular Speed", 80)
+            {
+                EquationLatex = @"\Omega = \frac{wr}{I\omega}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\Omega = \frac{d \phi}{dt} = \frac{|d \vec{L}|/|\vec{L}|}{dt} = \frac{\tau_z}{L_z} = \frac{wr}{I\omega}", 80),
+                }
+            },
+            new EquationItem("Equilibrium", 60) {EquationLatex = @"\sum \vec{F} = \sum \vec{\tau} = 0"},
+            new EquationItem("Hooke's Law", 80) {EquationLatex = @"\frac{\text{stress}}{\text{strain}} = \text{elastic modulus}"},
+            new EquationItem("Young's Modulus", 80)
+            {
+                EquationLatex = @"Y = \frac{\text{tensile stress}}{\text{tensile strain}}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"Y = \frac{F_{\perp} / A}{\Delta l / l_0} = \frac{F_{\perp} \ l_0}{A \ \Delta l}", 80)
+                }
+            },
+            new EquationItem("Shear Modulus", 80)
+            {
+                EquationLatex = @"Y = \frac{\text{shear stress}}{\text{shear strain}}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"Y = \frac{F_{\parallel} / A}{x / h} = \frac{F_{\parallel} \ h}{A \ x}", 80)
+                }
+            },
+            new EquationItem("Newton's Law of Gravitation", 80) {EquationLatex = @"F = \frac{G m_1 m_2}{r^2}"},
+            new EquationItem("Gravitational Potential", 80)
+            {
+                EquationLatex = @"U = - \frac{G m_E m}{r}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\text{\underline{Derivation}}", 50),
+                    new DerivationStep(@"\text{Work done by gravity:}", 30, 30),
+                    new DerivationStep(@"W = \int_{r_1}^{r_2} F_r \ dr", 80),
+                    new DerivationStep(@"W = - \int_{r_1}^{r_2} \frac{G m_E m}{r^2} \ dr", 80),
+                    new DerivationStep(@"\text{(negative as gravity acts toward earth)}", 50, 30),
+                    new DerivationStep(@"W = -\frac{G m_E m}{r_1} + \frac{G m_E m}{r_2}", 80),
+                    new DerivationStep(@"\text{Potential energy U is defined by W = U_1 - U_2}",50, 30),
+                    new DerivationStep(@"\text{Thus, } U = - \frac{G m_E m}{r}", 80),
+                }
+            },
+            new EquationItem("Escape Velocity", 80)
+            {
+                EquationLatex = @"v_{escape} = \sqrt{\frac{2GM}{R}}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\text{\underline{Derivation}}", 50),
+                    new DerivationStep(@"\text{Kinetic energy must equal work done to}", 30, 30),
+                    new DerivationStep(@"\text{escape to infinite distance}", 30, 30),
+                    new DerivationStep(@"\frac{1}{2}mv^2 = -(-\frac{G M m}{r_1} + \frac{G M m}{r_2})", 80),
+                    new DerivationStep("", 0, 0, true, "Gravitational Potential"),
+                    new DerivationStep(@"\frac{1}{2}mv^2 = -(-\frac{G M m}{R} + \frac{G M m}{\infty})", 80),
+                    new DerivationStep(@"\frac{1}{2}mv^2 = \frac{G M m}{R}", 80),
+                    new DerivationStep(@"v_{escape} = \sqrt{\frac{2GM}{R}}", 80),
+                    new DerivationStep(@"\text{For any body mass M, at radius R}", 30, 30),
 
+                }
+            },
         };
 
 
