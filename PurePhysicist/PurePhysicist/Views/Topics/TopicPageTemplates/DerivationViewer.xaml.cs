@@ -20,7 +20,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
             this.ViewerTitle.Text = equationItem.LabelText;
 
-            MathView view = new MathView(){FontSize = 40, HeightRequest = equationItem.HeightRequest};
+            MathView view = new MathView(){FontSize = equationItem.FontSize, HeightRequest = equationItem.HeightRequest};
             view.LaTeX = $@"{equationItem.EquationLatex}";
             this.ViewArea.Children.Add(view);
 
@@ -34,7 +34,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
             foreach (var s in equationItem.DerivationStepsLatex)
             {
-                MathView newview = new MathView { FontSize = 40, HeightRequest = s.HeightRequest };
+                MathView newview = new MathView { FontSize = s.FontSize, HeightRequest = s.HeightRequest };
                 newview.LaTeX = $@"{s.Latex}";
                 this.ViewArea.Children.Add(newview);
             }
