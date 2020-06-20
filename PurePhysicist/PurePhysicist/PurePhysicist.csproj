@@ -109,4 +109,14 @@
       <DependentUpon>MainThermodynamics.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Topics\Astrophysics\CoolStuffItems\" />
+    <Folder Include="Views\Topics\ClassicalMechanics\CoolStuffItems\" />
+    <Folder Include="Views\Topics\Electromagnetism\CoolStuffItems\" />
+    <Folder Include="Views\Topics\FluidDynamics\CoolStuffItems\" />
+    <Folder Include="Views\Topics\Mathematics\CoolStuffItems\" />
+    <Folder Include="Views\Topics\QuantumPhysics\CoolStuffItems\" />
+    <Folder Include="Views\Topics\Thermodynamics\CoolStuffItems\" />
+  </ItemGroup>
 </Project>
