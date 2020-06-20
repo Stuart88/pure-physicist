@@ -236,6 +236,85 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics
 
                 }
             },
+            new EquationItem("Kepler's 1st Law", 60, 30) {EquationLatex = @"\text{All planets move in an elliptical orbit \\ with one focus about a star}"},
+            new EquationItem("Kepler's 2nd Law", 80)
+            {
+                EquationLatex = @"\frac{dA}{dt} = \frac{1}{2} \ r^2 \ \frac{d \theta}{dt}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\text{A line connecting a planet to its central star}", 30, 30),
+                    new DerivationStep(@"\text{sweeps an equal area for all changes in time.}", 30, 30),
+                    new DerivationStep(@"\text{(Conservation of angular momentum)}", 30, 30),
+                }
+            },
+            new EquationItem("Kepler's 3rd Law", 80) {EquationLatex = @"T = \frac{2 \pi a^{\frac{3}{2}}}{\sqrt{G M_s}}"},
+            new EquationItem("Schwarzchild Radius", 80) {EquationLatex = @"R_S = \frac{2GM}{c^2}"},
+            new EquationItem("Periodic Motion", 80)
+            {
+                EquationLatex = @"f = \frac{1}{T} \ \ \ \ \ \ T = \frac{1}{f}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\omega = 2 \pi f = \frac{2 \pi}{T}", 80)
+                }
+            },
+            new EquationItem("Simple Harmonic Motion", 80)
+            {
+                EquationLatex = @"\frac{d^2}{d t^2} x = - \omega^2 x",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"x = A e^{i \omega t}"),
+                    new DerivationStep(@"\text{\underline{\ \ \ \ \ \ \ \ \ \ \ \}}"),
+                    new DerivationStep(@"\omega = \sqrt{frac{k}{m}}", 80),
+                    new DerivationStep(@"f = \frac{\omega}{2 \pi} = \frac{1}{2 \pi}\sqrt{\frac{k}{m}", 80),
+                    new DerivationStep(@"T = \frac{2 \pi}{\omega} = 2 \pi \sqrt{\frac{m}{k}", 80),
+                    new DerivationStep("",60,40,true, "Periodic Motion"),
+                }
+            },
+            new EquationItem("Energy in Simple Harmonic Motion", 80, 35) {EquationLatex = @"E = \frac{1}{2}mv_x^2 + \frac{1}{2}k x^2 = \frac{1}{2}k A^2 = constant"},
+            new EquationItem("The Simple Pendulum", 80)
+            {
+                EquationLatex = @"\frac{d^2}{d t^2} \theta = - \omega^2 \theta",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{g}{L}}", 80),
+                    new DerivationStep(@"f = \frac{\omega}{2 \pi} = \frac{1}{2 \pi}\sqrt{\frac{g}{L}}", 80),
+                    new DerivationStep(@"T = \frac{2 \pi}{\omega} = 2 \pi \sqrt{\frac{L}{g}}", 80),
+                    new DerivationStep("",60,40,true, "Periodic Motion"),
+                }
+            },
+            new EquationItem("The Physical Pendulum", 80)
+            {
+                EquationLatex = @"\frac{d^2}{d t^2} \theta = - \frac{mgd}{I} \theta",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\omega = \sqrt{\frac{mgd}{I}}", 80),
+                    new DerivationStep(@"T = 2 \pi \sqrt{\frac{I}{mgd}}", 80),
+                    new DerivationStep(@"\text{Where } I \text{ is the moment of inertia}", 30, 35),
+                    new DerivationStep("",60,40,true, "Moment of Inertia"),
+                }
+            },
+            new EquationItem("Damped Oscillation", 80)
+            {
+                EquationLatex = @"x = Ae^{-(\frac{b}{2m} + i \omega')t}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\omega' = \sqrt{\frac{k}{m} - \frac{b^2}{4m^2}}", 80),
+                    new DerivationStep(@"b = \text{damping factor}", 50),
+                    new DerivationStep(@"b < 2\sqrt{km} \ \ \text{underdamping}"),
+                    new DerivationStep(@"b = 2\sqrt{km} \ \ \text{critical damping}"),
+                    new DerivationStep(@"b > 2\sqrt{km} \ \ \text{overdamping}"),
+                }
+            },
+            new EquationItem("Driven (Forced) oscillation", 80)
+            {
+                EquationLatex = @"A = \frac{F_{max}}{\sqrt{(k - m \omega_d^2)^2 + b^2 \omega_d^2}}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\omega_d = \text{driving frequency}"),
+                    new DerivationStep(@"b= \text{damping factor}"),
+                    new DerivationStep("", 60,40,true, "Damped Oscillation"),
+                }
+            },
         };
 
 
