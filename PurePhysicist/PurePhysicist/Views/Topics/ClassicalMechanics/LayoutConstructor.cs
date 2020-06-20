@@ -11,11 +11,12 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics
 {
     public class LayoutConstructor : LayoutConstructorBase
     {
+        private const string TopicTitle = "Classical Mechanics";
         public LayoutConstructor(Color themeColour) :base(themeColour)
         {
             this.ContentsPage = new ContentsView(themeColour);
-            this.EquationsPage = new EquationsViewBase("Classical Mechanics", themeColour, Equations.EquationsList);
-            this.CoolStuffPage = new CoolStuffView();
+            this.EquationsPage = new EquationsViewBase(TopicTitle, themeColour, Equations.EquationsList);
+            this.CoolStuffPage = new CoolStuffView(TopicTitle, themeColour, CoolStuffContents.Items);
         }
 
     }

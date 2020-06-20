@@ -68,7 +68,7 @@
     <EmbeddedResource Update="Views\Topics\ClassicalMechanics\CoolStuffItems\SimplePendulum.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Topics\ClassicalMechanics\CoolStuffView.xaml">
+    <EmbeddedResource Update="Views\Topics\TopicPageTemplates\CoolStuffView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Topics\TopicPageTemplates\DerivationViewer.xaml">
