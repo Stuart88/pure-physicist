@@ -75,7 +75,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
             if (selected != null)
             {
-                await this.Navigation.PushModalAsync(new DerivationViewer(selected, this));
+                await this.Navigation.PushModalAsync(new DerivationViewer(selected));
             }
 
             ((Button)sender).IsEnabled = true;

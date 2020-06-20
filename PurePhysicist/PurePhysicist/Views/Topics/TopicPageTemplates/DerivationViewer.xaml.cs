@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CSharpMath.Forms;
 using PurePhysicist.Models;
+using PurePhysicist.Views.Topics.ClassicalMechanics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,11 +14,9 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DerivationViewer : ContentPage
     {
-        private EquationsViewBase Parent;
 
-        public DerivationViewer(EquationItem equationItem, EquationsViewBase parent, string backToName = "List")
+        public DerivationViewer(EquationItem equationItem, string backToName = "List")
         {
-            this.Parent = parent;
 
             InitializeComponent();
 
@@ -66,10 +65,10 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
                     };
                     infoButton.Clicked += async (sender, args) =>
                     {
-                        var equationToShow = this.Parent.Equations.FirstOrDefault(x => x.LabelText == s.ButtonNavigation);
+                        var equationToShow = Equations.EquationsList.FirstOrDefault(x => x.LabelText == s.ButtonNavigation);
                         if (equationToShow != null)
                         {
-                            await this.Navigation.PushModalAsync(new DerivationViewer(equationToShow, this.Parent, equationItem.LabelText));
+                            await this.Navigation.PushModalAsync(new DerivationViewer(equationToShow, equationItem.LabelText));
                         }
                     };
                     infoArea.Children.Add(forTheAbove);
