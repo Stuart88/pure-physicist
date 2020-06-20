@@ -21,7 +21,7 @@ namespace PurePhysicist
         public App()
         {
             Device.SetFlags(new[] {
-                //"RadioButton_Experimental",
+                "RadioButton_Experimental",
                 //"AppTheme_Experimental",
                 //"Markup_Experimental",
                 "Expander_Experimental"
