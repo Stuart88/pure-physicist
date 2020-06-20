@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:extensions="clr-namespace:PurePhysicist.Extensions;assembly=PurePhysicist"
+             xmlns:cocosSharp="clr-namespace:CocosSharp;assembly=CocosSharp.Forms"
+             mc:Ignorable="d"
+             x:Class="PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems.SimplePendulum">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PaperColour}">
+
+            <Grid x:Name="PageGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Simple Pendulum Simulator" Style="{StaticResource ContentsTitle}" VerticalTextAlignment="Center"/>
+                <Button Grid.Row="0" Grid.Column="2" x:Name="InfoButton" 
+                        Text="Info" Clicked="InfoButton_Clicked" 
+                        HorizontalOptions="Center" Style="{StaticResource BlueButton}"/>
+
+                <cocosSharp:CocosSharpView x:Name="GameView" Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="3" 
+                                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Start Angle" Style="{StaticResource CoolStuffLabel}"/>
+                <Slider Grid.Row="2" Grid.Column="1" x:Name="AngleSlider"  Minimum="-0.5" Maximum="0.5" HorizontalOptions="FillAndExpand"
+                        ValueChanged="AngleSlider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green"
+                        DragStarted="LengthSlider_DragStarted" DragCompleted="LengthSlider_DragCompleted"/>
+                <Label Grid.Row="2" Grid.Column="2" x:Name="AngleLabel" Style="{StaticResource CoolStuffLabel}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Length" Style="{StaticResource CoolStuffLabel}"/>
+                <Slider Grid.Row="3" Grid.Column="1" x:Name="LengthSlider"  Minimum="0.1" Maximum="15" HorizontalOptions="FillAndExpand"  
+                        ValueChanged="LengthSlider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green" 
+                        DragStarted="LengthSlider_DragStarted" DragCompleted="LengthSlider_DragCompleted"/>
+                <Label Grid.Row="3" Grid.Column="2" x:Name="StringLengthLabel" Style="{StaticResource CoolStuffLabel}"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Gravity" Style="{StaticResource CoolStuffLabel}"/>
+                <StackLayout Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <RadioButton Text="0g" GroupName="gravOptions" TextColor="Green" Margin="5,0,5,0" CheckedChanged="RadioButton_CheckedChanged"/>
+                    <RadioButton Text="g" GroupName="gravOptions" TextColor="Green" Margin="5,0,5,0" CheckedChanged="RadioButton_CheckedChanged" IsChecked="True"/>
+                    <RadioButton Text="5g" GroupName="gravOptions" TextColor="Green" Margin="5,0,5,0" CheckedChanged="RadioButton_CheckedChanged"/>
+                    <RadioButton Text="10g" GroupName="gravOptions" TextColor="Green" Margin="5,0,5,0" CheckedChanged="RadioButton_CheckedChanged"/>
+                </StackLayout>
+
+
+                <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" x:Name="PeriodLabel" Style="{StaticResource CoolStuffLabel}"/>
+                <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" x:Name="FrequencyLabel" Style="{StaticResource CoolStuffLabel}"/>
+                <Label Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" x:Name="AngularFrequencyLabel" Style="{StaticResource CoolStuffLabel}"/>
+                
+
+            </Grid>
+            <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource BlueButton}" VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
