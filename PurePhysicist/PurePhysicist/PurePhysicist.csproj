@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -45,12 +45,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CocosSharp" Version="1.7.1" />
+    <PackageReference Include="CocosSharp.Forms" Version="1.7.1" />
     <PackageReference Include="CSharpMath.Forms" Version="0.4.2" />
     <PackageReference Include="Microsoft.Net.Compilers" Version="3.6.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.847" />  
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.968" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
@@ -61,6 +63,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\Topics\ClassicalMechanics\ContentsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Topics\ClassicalMechanics\CoolStuffItems\SimplePendulum.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Topics\ClassicalMechanics\CoolStuffView.xaml">
@@ -112,7 +117,6 @@
 
   <ItemGroup>
     <Folder Include="Views\Topics\Astrophysics\CoolStuffItems\" />
-    <Folder Include="Views\Topics\ClassicalMechanics\CoolStuffItems\" />
     <Folder Include="Views\Topics\Electromagnetism\CoolStuffItems\" />
     <Folder Include="Views\Topics\FluidDynamics\CoolStuffItems\" />
     <Folder Include="Views\Topics\Mathematics\CoolStuffItems\" />
