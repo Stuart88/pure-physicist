@@ -119,11 +119,14 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
         {
             bool justShowZero = Pendulum.StartAngle == 0 || Pendulum.StringLength == 0;
 
-            AngleLabel.Text = $"{(justShowZero ? 0 : MathsHelpers.ToDegrees(Pendulum.StartAngle).DecimalPoints(2))}°";
-            StringLengthLabel.Text = $"{Pendulum.StringLength.DecimalPoints(2)} m";
-            PeriodLabel.Text = $"T = {(justShowZero ? 0 : Pendulum.Period.DecimalPoints(2))} s";
-            FrequencyLabel.Text = $"f = {Pendulum.Frequency.DecimalPoints(2)} Hz";
-            AngularFrequencyLabel.Text = $"ω = {Pendulum.Frequency.DecimalPoints(2)} rad/s";
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                AngleLabel.Text = $"{(justShowZero ? 0 : MathsHelpers.ToDegrees(Pendulum.StartAngle).DecimalPoints(2))}°";
+                StringLengthLabel.Text = $"{Pendulum.StringLength.DecimalPoints(2)} m";
+                PeriodLabel.Text = $"T = {(justShowZero ? 0 : Pendulum.Period.DecimalPoints(2))} s";
+                FrequencyLabel.Text = $"f = {Pendulum.Frequency.DecimalPoints(2)} Hz";
+                AngularFrequencyLabel.Text = $"ω = {Pendulum.Frequency.DecimalPoints(2)} rad/s";
+            });
         }
 
         private void SetupGameScene(CCScene gameScene)
