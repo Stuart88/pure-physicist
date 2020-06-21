@@ -125,7 +125,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
                 StringLengthLabel.Text = $"{Pendulum.StringLength.DecimalPoints(2)} m";
                 PeriodLabel.Text = $"T = {(justShowZero ? 0 : Pendulum.Period.DecimalPoints(2))} s";
                 FrequencyLabel.Text = $"f = {Pendulum.Frequency.DecimalPoints(2)} Hz";
-                AngularFrequencyLabel.Text = $"ω = {Pendulum.Frequency.DecimalPoints(2)} rad/s";
+                AngularFrequencyLabel.Text = $"ω = {Pendulum.AngularFrequency.DecimalPoints(2)} rad/s";
             });
         }
 
