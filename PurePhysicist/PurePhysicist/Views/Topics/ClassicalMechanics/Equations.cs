@@ -259,21 +259,21 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics
             },
             new EquationItem("Simple Harmonic Motion", 80)
             {
-                EquationLatex = @"\frac{d^2}{d t^2} x = - \omega^2 x",
+                EquationLatex = @"\ddot{x} = - \omega^2 x",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
                     new DerivationStep(@"x = A e^{i \omega t}"),
-                    new DerivationStep(@"\text{\underline{\ \ \ \ \ \ \ \ \ \ \ \}}"),
-                    new DerivationStep(@"\omega = \sqrt{frac{k}{m}}", 80),
-                    new DerivationStep(@"f = \frac{\omega}{2 \pi} = \frac{1}{2 \pi}\sqrt{\frac{k}{m}", 80),
-                    new DerivationStep(@"T = \frac{2 \pi}{\omega} = 2 \pi \sqrt{\frac{m}{k}", 80),
+                    new DerivationStep(@"\text{\underline{\ \ \ \ \ \ \ \ \ \ \ \ }}"),
+                    new DerivationStep(@"\omega = \sqrt{\frac{k}{m}}", 80),
+                    new DerivationStep(@"f = \frac{\omega}{2 \pi} = \frac{1}{2 \pi}\sqrt{\frac{k}{m}}", 80),
+                    new DerivationStep(@"T = \frac{2 \pi}{\omega} = 2 \pi \sqrt{\frac{m}{k}}", 80),
                     new DerivationStep("",60,40,true, "Periodic Motion"),
                 }
             },
             new EquationItem("Energy in Simple Harmonic Motion", 80, 35) {EquationLatex = @"E = \frac{1}{2}mv_x^2 + \frac{1}{2}k x^2 = \frac{1}{2}k A^2 = constant"},
             new EquationItem("The Simple Pendulum", 80)
             {
-                EquationLatex = @"\frac{d^2}{d t^2} \theta = - \omega^2 \theta",
+                EquationLatex = @"\ddot{\theta} = - \omega^2 \theta",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
                     new DerivationStep(@"\omega = \sqrt{\frac{k}{m}} = \sqrt{\frac{g}{L}}", 80),
@@ -284,7 +284,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics
             },
             new EquationItem("The Physical Pendulum", 80)
             {
-                EquationLatex = @"\frac{d^2}{d t^2} \theta = - \frac{mgd}{I} \theta",
+                EquationLatex = @"\ddot{\theta} = - \frac{mgd}{I} \theta",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
                     new DerivationStep(@"\omega = \sqrt{\frac{mgd}{I}}", 80),
