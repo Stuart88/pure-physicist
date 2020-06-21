@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cocosSharp="clr-namespace:CocosSharp;assembly=CocosSharp.Forms"
+             mc:Ignorable="d"
+             x:Class="PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems.CentreOfGravity">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" >
+
+            <Grid x:Name="PageGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PaperColour}" Padding="0,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Centre of Mass" Style="{StaticResource ContentsTitle}" VerticalTextAlignment="Center"/>
+                <Button Grid.Row="0" Grid.Column="2" x:Name="InfoButton" 
+                        Text="Info" Clicked="InfoButton_Clicked" 
+                        HorizontalOptions="Center" Style="{StaticResource BlueButton}"/>
+
+                <cocosSharp:CocosSharpView x:Name="GameView" Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="3" 
+                                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="CentreOfMassLabel" TextColor="Red" Style="{StaticResource CoolStuffLabel}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource CoolStuffLabel}">
+                    <Label.Text>
+                        Drag balls around to see the centre of mass change
+                    </Label.Text>
+                </Label>
+
+                <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Button  x:Name="RemoveButton" Text="Remove Selected" Clicked="RemoveButton_Clicked" HorizontalOptions="End" Style="{StaticResource BlueButton}"/>
+                    <Button x:Name="AddButton" Text="Add Ball" Clicked="AddButton_Clicked" HorizontalOptions="Start" Style="{StaticResource BlueButton}" BackgroundColor="Green"/>
+                </StackLayout>
+
+                <Label Grid.Row="5" Grid.Column="0" Text="Mass (selected)" Style="{StaticResource CoolStuffLabel}"/>
+                <Slider Grid.Row="5" Grid.Column="1" x:Name="MassSlider" Maximum="10" Minimum="1"  HorizontalOptions="FillAndExpand"  
+                        ValueChanged="MassSlider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green" />
+                <Label  Grid.Row="5" Grid.Column="2" x:Name="MassLabel" Style="{StaticResource CoolStuffLabel}" />
+
+            </Grid>
+            <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource BlueButton}" VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

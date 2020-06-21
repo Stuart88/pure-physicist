@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <!--<ProduceReferenceAssembly>true</ProduceReferenceAssembly>-->
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
@@ -106,6 +106,9 @@
     </Compile>
     <Compile Update="Views\Topics\ClassicalMechanics\ContentsView.xaml.cs">
       <DependentUpon>ContentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Topics\ClassicalMechanics\CoolStuffItems\CentreOfGravity.xaml.cs">
+      <DependentUpon>CentreOfGravity.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Topics\FluidDynamics\MainFluidDynamics.xaml.cs">
       <DependentUpon>MainFluidDynamics.xaml</DependentUpon>

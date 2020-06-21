@@ -10,7 +10,8 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics
     {
         public static readonly List<CoolStuffView.CoolStuffListItem> Items = new List<CoolStuffView.CoolStuffListItem>
         {
-            new CoolStuffView.CoolStuffListItem("Simple Pendulum", new SimplePendulum())
+            new CoolStuffView.CoolStuffListItem("Simple Pendulum", new SimplePendulum()),
+            new CoolStuffView.CoolStuffListItem("Centre of Mass", new CentreOfGravity()),
         };
     }
 }
