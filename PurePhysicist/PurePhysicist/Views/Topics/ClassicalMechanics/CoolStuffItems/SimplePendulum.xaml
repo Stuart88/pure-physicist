@@ -3,14 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:extensions="clr-namespace:PurePhysicist.Extensions;assembly=PurePhysicist"
              xmlns:cocosSharp="clr-namespace:CocosSharp;assembly=CocosSharp.Forms"
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems.SimplePendulum">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PaperColour}">
+        <StackLayout HorizontalOptions="FillAndExpand" >
 
-            <Grid x:Name="PageGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid x:Name="PageGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PaperColour}" Padding="0,0,0,10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
@@ -37,13 +36,13 @@
                                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 
                 <Label Grid.Row="2" Grid.Column="0" Text="Start Angle" Style="{StaticResource CoolStuffLabel}"/>
-                <Slider Grid.Row="2" Grid.Column="1" x:Name="AngleSlider"  Minimum="-0.5" Maximum="0.5" HorizontalOptions="FillAndExpand"
+                <Slider Grid.Row="2" Grid.Column="1" x:Name="AngleSlider" Maximum="0.5" Minimum="-0.5"  HorizontalOptions="FillAndExpand"
                         ValueChanged="AngleSlider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green"
                         DragStarted="LengthSlider_DragStarted" DragCompleted="LengthSlider_DragCompleted"/>
                 <Label Grid.Row="2" Grid.Column="2" x:Name="AngleLabel" Style="{StaticResource CoolStuffLabel}"/>
 
                 <Label Grid.Row="3" Grid.Column="0" Text="Length" Style="{StaticResource CoolStuffLabel}"/>
-                <Slider Grid.Row="3" Grid.Column="1" x:Name="LengthSlider"  Minimum="0.1" Maximum="15" HorizontalOptions="FillAndExpand"  
+                <Slider Grid.Row="3" Grid.Column="1" x:Name="LengthSlider" Maximum="15" Minimum="0.1"  HorizontalOptions="FillAndExpand"  
                         ValueChanged="LengthSlider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green" 
                         DragStarted="LengthSlider_DragStarted" DragCompleted="LengthSlider_DragCompleted"/>
                 <Label Grid.Row="3" Grid.Column="2" x:Name="StringLengthLabel" Style="{StaticResource CoolStuffLabel}"/>
