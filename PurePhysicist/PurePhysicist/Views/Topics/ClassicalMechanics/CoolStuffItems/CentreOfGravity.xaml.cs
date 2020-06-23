@@ -125,7 +125,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
         {
             InfoButton.IsEnabled = false;
             EquationItem equation = Equations.EquationsList.FirstOrDefault(x => x.LabelText == "Centre of Mass");
-            await Navigation.PushModalAsync(new DerivationViewer(equation, "Cool Stuff"));
+            await Navigation.PushModalAsync(new DerivationViewer(equation, "demo"));
             InfoButton.IsEnabled = true;
         }
 

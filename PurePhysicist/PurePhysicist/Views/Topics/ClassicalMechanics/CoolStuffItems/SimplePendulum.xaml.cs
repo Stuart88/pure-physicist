@@ -90,6 +90,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
             gameView.RunWithScene(gameScene);
         }
 
+            await this.Navigation.PushModalAsync(new DerivationViewer(equation, "demo"));
         private void LengthSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             Pendulum.StringLength = e.NewValue;
@@ -157,7 +158,6 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
         {
             InfoButton.IsEnabled = false;
             var equation = Equations.EquationsList.FirstOrDefault(x => x.LabelText == "The Simple Pendulum");
-            await this.Navigation.PushModalAsync(new DerivationViewer(equation, "Cool Stuff"));
             InfoButton.IsEnabled = true;
         }
 
