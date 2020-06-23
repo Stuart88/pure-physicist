@@ -48,17 +48,17 @@
                            BackgroundColor="LightGreen" 
                            TextColor="#444"
                            FontAttributes="Bold"
-                           HorizontalOptions="Center" HorizontalTextAlignment="Center" 
+                           HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" 
                            VerticalOptions="Center" VerticalTextAlignment="Center"/>
 
-                    <StackLayout  Grid.Row="1" Grid.Column="0" BackgroundColor="CornflowerBlue">
-                        <Label Text="Car 1" Style="{StaticResource CoolStuffLabel}"  />
+                    <StackLayout  Grid.Row="1" Grid.Column="0" BackgroundColor="Transparent">
+                        <Label Text="Car 1" Style="{StaticResource CoolStuffLabel}" HorizontalOptions="Start" BackgroundColor="CornflowerBlue"/>
                         <Label x:Name="Car1Velocity" Style="{StaticResource CoolStuffLabel}"  />
                         <Label x:Name="Car1Displacement" Style="{StaticResource CoolStuffLabel}" />
                     </StackLayout>
 
-                    <StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="DarkOrange">
-                        <Label Text="Car 2" Style="{StaticResource CoolStuffLabel}" />
+                    <StackLayout Grid.Row="1" Grid.Column="1" >
+                        <Label Text="Car 2" Style="{StaticResource CoolStuffLabel}" HorizontalOptions="Start" BackgroundColor="DarkOrange" />
                         <Label x:Name="Car2Velocity" Style="{StaticResource CoolStuffLabel}" />
                         <Label x:Name="Car2Displacement" Style="{StaticResource CoolStuffLabel}" />
                     </StackLayout>

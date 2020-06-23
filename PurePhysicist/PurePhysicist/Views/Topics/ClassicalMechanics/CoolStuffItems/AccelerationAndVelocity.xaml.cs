@@ -225,7 +225,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
                 Car2VelocitySliderLabel.Text = $"{Car2VelocitySlider.Value} m/s";
                 Car2AccelerationSliderLabel.Text = $"{Car2AccelerationSlider.Value} m/s/s";
 
-                TimerLabel.Text = $"{MathsHelpers.DecimalPoints(_elapsedTime, 2):0.00}s";
+                TimerLabel.Text = $"Timer: {MathsHelpers.DecimalPoints(_elapsedTime, 2):0.00}s";
             });
         }
 
