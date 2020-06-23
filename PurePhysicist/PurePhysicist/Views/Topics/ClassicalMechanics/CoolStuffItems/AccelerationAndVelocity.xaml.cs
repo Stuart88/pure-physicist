@@ -33,10 +33,10 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
         public AccelerationAndVelocity()
         {
+            InitializeComponent();
+
             _car1Rect = new CCRect(0, 0, 5, 10) { Origin = new CCPoint(0, 0) };
             _car2Rect = new CCRect(0, 0, 5, 10) { Origin = new CCPoint(0, 0) };
-
-            InitializeComponent();
 
             StartStopButton.Text = "Start";
 
@@ -46,6 +46,16 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
         }
 
         #endregion Public Constructors
+
+        #region Protected Methods
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Reset();
+        }
+
+        #endregion Protected Methods
 
         #region Private Methods
 
@@ -109,9 +119,6 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
             _car1DrawNode.Clear();
             _car2DrawNode.Clear();
 
-            _layer.AddChild(_car1DrawNode);
-            _layer.AddChild(_car2DrawNode);
-
             _car1DrawNode.PositionX = (float)_viewResolution.Width / 5;
             _car1DrawNode.PositionY = 0;
 
@@ -125,7 +132,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
             _car2.Position = new Vector(_car2DrawNode.Position.X, _car2DrawNode.Position.Y);
         }
 
-        private void ResetButton_Clicked(object sender, EventArgs e)
+        private void Reset()
         {
             StartStopRunning(true);
 
@@ -140,9 +147,17 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
             UpdateLabels();
         }
 
+        private void ResetButton_Clicked(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
         private void SetupGameScene(CCScene gameScene)
         {
             gameScene.AddLayer(_layer);
+
+            _layer.AddChild(_car1DrawNode);
+            _layer.AddChild(_car2DrawNode);
 
             ReDrawScene();
 

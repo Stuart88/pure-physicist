@@ -107,7 +107,11 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
         {
             _layer.Pause();
         }
-
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            RedrawGameScene();
+        }
         private void LengthSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             Pendulum.StringLength = e.NewValue;
@@ -139,12 +143,19 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
             _layer.AddChild(_pendulumString);
 
+            RedrawGameScene();
+
+            _layer.Schedule(Update);
+        }
+
+        private void RedrawGameScene()
+        {
+            _pendulumString.Clear();
+
             _pendulumString.PositionX = (float)_viewResolution.Width / 2;
             _pendulumString.PositionY = _viewResolution.Height;
 
             _pendulumString.DrawRect(_pendulumRect);
-
-            _layer.Schedule(Update);
         }
 
         private void Update(float timeInSeconds)

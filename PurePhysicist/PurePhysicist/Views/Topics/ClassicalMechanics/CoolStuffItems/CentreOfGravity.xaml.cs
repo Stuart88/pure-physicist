@@ -63,6 +63,16 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
         #endregion Public Constructors
 
+        #region Protected Methods
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            RedrawParticles();
+        }
+
+        #endregion Protected Methods
+
         #region Private Methods
 
         private void AddButton_Clicked(object sender, EventArgs e)
@@ -198,8 +208,8 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
             _centreOfGrav.DrawNode.Clear();
             _layer.AddChild(_centreOfGrav.DrawNode);
-            _centreOfGrav.DrawNode.DrawLine(new CCPoint(-2, -2), new CCPoint(2, 2), lineWidth: 0.5f,CCColor4B.Red);
-            _centreOfGrav.DrawNode.DrawLine(new CCPoint(2, -2), new CCPoint(-2, 2), lineWidth: 0.5f,CCColor4B.Red);
+            _centreOfGrav.DrawNode.DrawLine(new CCPoint(-2, -2), new CCPoint(2, 2), lineWidth: 0.5f, CCColor4B.Red);
+            _centreOfGrav.DrawNode.DrawLine(new CCPoint(2, -2), new CCPoint(-2, 2), lineWidth: 0.5f, CCColor4B.Red);
             PositionCentreOfGravity();
             UpdateLabels();
         }
