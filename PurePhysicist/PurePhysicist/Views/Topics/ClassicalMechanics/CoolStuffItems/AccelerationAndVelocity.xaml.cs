@@ -206,9 +206,9 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
                 Car2Displacement.Text = $"s: {_car2.Position.Y.DecimalPoints(2)} m";
 
                 Car1VelocitySliderLabel.Text = $"{Car1VelocitySlider.Value} m/s";
-                Car1AccelerationSliderLabel.Text = $"{Car1AccelerationSlider.Value} m/s";
+                Car1AccelerationSliderLabel.Text = $"{Car1AccelerationSlider.Value} m/s/s";
                 Car2VelocitySliderLabel.Text = $"{Car2VelocitySlider.Value} m/s";
-                Car2AccelerationSliderLabel.Text = $"{Car2AccelerationSlider.Value} m/s";
+                Car2AccelerationSliderLabel.Text = $"{Car2AccelerationSlider.Value} m/s/s";
 
                 TimerLabel.Text = $"{MathsHelpers.DecimalPoints(_elapsedTime, 2):0.00}s";
             });

@@ -73,7 +73,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Car 1" Style="{StaticResource CoolStuffLabel}"/>
@@ -99,7 +99,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="3*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Car 1" Style="{StaticResource CoolStuffLabel}"/>
@@ -107,12 +107,12 @@
                     <Label Grid.Row="1" Grid.Column="0" Text="Start Velocity" Style="{StaticResource CoolStuffLabel}"/>
                     <Slider Grid.Row="1" Grid.Column="1" x:Name="Car2VelocitySlider" Maximum="100" Minimum="0"  HorizontalOptions="FillAndExpand"
                             ValueChanged="Car2VelocitySlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green"/>
-                    <Label Grid.Row="1" Grid.Column="2" x:Name="Car2VelocitySliderLabel" Style="{StaticResource CoolStuffLabel}"/>
+                    <Label Grid.Row="1" Grid.Column="2" x:Name="Car2VelocitySliderLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="100"/>
 
                     <Label Grid.Row="2" Grid.Column="0" Text="Acceleration" Style="{StaticResource CoolStuffLabel}"/>
                     <Slider Grid.Row="2" Grid.Column="1" x:Name="Car2AccelerationSlider" Maximum="100" Minimum="0"  HorizontalOptions="FillAndExpand"
                             ValueChanged="Car2AccelerationSlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green"/>
-                    <Label Grid.Row="2" Grid.Column="2" x:Name="Car2AccelerationSliderLabel" Style="{StaticResource CoolStuffLabel}"/>
+                    <Label Grid.Row="2" Grid.Column="2" x:Name="Car2AccelerationSliderLabel" Style="{StaticResource CoolStuffLabel}" WidthRequest="100"/>
 
                 </Grid>
 
