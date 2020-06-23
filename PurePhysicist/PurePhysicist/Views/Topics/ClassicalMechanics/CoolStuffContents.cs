@@ -12,6 +12,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics
         {
             new CoolStuffView.CoolStuffListItem("Simple Pendulum", new SimplePendulum()),
             new CoolStuffView.CoolStuffListItem("Centre of Mass", new CentreOfGravity()),
+            new CoolStuffView.CoolStuffListItem("Acceleration and Velocity", new AccelerationAndVelocity())
         };
     }
 }

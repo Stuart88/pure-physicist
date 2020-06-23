@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cocosSharp="clr-namespace:CocosSharp;assembly=CocosSharp.Forms"
+             mc:Ignorable="d"
+             x:Class="PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems.AccelerationAndVelocity">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" >
+
+            <Grid x:Name="PageGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PaperColour}" Padding="0,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Acceleration and Velocity" Style="{StaticResource ContentsTitle}" VerticalTextAlignment="Center"/>
+                <Button Grid.Row="0" Grid.Column="2" x:Name="InfoButton" 
+                        Text="Info" Clicked="InfoButton_Clicked" 
+                        HorizontalOptions="Center" Style="{StaticResource BlueButton}"/>
+
+                <cocosSharp:CocosSharpView x:Name="GameView" Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="3" 
+                                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                           x:Name="TimerLabel" Style="{StaticResource CoolStuffLabel}"  
+                           BackgroundColor="LightGreen" 
+                           TextColor="#444"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" HorizontalTextAlignment="Center" 
+                           VerticalOptions="Center" VerticalTextAlignment="Center"/>
+
+                    <StackLayout  Grid.Row="1" Grid.Column="0" BackgroundColor="CornflowerBlue">
+                        <Label Text="Car 1" Style="{StaticResource CoolStuffLabel}"  />
+                        <Label x:Name="Car1Velocity" Style="{StaticResource CoolStuffLabel}"  />
+                        <Label x:Name="Car1Displacement" Style="{StaticResource CoolStuffLabel}" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="DarkOrange">
+                        <Label Text="Car 2" Style="{StaticResource CoolStuffLabel}" />
+                        <Label x:Name="Car2Velocity" Style="{StaticResource CoolStuffLabel}" />
+                        <Label x:Name="Car2Displacement" Style="{StaticResource CoolStuffLabel}" />
+                    </StackLayout>
+
+                </Grid>
+
+                <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" BackgroundColor="CornflowerBlue" Margin="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/><RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Car 1" Style="{StaticResource CoolStuffLabel}"/>
+                    
+                    <Label Grid.Row="1" Grid.Column="0" Text="Start Velocity" Style="{StaticResource CoolStuffLabel}"/>
+                    <Slider Grid.Row="1" Grid.Column="1" x:Name="Car1VelocitySlider" Maximum="100" Minimum="0"  HorizontalOptions="FillAndExpand"
+                            ValueChanged="Car1VelocitySlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green"/>
+                    <Label Grid.Row="1" Grid.Column="2" x:Name="Car1VelocitySliderLabel" Style="{StaticResource CoolStuffLabel}"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Text="Acceleration" Style="{StaticResource CoolStuffLabel}"/>
+                    <Slider Grid.Row="2" Grid.Column="1" x:Name="Car1AccelerationSlider" Maximum="100" Minimum="0"  HorizontalOptions="FillAndExpand"
+                            ValueChanged="Car1AccelerationSlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green"/>
+                    <Label Grid.Row="2" Grid.Column="2" x:Name="Car1AccelerationSliderLabel" Style="{StaticResource CoolStuffLabel}"/>
+
+                </Grid>
+
+                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" BackgroundColor="DarkOrange" Margin="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Car 1" Style="{StaticResource CoolStuffLabel}"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Start Velocity" Style="{StaticResource CoolStuffLabel}"/>
+                    <Slider Grid.Row="1" Grid.Column="1" x:Name="Car2VelocitySlider" Maximum="100" Minimum="0"  HorizontalOptions="FillAndExpand"
+                            ValueChanged="Car2VelocitySlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green"/>
+                    <Label Grid.Row="1" Grid.Column="2" x:Name="Car2VelocitySliderLabel" Style="{StaticResource CoolStuffLabel}"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Text="Acceleration" Style="{StaticResource CoolStuffLabel}"/>
+                    <Slider Grid.Row="2" Grid.Column="1" x:Name="Car2AccelerationSlider" Maximum="100" Minimum="0"  HorizontalOptions="FillAndExpand"
+                            ValueChanged="Car2AccelerationSlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green"/>
+                    <Label Grid.Row="2" Grid.Column="2" x:Name="Car2AccelerationSliderLabel" Style="{StaticResource CoolStuffLabel}"/>
+
+                </Grid>
+
+                <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" x:Name="ResetButton" BackgroundColor="LightGray" TextColor="Black" HorizontalOptions="Center"
+                            WidthRequest="150" HeightRequest="30" Padding="5"
+                            FontSize="15"
+                            Clicked="ResetButton_Clicked" Text="Reset"/>
+                    <Button Grid.Row="0" Grid.Column="1" x:Name="StartStopButton" BackgroundColor="Green" TextColor="White" HorizontalOptions="Center" 
+                            WidthRequest="150" HeightRequest="30" Padding="5"
+                            FontSize="15"
+                            Clicked="StartStopButton_Clicked"/>
+
+                </Grid>
+
+
+            </Grid>
+            <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource BlueButton}" VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -110,6 +110,9 @@
     <Compile Update="Views\Topics\ClassicalMechanics\CoolStuffItems\CentreOfGravity.xaml.cs">
       <DependentUpon>CentreOfGravity.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Topics\ClassicalMechanics\CoolStuffItems\AccelerationAndVelocity.xaml.cs">
+      <DependentUpon>AccelerationAndVelocity.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Topics\FluidDynamics\MainFluidDynamics.xaml.cs">
       <DependentUpon>MainFluidDynamics.xaml</DependentUpon>
     </Compile>
