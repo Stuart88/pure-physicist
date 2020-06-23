@@ -198,7 +198,8 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
             _centreOfGrav.DrawNode.Clear();
             _layer.AddChild(_centreOfGrav.DrawNode);
-            _centreOfGrav.DrawNode.DrawCircle(new CCPoint(0, 0), 1, CCColor4B.Red);
+            _centreOfGrav.DrawNode.DrawLine(new CCPoint(-2, -2), new CCPoint(2, 2), lineWidth: 0.5f,CCColor4B.Red);
+            _centreOfGrav.DrawNode.DrawLine(new CCPoint(2, -2), new CCPoint(-2, 2), lineWidth: 0.5f,CCColor4B.Red);
             PositionCentreOfGravity();
             UpdateLabels();
         }
