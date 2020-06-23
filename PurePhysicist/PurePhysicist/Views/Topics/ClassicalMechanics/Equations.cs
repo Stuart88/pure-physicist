@@ -10,6 +10,18 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics
     {
         public static readonly List<EquationItem> EquationsList = new List<EquationItem>
         {
+            new EquationItem("The SUVAT Equations", 80)
+            {
+                EquationLatex = @"\text{View Details}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"v = u +at", 60),
+                    new DerivationStep(@"s = ut + \frac{1}{2}a t ^2", 60),
+                    new DerivationStep(@"s = \frac{1}{2} (u + v) t", 60),
+                    new DerivationStep(@"v^2 = u^2 +2as", 60),
+                    new DerivationStep(@"s = vt - \frac{1}{2}a t ^2", 60),
+                }
+            },
             new EquationItem("Net Force on a Body")
             {
                 EquationLatex = @"\vec{F}_{total}= \sum \ \vec{F}_n",
