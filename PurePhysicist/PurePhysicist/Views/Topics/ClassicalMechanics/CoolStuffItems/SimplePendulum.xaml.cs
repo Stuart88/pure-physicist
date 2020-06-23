@@ -21,10 +21,10 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
         private float _elapsedTime = 0f;
 
-        private CCLayer _layer = new CCLayer() {ContentSize = new CCSize((float) App.DeviceWidth, (float) App.DeviceHeight / 2)};
+        private CCLayer _layer = new CCLayer() { ContentSize = new CCSize((float)App.DeviceWidth, (float)App.DeviceHeight / 2) };
 
         private CCRect _pendulumRect;
-        private CCDrawNode _pendulumString = new CCDrawNode {Color = CCColor3B.White};
+        private CCDrawNode _pendulumString = new CCDrawNode { Color = CCColor3B.White };
 
         /// <summary>
         /// Amount to scale pendulum on screen
@@ -41,7 +41,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
         {
             //_scaleFactor = (float)(_viewResolution.Height / Pendulum.StringLength);
 
-            _pendulumRect = new CCRect(0, 0, 1, -(float) Pendulum.StringLength * _scaleFactor) {Origin = new CCPoint(0, 0)};
+            _pendulumRect = new CCRect(0, 0, 1, -(float)Pendulum.StringLength * _scaleFactor) { Origin = new CCPoint(0, 0) };
 
             InitializeComponent();
 
@@ -62,7 +62,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
             Pendulum.StartAngle = e.NewValue;
 
-            _pendulumString.Rotation = (float) MathsHelpers.ToDegrees(e.NewValue);
+            _pendulumString.Rotation = (float)MathsHelpers.ToDegrees(e.NewValue);
 
             UpdateLabels();
         }
@@ -90,12 +90,29 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
             gameView.RunWithScene(gameScene);
         }
 
+        private async void InfoButton_Clicked(object sender, EventArgs e)
+        {
+            InfoButton.IsEnabled = false;
+            var equation = Equations.EquationsList.FirstOrDefault(x => x.LabelText == "The Simple Pendulum");
             await this.Navigation.PushModalAsync(new DerivationViewer(equation, "demo"));
+            InfoButton.IsEnabled = true;
+        }
+
+        private void LengthSlider_DragCompleted(object sender, EventArgs e)
+        {
+            _layer.Resume();
+        }
+
+        private void LengthSlider_DragStarted(object sender, EventArgs e)
+        {
+            _layer.Pause();
+        }
+
         private void LengthSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             Pendulum.StringLength = e.NewValue;
 
-            _pendulumRect.Size.Height = -(float) e.NewValue * _scaleFactor;
+            _pendulumRect.Size.Height = -(float)e.NewValue * _scaleFactor;
             _pendulumString.Clear();
             _pendulumString.DrawRect(_pendulumRect);
 
@@ -104,7 +121,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
         private void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            Pendulum.LocalGravity = ((RadioButton) sender).Text switch
+            Pendulum.LocalGravity = ((RadioButton)sender).Text switch
             {
                 "0g" => 0,
                 "g" => UniversityPhysics.UnitsAndConstants.Constants.Common.StandardGravity,
@@ -114,6 +131,27 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
             };
 
             UpdateLabels();
+        }
+
+        private void SetupGameScene(CCScene gameScene)
+        {
+            gameScene.AddLayer(_layer);
+
+            _layer.AddChild(_pendulumString);
+
+            _pendulumString.PositionX = (float)_viewResolution.Width / 2;
+            _pendulumString.PositionY = _viewResolution.Height;
+
+            _pendulumString.DrawRect(_pendulumRect);
+
+            _layer.Schedule(Update);
+        }
+
+        private void Update(float timeInSeconds)
+        {
+            _elapsedTime += timeInSeconds;
+
+            _pendulumString.Rotation = (float)Pendulum.AngleAfterTime((double)_elapsedTime);
         }
 
         private void UpdateLabels()
@@ -130,45 +168,6 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
             });
         }
 
-        private void SetupGameScene(CCScene gameScene)
-        {
-            gameScene.AddLayer(_layer);
-
-            _layer.AddChild(_pendulumString);
-
-            _pendulumString.PositionX = (float) _viewResolution.Width / 2;
-            _pendulumString.PositionY = _viewResolution.Height;
-
-            _pendulumString.DrawRect(_pendulumRect);
-
-            _layer.Schedule(Update);
-        }
-
-
-        private void Update(float timeInSeconds)
-        {
-            _elapsedTime += timeInSeconds;
-
-            _pendulumString.Rotation = (float) Pendulum.AngleAfterTime((double) _elapsedTime);
-        }
-
         #endregion Private Methods
-
-        private async void InfoButton_Clicked(object sender, EventArgs e)
-        {
-            InfoButton.IsEnabled = false;
-            var equation = Equations.EquationsList.FirstOrDefault(x => x.LabelText == "The Simple Pendulum");
-            InfoButton.IsEnabled = true;
-        }
-
-        private void LengthSlider_DragStarted(object sender, EventArgs e)
-        {
-            _layer.Pause();
-        }
-
-        private void LengthSlider_DragCompleted(object sender, EventArgs e)
-        {
-            _layer.Resume();
-        }
     }
 }
