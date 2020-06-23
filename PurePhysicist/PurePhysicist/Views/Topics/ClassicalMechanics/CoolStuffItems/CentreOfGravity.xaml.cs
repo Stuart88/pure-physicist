@@ -228,9 +228,8 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                //BallsCountLabel.Text = _particles.Count.ToString();
                 Vector centre = _centreOfGrav.Particle.Position;
-                CentreOfMassLabel.Text = $"Centre of Mass: ({centre.X.DecimalPoints(2)}, {centre.X.DecimalPoints(2)})";
+                CentreOfMassLabel.Text = $"Centre of Mass: ({centre.X.DecimalPoints(2)}, {centre.Y.DecimalPoints(2)})";
                 MassLabel.Text = $"{_selectedParticle?.Particle.Mass.Kilograms.DecimalPoints(2)} kg";
             });
         }
