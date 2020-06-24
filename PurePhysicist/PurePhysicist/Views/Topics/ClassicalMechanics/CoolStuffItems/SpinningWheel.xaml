@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cocosSharp="clr-namespace:CocosSharp;assembly=CocosSharp.Forms"
+             mc:Ignorable="d"
+             x:Class="PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems.SpinningWheel">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" >
+
+            <Grid x:Name="PageGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PaperColour}" Padding="0,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Rotation Simulator" Style="{StaticResource ContentsTitle}" VerticalTextAlignment="Center"/>
+                <Button Grid.Row="0" Grid.Column="2" x:Name="InfoButton" 
+                        Text="Info" Clicked="InfoButton_Clicked" 
+                        HorizontalOptions="Center" Style="{StaticResource BlueButton}"/>
+
+                <cocosSharp:CocosSharpView x:Name="GameView" Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="3" 
+                                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"  Text="Spin the wheel with your finger!" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Green" Style="{StaticResource CoolStuffLabel}"/>
+                <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" x:Name="RotationLabel" Style="{StaticResource CoolStuffLabel}"/>
+                <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" x:Name="PeriodLabel" Style="{StaticResource CoolStuffLabel}"/>
+                <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" x:Name="RotationalKineticEnergyLabel" Style="{StaticResource CoolStuffLabel}"/>
+
+                <Label Grid.Row="6" Grid.Column="0" Text="Wheel Mass" Style="{StaticResource CoolStuffLabel}"/>
+                <Slider Grid.Row="6" Grid.Column="1" x:Name="MassSlider" Maximum="100" Minimum="1"  HorizontalOptions="FillAndExpand"
+                        ValueChanged="MassSlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green"/>
+                <Label Grid.Row="6" Grid.Column="2" x:Name="MassLabel" Style="{StaticResource CoolStuffLabel}"/>
+
+                <Label Grid.Row="7" Grid.Column="0" Text="Wheel Friction" Style="{StaticResource CoolStuffLabel}"/>
+                <Slider Grid.Row="7" Grid.Column="1" x:Name="FrictionSlider" Maximum="1" Minimum="0"  HorizontalOptions="FillAndExpand"
+                        ValueChanged="FrictionSlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green"/>
+                <Label Grid.Row="7" Grid.Column="2" x:Name="FrictionLabel" Style="{StaticResource CoolStuffLabel}"/>
+
+            </Grid>
+            <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource BlueButton}" VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
