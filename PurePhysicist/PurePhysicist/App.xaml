@@ -55,6 +55,7 @@
             </Style>
 
             <!--Topics Pages-->
+            <Color x:Key="ContentsViewBackgroundColour">LightGray</Color>
             <Style TargetType="Image" x:Key="TopicsHeaderImage">
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
                 <Setter Property="VerticalOptions" Value="Start"/>

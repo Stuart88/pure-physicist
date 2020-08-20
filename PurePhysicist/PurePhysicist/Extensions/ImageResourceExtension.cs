@@ -20,5 +20,4 @@ namespace PurePhysicist.Extensions
             return ImageSource.FromResource($"PurePhysicist.Images.{Source}", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
         }
     }
-
 }

@@ -12,7 +12,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\classicalMechanicsPendulum.jpg" />
     <None Remove="Images\ClassicalMechanics\newton.jpg" />
     <None Remove="Images\Icons\astro.png" />
     <None Remove="Images\Icons\classical.png" />
@@ -26,11 +25,95 @@
     <None Remove="Images\Icons\quantum.png" />
     <None Remove="Images\Icons\saturn.png" />
     <None Remove="Images\Icons\thermo.png" />
+    <None Remove="Images\Physicists\abdussalam.jpg" />
+    <None Remove="Images\Physicists\alberteinstein.jpg" />
+    <None Remove="Images\Physicists\andremarieampere.jpg" />
+    <None Remove="Images\Physicists\arthurcompton.jpg" />
+    <None Remove="Images\Physicists\becquerel.jpg" />
+    <None Remove="Images\Physicists\carlsagan.jpg" />
+    <None Remove="Images\Physicists\charlestownes.jpg" />
+    <None Remove="Images\Physicists\christiaanhuygens.jpg" />
+    <None Remove="Images\Physicists\cvraman.jpg" />
+    <None Remove="Images\Physicists\danielbernoulli.jpg" />
+    <None Remove="Images\Physicists\emmynoether.jpg" />
+    <None Remove="Images\Physicists\enricofermi.jpg" />
+    <None Remove="Images\Physicists\ernestrutherford.jpg" />
+    <None Remove="Images\Physicists\ernestwalton.jpg" />
+    <None Remove="Images\Physicists\erwinschrodinger.jpg" />
+    <None Remove="Images\Physicists\galileo.jpg" />
+    <None Remove="Images\Physicists\gauss.jpg" />
+    <None Remove="Images\Physicists\georgegamov.jpg" />
+    <None Remove="Images\Physicists\georgeohm.jpg" />
+    <None Remove="Images\Physicists\georgestokes.jpg" />
+    <None Remove="Images\Physicists\guglielmomarconi.jpg" />
+    <None Remove="Images\Physicists\hansbethe.jpg" />
+    <None Remove="Images\Physicists\heinrichhertz.jpg" />
+    <None Remove="Images\Physicists\hendriklorentz.jpg" />
+    <None Remove="Images\Physicists\henrycavendish.jpg" />
+    <None Remove="Images\Physicists\hermannvonhelmholtz.jpg" />
+    <None Remove="Images\Physicists\jameschadwick.jpg" />
+    <None Remove="Images\Physicists\jamesclerkmaxwell.jpeg" />
+    <None Remove="Images\Physicists\jjthompson.jpg" />
+    <None Remove="Images\Physicists\johnbardeen.jpg" />
+    <None Remove="Images\Physicists\johncockroft.jpg" />
+    <None Remove="Images\Physicists\josephboussinesq.jpg" />
+    <None Remove="Images\Physicists\leonhardeuler.jpg" />
+    <None Remove="Images\Physicists\louisdebroglie.jpg" />
+    <None Remove="Images\Physicists\ludwigboltzmann.jpg" />
+    <None Remove="Images\Physicists\mariecurie.jpg" />
+    <None Remove="Images\Physicists\maxborn.jpg" />
+    <None Remove="Images\Physicists\maxplanck.jpg" />
+    <None Remove="Images\Physicists\michaelfaraday.jpg" />
+    <None Remove="Images\Physicists\murraygelman.jpg" />
+    <None Remove="Images\Physicists\navier.jpg" />
+    <None Remove="Images\Physicists\nielsbohr.jpg" />
+    <None Remove="Images\Physicists\nikolatesla.jpg" />
+    <None Remove="Images\Physicists\pauldirac.jpg" />
+    <None Remove="Images\Physicists\peterhiggs.jpg" />
+    <None Remove="Images\Physicists\pierrecurie.jpg" />
+    <None Remove="Images\Physicists\richardfeynman.jpg" />
+    <None Remove="Images\Physicists\roberthooke.jpg" />
+    <None Remove="Images\Physicists\robertoppenheimer.jpg" />
+    <None Remove="Images\Physicists\saintvenant.jpg" />
+    <None Remove="Images\Physicists\satyendrabose.jpg" />
+    <None Remove="Images\Physicists\sheldonleeglashow.jpg" />
+    <None Remove="Images\Physicists\stephenhawking.jpg" />
+    <None Remove="Images\Physicists\stevenweinberg.jpg" />
+    <None Remove="Images\Physicists\subrahmanyanchandrasekhar.jpg" />
+    <None Remove="Images\Physicists\wernerheisenberg.jpg" />
+    <None Remove="Images\Physicists\wilhelmdontgen.jpg" />
+    <None Remove="Images\Physicists\williamthompson.jpg" />
+    <None Remove="Images\Physicists\wolfgangpauli.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Images\classicalMechanicsPendulum.jpg" />
-    <EmbeddedResource Include="Images\ClassicalMechanics\newton.jpg" />
+    <EmbeddedResource Include="Images\Physicists\abdussalam.jpg" />
+    <EmbeddedResource Include="Images\Physicists\alberteinstein.jpg" />
+    <EmbeddedResource Include="Images\Physicists\andremarieampere.jpg" />
+    <EmbeddedResource Include="Images\Physicists\arthurcompton.jpg" />
+    <EmbeddedResource Include="Images\Physicists\becquerel.jpg" />
+    <EmbeddedResource Include="Images\Physicists\carlsagan.jpg" />
+    <EmbeddedResource Include="Images\Physicists\charlestownes.jpg" />
+    <EmbeddedResource Include="Images\Physicists\christiaanhuygens.jpg" />
+    <EmbeddedResource Include="Images\Physicists\cvraman.jpg" />
+    <EmbeddedResource Include="Images\Physicists\danielbernoulli.jpg" />
+    <EmbeddedResource Include="Images\Physicists\emmynoether.jpg" />
+    <EmbeddedResource Include="Images\Physicists\enricofermi.jpg" />
+    <EmbeddedResource Include="Images\Physicists\ernestrutherford.jpg" />
+    <EmbeddedResource Include="Images\Physicists\ernestwalton.jpg" />
+    <EmbeddedResource Include="Images\Physicists\erwinschrodinger.jpg" />
+    <EmbeddedResource Include="Images\Physicists\galileo.jpg" />
+    <EmbeddedResource Include="Images\Physicists\gauss.jpg" />
+    <EmbeddedResource Include="Images\Physicists\georgegamov.jpg" />
+    <EmbeddedResource Include="Images\Physicists\georgeohm.jpg" />
+    <EmbeddedResource Include="Images\Physicists\georgestokes.jpg" />
+    <EmbeddedResource Include="Images\Physicists\guglielmomarconi.jpg" />
+    <EmbeddedResource Include="Images\Physicists\hansbethe.jpg" />
+    <EmbeddedResource Include="Images\Physicists\heinrichhertz.jpg" />
+    <EmbeddedResource Include="Images\Physicists\hendriklorentz.jpg" />
+    <EmbeddedResource Include="Images\Physicists\henrycavendish.jpg" />
+    <EmbeddedResource Include="Images\Physicists\hermannvonhelmholtz.jpg" />
+    <EmbeddedResource Include="Images\Physicists\isaacnewton.jpg" />
     <EmbeddedResource Include="Images\Icons\astro.png" />
     <EmbeddedResource Include="Images\Icons\classical.png" />
     <EmbeddedResource Include="Images\Icons\contents.png" />
@@ -42,6 +125,39 @@
     <EmbeddedResource Include="Images\Icons\menu.png" />
     <EmbeddedResource Include="Images\Icons\quantum.png" />
     <EmbeddedResource Include="Images\Icons\thermo.png" />
+    <EmbeddedResource Include="Images\Physicists\jameschadwick.jpg" />
+    <EmbeddedResource Include="Images\Physicists\jamesclerkmaxwell.jpeg" />
+    <EmbeddedResource Include="Images\Physicists\jjthompson.jpg" />
+    <EmbeddedResource Include="Images\Physicists\johnbardeen.jpg" />
+    <EmbeddedResource Include="Images\Physicists\johncockroft.jpg" />
+    <EmbeddedResource Include="Images\Physicists\josephboussinesq.jpg" />
+    <EmbeddedResource Include="Images\Physicists\leonhardeuler.jpg" />
+    <EmbeddedResource Include="Images\Physicists\louisdebroglie.jpg" />
+    <EmbeddedResource Include="Images\Physicists\ludwigboltzmann.jpg" />
+    <EmbeddedResource Include="Images\Physicists\mariecurie.jpg" />
+    <EmbeddedResource Include="Images\Physicists\maxborn.jpg" />
+    <EmbeddedResource Include="Images\Physicists\maxplanck.jpg" />
+    <EmbeddedResource Include="Images\Physicists\michaelfaraday.jpg" />
+    <EmbeddedResource Include="Images\Physicists\murraygelman.jpg" />
+    <EmbeddedResource Include="Images\Physicists\navier.jpg" />
+    <EmbeddedResource Include="Images\Physicists\nielsbohr.jpg" />
+    <EmbeddedResource Include="Images\Physicists\nikolatesla.jpg" />
+    <EmbeddedResource Include="Images\Physicists\pauldirac.jpg" />
+    <EmbeddedResource Include="Images\Physicists\peterhiggs.jpg" />
+    <EmbeddedResource Include="Images\Physicists\pierrecurie.jpg" />
+    <EmbeddedResource Include="Images\Physicists\richardfeynman.jpg" />
+    <EmbeddedResource Include="Images\Physicists\roberthooke.jpg" />
+    <EmbeddedResource Include="Images\Physicists\robertoppenheimer.jpg" />
+    <EmbeddedResource Include="Images\Physicists\saintvenant.jpg" />
+    <EmbeddedResource Include="Images\Physicists\satyendrabose.jpg" />
+    <EmbeddedResource Include="Images\Physicists\sheldonleeglashow.jpg" />
+    <EmbeddedResource Include="Images\Physicists\stephenhawking.jpg" />
+    <EmbeddedResource Include="Images\Physicists\stevenweinberg.jpg" />
+    <EmbeddedResource Include="Images\Physicists\subrahmanyanchandrasekhar.jpg" />
+    <EmbeddedResource Include="Images\Physicists\wernerheisenberg.jpg" />
+    <EmbeddedResource Include="Images\Physicists\wilhelmdontgen.jpg" />
+    <EmbeddedResource Include="Images\Physicists\williamthompson.jpg" />
+    <EmbeddedResource Include="Images\Physicists\wolfgangpauli.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -125,6 +241,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Images\Astrophysics\" />
+    <Folder Include="Images\ClassicalMechanics\" />
     <Folder Include="Views\Topics\Astrophysics\CoolStuffItems\" />
     <Folder Include="Views\Topics\Electromagnetism\CoolStuffItems\" />
     <Folder Include="Views\Topics\FluidDynamics\CoolStuffItems\" />
