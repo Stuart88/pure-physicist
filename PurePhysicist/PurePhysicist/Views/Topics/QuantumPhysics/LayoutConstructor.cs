@@ -1,17 +1,24 @@
 ﻿using PurePhysicist.Models;
+using PurePhysicist.Views.Topics.TopicPageTemplates;
 using Xamarin.Forms;
 
 namespace PurePhysicist.Views.Topics.QuantumPhysics
 {
     public class LayoutConstructor : LayoutConstructorBase
     {
+        #region Private Fields
+
+        private const string TopicTitle = "Mathematics";
+
+        #endregion Private Fields
+
         #region Public Constructors
 
-        public LayoutConstructor(Color buttonsColour) : base(buttonsColour)
+        public LayoutConstructor(Color themeColour) : base(themeColour)
         {
-            //this.ContentsPage = new ContentsView();
-            //this.EquationsPage = new EquationsView();
-            //this.CoolStuffPage = new CoolStuffView();
+            this.ContentsPage = new ContentsView(themeColour);
+            this.EquationsPage = new EquationsViewBase(TopicTitle, themeColour, Equations.EquationsList);
+            this.CoolStuffPage = new CoolStuffView(TopicTitle, themeColour, CoolStuffContents.Items);
         }
 
         #endregion Public Constructors
