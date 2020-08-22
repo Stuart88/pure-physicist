@@ -56,13 +56,7 @@
 
             <!--Topics Pages-->
             <Color x:Key="ContentsViewBackgroundColour">LightGray</Color>
-            <Style TargetType="Image" x:Key="TopicsHeaderImage">
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
-                <Setter Property="VerticalOptions" Value="Start"/>
-                <Setter Property="Margin" Value="0"/>
-                <Setter Property="WidthRequest" Value="250"/>
-                <Setter Property="HeightRequest" Value="250"/>
-            </Style>
+
             <Style TargetType="Label" x:Key="ContentsTitle">
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
@@ -92,6 +86,31 @@
             <Style TargetType="Label" x:Key="CoolStuffLabel">
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="Padding" Value="5,0,5,0"/>
+            </Style>
+
+            <!-- Physicist Cards -->
+            <Style TargetType="Image" x:Key="PhysicistImage">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="WidthRequest" Value="250"/>
+                <Setter Property="HeightRequest" Value="250"/>
+            </Style>
+            <Style TargetType="Label" x:Key="NameText">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="#444"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="Padding" Value="5,10,5,10"/>
+                <Setter Property="Margin" Value="0"/>
+            </Style>
+            <Style TargetType="Label" x:Key="FamousForText">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontAttributes" Value="Italic"/>
+                <Setter Property="TextColor" Value="#666"/>
+                <Setter Property="FontSize" Value="Medium"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

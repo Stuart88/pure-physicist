@@ -8,6 +8,12 @@ namespace PurePhysicist.Models
 {
     public static class PhyscistsCollection
     {
+        public static Physicist RandomPhysicist()
+        {
+            int randomIndex = new Random().Next(0, Physicists.Count);
+
+            return Physicists[randomIndex];
+        }
         public static List<Physicist> Physicists = new List<Physicist>
         {
             new Physicist("Isaac Newton", "isaacnewton.jpg", "Laws of Motion, Law of Gravitation, Calculus",
@@ -20,7 +26,7 @@ namespace PurePhysicist.Models
                 TopicsEnum.ModernPhysics & TopicsEnum.QuantumPhysics),
 
             new Physicist("Enrico Fermi", "enricofermi.jpg", "Nuclear Physics, Fermi Paradox", 
-                TopicsEnum.QuantumPhysics & TopicsEnum.ModernPhysics),
+                TopicsEnum.QuantumPhysics & TopicsEnum.ModernPhysics & TopicsEnum.NuclearPhysics),
 
             new Physicist("Richard Feynman", "richardfeynman.jpg", "Quantum Electrodynamics, Feynman Lectures", 
                 TopicsEnum.QuantumPhysics),
@@ -35,7 +41,7 @@ namespace PurePhysicist.Models
                 TopicsEnum.ElectroMagnetism),
 
             new Physicist("Ernest Rutherford", "ernestrutherford.jpg", "\"The Father of Nuclear Physics\"", 
-                TopicsEnum.ModernPhysics),
+                TopicsEnum.ModernPhysics & TopicsEnum.NuclearPhysics),
 
             new Physicist("Erwin Schrodinger", "erwinschrodinger.jpg", "The Schrodinger Equation", 
                 TopicsEnum.QuantumPhysics),
@@ -56,7 +62,7 @@ namespace PurePhysicist.Models
                 TopicsEnum.ElectroMagnetism),
 
             new Physicist("Enrico Fermi", "enricofermi.jpg", "\"The Architect of the Nuclear Age\", First Nuclear Reactor, The Fermi Paradox", 
-                TopicsEnum.ModernPhysics & TopicsEnum.QuantumPhysics),
+                TopicsEnum.ModernPhysics & TopicsEnum.QuantumPhysics & TopicsEnum.NuclearPhysics),
 
             new Physicist("Wolfgang Pauli", "wolfgangpauli.jpg", "Pauli Exclusion Principle", 
                 TopicsEnum.QuantumPhysics),
@@ -91,7 +97,7 @@ namespace PurePhysicist.Models
             new Physicist("Pierre Curie", "pierrecurie.jpg", "Crystallography, Piezoelectricity, Radioactivity", 
                 TopicsEnum.ModernPhysics),
 
-            new Physicist("Antoine Henri Becquerel", "becquerel.jpg", "Discvoery of Radioactivity", 
+            new Physicist("Antoine Henri Becquerel", "becquerel.jpg", "Discovery of Radioactivity", 
                 TopicsEnum.ModernPhysics),
 
             new Physicist("Sheldon Lee Glashow", "sheldonleeglashow.jpg", "Electroweak Unification Theory, The Charm Quark", 
@@ -105,7 +111,7 @@ namespace PurePhysicist.Models
             new Physicist("Abdus Salam", "abdussalam.jpg", "Electroweak Unification Theory",
                 TopicsEnum.ModernPhysics),
 
-            new Physicist("Hans Bethe", "hansbethe.jpg", "stellar nucleosynthesis", 
+            new Physicist("Hans Bethe", "hansbethe.jpg", "Stellar Nucleosynthesis", 
                 TopicsEnum.Astrophysics),
 
             new Physicist("Carl Friedrich Gauss", "gauss.jpg", "Mathematics, Astronomy", 
@@ -130,7 +136,7 @@ namespace PurePhysicist.Models
                 TopicsEnum.ElectroMagnetism),
 
             new Physicist("John Cockroft", "johncockroft.jpg", "Splitting the Atom, Nuclear Energy", 
-                TopicsEnum.ModernPhysics),
+                TopicsEnum.ModernPhysics & TopicsEnum.NuclearPhysics),
 
             new Physicist("George Ohm", "georgeohm.jpg", "Early electrodynamics, The Ohm unit of Measurement", 
                 TopicsEnum.ElectroMagnetism),
@@ -169,7 +175,7 @@ namespace PurePhysicist.Models
                 TopicsEnum.Mathematics & TopicsEnum.ClassicalMechanics),
 
             new Physicist("Peter Higgs", "peterhiggs.jpg", "The Higgs Particle", 
-                TopicsEnum.ModernPhysics),
+                TopicsEnum.ModernPhysics & TopicsEnum.ParticlePhysics),
 
             new Physicist("C. V. Raman", "cvraman.jpg", "Light Scattering", 
                 TopicsEnum.ModernPhysics),
@@ -190,7 +196,66 @@ namespace PurePhysicist.Models
                 TopicsEnum.FluidDynamics),
 
             new Physicist("Claude-Louis Navier", "navier.jpg", "Continuum Mechanics, The Navier-Stokes Equations", 
-                TopicsEnum.FluidDynamics)
+                TopicsEnum.FluidDynamics),
+
+            new Physicist("Neil deGrasse Tyson", "neildegrassetyson.jpg", "Cosmology, Science Communication", 
+                TopicsEnum.Astrophysics),
+
+            new Physicist("Chien-Shung Wu", "chienshiungwu.jpg", "Nuclear Physics", 
+                TopicsEnum.NuclearPhysics & TopicsEnum.ModernPhysics),
+
+            new Physicist("Yang Chen-Ning", "yangchenning.jpg", "Statistical Mechanics, Gauge Theory, Particle Physics, Condensed Matter Physics", 
+                TopicsEnum.ModernPhysics & TopicsEnum.Mathematics),
+
+            new Physicist("Tsung-Dao Lee", "tsungdaoli.jpg", "Particle Physics, Astrophysics, The Lee Model", 
+                TopicsEnum.Astrophysics & TopicsEnum.ModernPhysics & TopicsEnum.ParticlePhysics),
+
+            new Physicist("Wang Ganchang", "wangganchang.jpg", "Nuclear Physics, Particle Physics", 
+                TopicsEnum.NuclearPhysics & TopicsEnum.ParticlePhysics),
+
+            new Physicist("Wang Dageng", "wangdaheng.jpg", "Optics", 
+                TopicsEnum.Optics),
+
+            new Physicist("Laura Na Liu", "lauranaliu.jpg", "Nanophysics, Nano-optics", 
+                TopicsEnum.Optics & TopicsEnum.NanoPhysics),
+
+            new Physicist("Charles Kao", "charleskao.jpg", "Fibre Optics", 
+                TopicsEnum.Optics),
+
+            new Physicist("Zhao Jiuzhang", "zhaojiuzhang.jpg", "Meteorology, Satellite Engineering", 
+                TopicsEnum.Astrophysics),
+
+            new Physicist("Mozi", "mozi.jpg", "Early Philosophy of Motion", 
+                TopicsEnum.ClassicalMechanics),
+
+            new Physicist("He Zehui", "hezehui.jpg", "Nuclear Physics", 
+                TopicsEnum.NuclearPhysics),
+
+            new Physicist("Qian Sanqiang", "qiansanqiang.jpg", "Nuclear Physics, China Atomic Weapons Program", 
+                TopicsEnum.NuclearPhysics),
+
+            new Physicist("Yu Min", "yumin.jpg", "Atomic Physics, China Atomic Weapons Program",
+                TopicsEnum.NuclearPhysics),
+
+            new Physicist("Ibn al-Haytham", "ibnalhaytham.jpg", "Optics, \"The Father of Modern Optics\"", 
+                TopicsEnum.Optics),
+
+            new Physicist("Avicenna", "avicenna.jpg", "Mathematics, Early Astronomy", 
+                TopicsEnum.Mathematics & TopicsEnum.Astrophysics),
+
+            new Physicist("Nasir al-Din al-Tusi", "nasiraldin.jpg", "Early Mathematics, Trigonometry", 
+                TopicsEnum.Mathematics),
+
+            new Physicist("Sameera Moussa", "sameeramoussa.jpg", "Nuclear Physics, Atomic Energy, Medical Physics", 
+                TopicsEnum.NuclearPhysics & TopicsEnum.ModernPhysics),
+
+            new Physicist("Ali Moustafa Mosharafa", "alimoustagamosharafa.jpg", "Quantum Theory, Relativity", 
+                TopicsEnum.QuantumPhysics & TopicsEnum.ModernPhysics),
+
+            new Physicist("Ahmed Zewali", "ahmedzewali.jpg", "\"The Father of Femtochemistry\"", 
+                TopicsEnum.NuclearPhysics),
+
+
 
         };
     }

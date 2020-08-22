@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using PurePhysicist.Extensions;
 using PurePhysicist.Helpers;
 using PurePhysicist.Models;
+using PurePhysicist.Views.CustomViews;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,6 +17,8 @@ namespace PurePhysicist.Views.Topics.Astrophysics
     public partial class ContentsView : ContentView, ITopicPage
     {
         public Color ThemeColour { get; set; }
+
+        private int _num = 0;
         public ContentsView(Color themeColour)
         {
             this.ThemeColour = themeColour;
@@ -24,12 +27,12 @@ namespace PurePhysicist.Views.Topics.Astrophysics
 
             InitializeComponent();
 
-            this.HeaderImage.Source = ImageSourceHelpers.CreateRandomPhysicistImageSource(typeof(ContentsView).GetTypeInfo().Assembly);
+            this.PhysicistView.Content = new PhysicistCard(PhyscistsCollection.RandomPhysicist());
 
             Device.StartTimer(TimeSpan.FromSeconds(3), () => {
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    this.HeaderImage.Source = ImageSourceHelpers.CreateRandomPhysicistImageSource(typeof(ContentsView).GetTypeInfo().Assembly);
+                    this.PhysicistView.Content = new PhysicistCard(PhyscistsCollection.RandomPhysicist());
                 });
                 return true;
             });

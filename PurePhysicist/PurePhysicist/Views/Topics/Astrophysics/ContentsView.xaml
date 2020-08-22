@@ -12,8 +12,7 @@
           <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
               <Label x:Name="ContentsTitle" Text="Astrophysics" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}"/>
 
-              <Image x:Name="HeaderImage" Source="{extensions:ImageResource Physicists.newton.jpg}"
-                     Style="{StaticResource TopicsHeaderImage}"/>
+              <ContentView x:Name="PhysicistView"/>
 
               <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}"/>
 

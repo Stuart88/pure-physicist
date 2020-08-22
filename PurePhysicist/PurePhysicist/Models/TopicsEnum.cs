@@ -14,6 +14,10 @@ namespace PurePhysicist.Models
         Mathematics = 1 << 3,
         QuantumPhysics = 1 << 4,
         ThermoDynamics = 1 << 5,
-        ModernPhysics = 1 << 6
+        ModernPhysics = 1 << 6,
+        NuclearPhysics = 1 << 7,
+        ParticlePhysics = 1 << 8,
+        Optics = 1 << 9,
+        NanoPhysics = 1 << 10,
     }
 }
