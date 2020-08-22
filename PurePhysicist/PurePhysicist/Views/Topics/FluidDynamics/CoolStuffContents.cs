@@ -1,5 +1,4 @@
-﻿using PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems;
-using PurePhysicist.Views.Topics.TopicPageTemplates;
+﻿using PurePhysicist.Views.Topics.TopicPageTemplates;
 using System.Collections.Generic;
 
 namespace PurePhysicist.Views.Topics.FluidDynamics

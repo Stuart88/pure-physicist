@@ -16,8 +16,8 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         public List<EquationItem> Equations { get; set; }
         public ObservableCollection<EquationItem> EquationsFiltered { get; set; }
-        public Color ThemeColour { get; set; }
         public string PageTitle { get; set; }
+        public Color ThemeColour { get; set; }
 
         #endregion Public Properties
 

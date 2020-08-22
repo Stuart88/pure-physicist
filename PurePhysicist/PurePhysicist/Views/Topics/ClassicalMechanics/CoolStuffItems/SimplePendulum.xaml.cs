@@ -54,6 +54,16 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
         #endregion Public Constructors
 
+        #region Protected Methods
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            RedrawGameScene();
+        }
+
+        #endregion Protected Methods
+
         #region Private Methods
 
         private void AngleSlider_ValueChanged(object sender, ValueChangedEventArgs e)
@@ -107,11 +117,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
         {
             _layer.Pause();
         }
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            RedrawGameScene();
-        }
+
         private void LengthSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             Pendulum.StringLength = e.NewValue;
@@ -137,6 +143,16 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
             UpdateLabels();
         }
 
+        private void RedrawGameScene()
+        {
+            _pendulumString.Clear();
+
+            _pendulumString.PositionX = (float)_viewResolution.Width / 2;
+            _pendulumString.PositionY = _viewResolution.Height;
+
+            _pendulumString.DrawRect(_pendulumRect);
+        }
+
         private void SetupGameScene(CCScene gameScene)
         {
             gameScene.AddLayer(_layer);
@@ -146,16 +162,6 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
             RedrawGameScene();
 
             _layer.Schedule(Update);
-        }
-
-        private void RedrawGameScene()
-        {
-            _pendulumString.Clear();
-
-            _pendulumString.PositionX = (float)_viewResolution.Width / 2;
-            _pendulumString.PositionY = _viewResolution.Height;
-
-            _pendulumString.DrawRect(_pendulumRect);
         }
 
         private void Update(float timeInSeconds)

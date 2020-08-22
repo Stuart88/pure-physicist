@@ -14,6 +14,7 @@ namespace PurePhysicist.Models
         #region Public Methods
 
         public void SetIsShowing(bool isShowing);
+
         public void SetPhysicistView();
 
         #endregion Public Methods

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using PurePhysicist.Helpers;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using PurePhysicist.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,8 +12,8 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
         #region Public Properties
 
         public ObservableCollection<CoolStuffListItem> ListItems { get; set; }
-        public Color ThemeColour { get; set; }
         public string PageTitle { get; set; }
+        public Color ThemeColour { get; set; }
 
         #endregion Public Properties
 

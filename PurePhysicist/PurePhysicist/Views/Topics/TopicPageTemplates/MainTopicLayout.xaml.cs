@@ -1,6 +1,5 @@
 ﻿using PurePhysicist.Models;
 using System;
-using PurePhysicist.Views.CustomViews;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -71,22 +70,6 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
             StopPhysicistsImageCycle();
         }
 
-        #endregion Public Methods
-
-        #region Protected Methods
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            StopPhysicistsImageCycle();
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            StartPhysicistsImagesCycle();
-        }
-
         public void StartPhysicistsImagesCycle()
         {
             if (this.ContentArea.Content is IPhysicistFetcher physicistFetcher && !physicistFetcher.IsShowing)
@@ -107,6 +90,22 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
             {
                 physicistFetcher.SetIsShowing(false);
             }
+        }
+
+        #endregion Public Methods
+
+        #region Protected Methods
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            StartPhysicistsImagesCycle();
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            StopPhysicistsImageCycle();
         }
 
         #endregion Protected Methods

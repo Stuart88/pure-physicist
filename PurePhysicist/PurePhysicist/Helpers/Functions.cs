@@ -25,7 +25,6 @@ namespace PurePhysicist.Helpers
             return ImageSource.FromResource($"PurePhysicist.Images.{filename}", currentAssembly);
         }
 
-
         #endregion Public Methods
     }
 }

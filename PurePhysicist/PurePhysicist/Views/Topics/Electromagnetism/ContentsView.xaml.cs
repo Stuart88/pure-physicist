@@ -12,9 +12,9 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
         #region Public Properties
 
         public bool IsShowing { get; set; }
+        public string PageTitle { get; set; }
         public RandomPhysicistFetcher PhysicistFetcher { get; }
         public Color ThemeColour { get; set; }
-        public string PageTitle { get; set; }
 
         #endregion Public Properties
 

@@ -15,7 +15,6 @@
                 <ContentView x:Name="PhysicistView" />
 
                 <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
-
             </StackLayout>
         </StackLayout>
     </ContentView.Content>
