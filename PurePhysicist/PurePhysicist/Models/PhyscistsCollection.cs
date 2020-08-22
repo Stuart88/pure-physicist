@@ -75,16 +75,16 @@ namespace PurePhysicist.Models
                 TopicsEnum.ModernPhysics),
 
             new Physicist("William Thompson (Lord Kelvin)", "williamthompson.jpg", "Definition of the Kelvin",
-                TopicsEnum.ThermoDynamics),
+                TopicsEnum.Thermodynamics),
 
             new Physicist("Louis de Broglie", "louisdebroglie.jpg", "Wave-Particle Duality",
-                TopicsEnum.ThermoDynamics),
+                TopicsEnum.Thermodynamics),
 
             new Physicist("Carl Sagan", "carlsagan.jpg", "Planetary Science, Cosmology, Science Communication",
                 TopicsEnum.Astrophysics),
 
             new Physicist("Ludwig Boltzmann", "ludwigboltzmann.jpg", "Statistical Mechanics",
-                TopicsEnum.ClassicalMechanics | TopicsEnum.ThermoDynamics),
+                TopicsEnum.ClassicalMechanics | TopicsEnum.Thermodynamics),
 
             new Physicist("Pierre Curie", "pierrecurie.jpg", "Crystallography, Piezoelectricity, Radioactivity",
                 TopicsEnum.ModernPhysics),
@@ -143,7 +143,7 @@ namespace PurePhysicist.Models
                 TopicsEnum.ModernPhysics),
 
             new Physicist("Hermann von Helmholtz", "hermannvonhelmholtz.jpg", "Conservation of Energy, Thermodynamics",
-                TopicsEnum.ThermoDynamics),
+                TopicsEnum.Thermodynamics),
 
             new Physicist("John Bardeen", "johnbardeen.jpg", "Invention of the Transistor, Superconductivity (BCS Theory)",
                 TopicsEnum.ModernPhysics),
