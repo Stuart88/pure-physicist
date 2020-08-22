@@ -236,9 +236,6 @@
     <EmbeddedResource Update="Views\Topics\TopicPageTemplates\MainTopicLayout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Topics\Mathematics\MainMathematics.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\Topics\QuantumPhysics\MainQuantumPhysics.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -270,6 +267,9 @@
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Views\Topics\FluidDynamics\ContentsView.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Topics\Mathematics\ContentsView.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Views\Topics\Thermodynamics\MainThermodynamics.xaml.cs">
