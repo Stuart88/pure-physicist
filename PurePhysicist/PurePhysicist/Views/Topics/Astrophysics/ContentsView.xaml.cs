@@ -15,6 +15,7 @@ namespace PurePhysicist.Views.Topics.Astrophysics
 
         public RandomPhysicistFetcher PhysicistFetcher { get; }
         public Color ThemeColour { get; set; }
+        public string PageTitle { get; set; }
 
         #endregion Public Properties
 
@@ -23,6 +24,8 @@ namespace PurePhysicist.Views.Topics.Astrophysics
         public ContentsView(Color themeColour)
         {
             this.ThemeColour = themeColour;
+
+            this.PageTitle = Constants.TopicTitles.Astrophysics;
 
             this.BindingContext = this;
 

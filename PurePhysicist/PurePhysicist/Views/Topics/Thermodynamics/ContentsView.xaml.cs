@@ -14,6 +14,7 @@ namespace PurePhysicist.Views.Topics.Thermodynamics
         public bool IsShowing { get; set; }
         public RandomPhysicistFetcher PhysicistFetcher { get; }
         public Color ThemeColour { get; set; }
+        public string PageTitle { get; set; }
 
         #endregion Public Properties
 
@@ -22,6 +23,8 @@ namespace PurePhysicist.Views.Topics.Thermodynamics
         public ContentsView(Color themeColour)
         {
             this.ThemeColour = themeColour;
+
+            this.PageTitle = Constants.TopicTitles.Thermodynamics;
 
             this.BindingContext = this;
 

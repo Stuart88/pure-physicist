@@ -7,6 +7,7 @@ namespace PurePhysicist.Models
     {
         #region Public Properties
         public Color ThemeColour { get; set; }
+        public string PageTitle { get; set; }
 
         #endregion
 

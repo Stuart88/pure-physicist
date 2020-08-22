@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using PurePhysicist.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +13,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         public ObservableCollection<CoolStuffListItem> ListItems { get; set; }
         public Color ThemeColour { get; set; }
-        public string TopicTitle { get; set; }
+        public string PageTitle { get; set; }
 
         #endregion Public Properties
 
@@ -20,12 +21,15 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         public CoolStuffView(string topicTitle, Color themeColour, List<CoolStuffListItem> items)
         {
-            TopicTitle = topicTitle;
+            PageTitle = topicTitle;
             ThemeColour = themeColour;
             ListItems = new ObservableCollection<CoolStuffListItem>(items);
 
             BindingContext = this;
             InitializeComponent();
+
+            if (this.PageTitle == Constants.TopicTitles.Thermodynamics)
+                this.ContentsTitle.TextColor = Color.White;
         }
 
         #endregion Public Constructors

@@ -17,7 +17,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
         public List<EquationItem> Equations { get; set; }
         public ObservableCollection<EquationItem> EquationsFiltered { get; set; }
         public Color ThemeColour { get; set; }
-        public string TopicTitle { get; set; }
+        public string PageTitle { get; set; }
 
         #endregion Public Properties
 
@@ -31,13 +31,16 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
         {
             equations.AssignIds();
             this.ThemeColour = themeColour;
-            this.TopicTitle = topicTitle;
+            this.PageTitle = topicTitle;
             this.Equations = equations;
             this.EquationsFiltered = new ObservableCollection<EquationItem>(equations);
 
             this.BindingContext = this;
 
             InitializeComponent();
+
+            if (this.PageTitle == Constants.TopicTitles.Thermodynamics)
+                this.ContentsTitle.TextColor = Color.White;
         }
 
         #endregion Public Constructors

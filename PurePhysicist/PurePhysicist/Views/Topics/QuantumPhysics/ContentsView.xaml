@@ -10,7 +10,7 @@
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
             <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
 
-                <Label x:Name="ContentsTitle" Text="Quantum Physics" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+                <Label x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
 
                 <ContentView x:Name="PhysicistView" />
 

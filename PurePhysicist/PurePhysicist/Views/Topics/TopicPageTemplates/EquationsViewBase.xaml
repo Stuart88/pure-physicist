@@ -10,7 +10,7 @@
              x:Class="PurePhysicist.Views.Topics.TopicPageTemplates.EquationsViewBase">
     <ContentView.Content>
         <StackLayout>
-            <Label x:Name="ContentsTitle" Text="{Binding TopicTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+            <Label x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
             <SearchBar Placeholder="Search..."
                        CancelButtonColor="{StaticResource NavigationPrimary}"
                        PlaceholderColor="LightGray"
