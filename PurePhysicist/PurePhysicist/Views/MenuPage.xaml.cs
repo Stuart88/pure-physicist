@@ -1,12 +1,8 @@
 ﻿using PurePhysicist.Models;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PurePhysicist.Views
 {
@@ -15,9 +11,26 @@ namespace PurePhysicist.Views
     [DesignTimeVisible(false)]
     public partial class MenuPage : ContentPage
     {
-        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
-        List<HomeMenuItem> menuItems;
-        HomeMenuItem selectedItem;
+        #region Private Fields
+
+        private List<HomeMenuItem> menuItems;
+        private HomeMenuItem selectedItem;
+
+        #endregion Private Fields
+
+        #region Private Properties
+
+        /// <summary>
+        /// A reference of all menu items in UI. For performing style updates on user interaction
+        /// </summary>
+        private List<(HomeMenuItem itemRef, Frame frame)> MenuUiItems { get; set; } = new List<(HomeMenuItem itemRef, Frame frame)>();
+
+        private MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+
+        #endregion Private Properties
+
+        #region Public Constructors
+
         public MenuPage()
         {
             InitializeComponent();
@@ -43,7 +56,9 @@ namespace PurePhysicist.Views
             ApplySelectedItemStyling();
         }
 
-       
+        #endregion Public Constructors
+
+        #region Private Methods
 
         private void ApplySelectedItemStyling()
         {
@@ -64,32 +79,6 @@ namespace PurePhysicist.Views
             }
         }
 
-        private void SetupMenuItems()
-        {
-            foreach (HomeMenuItem item in menuItems.Where(item => item.ParentId == null))
-            {
-                if (item.IsTopLevel)
-                {
-                    MenuStack.Children.Add(CreateExpander(item));
-                }
-                else
-                {
-                    MenuStack.Children.Add(CreateMenuItem(item));
-                }
-                
-            }
-        }
-
-
-        private Expander CreateExpander(HomeMenuItem item)
-        {
-            return new Expander
-            {
-                Header = CreateMenuItem(item),
-                Content = CreateDropdownItems(menuItems.Where(i => i.ParentId == item.Id))
-            };
-        }
-
         private StackLayout CreateDropdownItems(IEnumerable<HomeMenuItem> items)
         {
             StackLayout dropdownStack = new StackLayout();
@@ -102,10 +91,14 @@ namespace PurePhysicist.Views
             return dropdownStack;
         }
 
-        /// <summary>
-        /// A reference of all menu items in UI. For performing style updates on user interaction
-        /// </summary>
-        private List<(HomeMenuItem itemRef, Frame frame)> MenuUiItems { get; set; } = new List<(HomeMenuItem itemRef, Frame frame)>();
+        private Expander CreateExpander(HomeMenuItem item)
+        {
+            return new Expander
+            {
+                Header = CreateMenuItem(item),
+                Content = CreateDropdownItems(menuItems.Where(i => i.ParentId == item.Id))
+            };
+        }
 
         private Frame CreateMenuItem(HomeMenuItem item)
         {
@@ -125,15 +118,15 @@ namespace PurePhysicist.Views
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
             };
-            itemGrid.RowDefinitions.Add(new RowDefinition {Height = GridLength.Auto});
-            itemGrid.ColumnDefinitions.Add(new ColumnDefinition {Width = GridLength.Star});
+            itemGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            itemGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
 
             Label itemLabel = new Label
             {
                 Text = item.Title,
                 Style = item.IsTopLevel
-                    ? (Style) Application.Current.Resources["MenuItemLabel"]
-                    : (Style) Application.Current.Resources["MenuDropdownItemLabel"]
+                    ? (Style)Application.Current.Resources["MenuItemLabel"]
+                    : (Style)Application.Current.Resources["MenuDropdownItemLabel"]
             };
 
             itemGrid.Children.Add(itemLabel);
@@ -142,12 +135,11 @@ namespace PurePhysicist.Views
 
             if (item.Icon != null)
             {
-                itemGrid.ColumnDefinitions.Add(new ColumnDefinition {Width = GridLength.Auto});
+                itemGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
                 itemGrid.Children.Add(item.Icon);
                 Grid.SetRow(item.Icon, 0);
                 Grid.SetColumn(item.Icon, 1);
             }
-
 
             Frame itemFrame = new Frame
             {
@@ -163,5 +155,22 @@ namespace PurePhysicist.Views
 
             return itemFrame;
         }
+
+        private void SetupMenuItems()
+        {
+            foreach (HomeMenuItem item in menuItems.Where(item => item.ParentId == null))
+            {
+                if (item.IsTopLevel)
+                {
+                    MenuStack.Children.Add(CreateExpander(item));
+                }
+                else
+                {
+                    MenuStack.Children.Add(CreateMenuItem(item));
+                }
+            }
+        }
+
+        #endregion Private Methods
     }
 }

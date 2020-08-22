@@ -1,17 +1,25 @@
 ﻿using PurePhysicist.Helpers;
 using PurePhysicist.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace PurePhysicist.Views.CustomViews
 {
-    public class PhysicistCard: Grid
+    public class PhysicistCard : Grid
     {
+        #region Public Properties
+
         public Image Image { get; }
-        private Label NameText { get; }
+
+        #endregion Public Properties
+
+        #region Private Properties
+
         private Label FamousForText { get; }
+        private Label NameText { get; }
+
+        #endregion Private Properties
+
+        #region Public Constructors
 
         public PhysicistCard(Physicist physicist)
         {
@@ -35,13 +43,17 @@ namespace PurePhysicist.Views.CustomViews
             CreateView();
         }
 
+        #endregion Public Constructors
+
+        #region Private Methods
+
         private void CreateView()
         {
-            this.RowDefinitions.Add(new RowDefinition {Height = GridLength.Auto});
-            this.RowDefinitions.Add(new RowDefinition {Height = GridLength.Auto});
-            this.RowDefinitions.Add(new RowDefinition {Height = GridLength.Auto});
+            this.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            this.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            this.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
 
-            this.ColumnDefinitions.Add(new ColumnDefinition {Width = GridLength.Star});
+            this.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
 
             this.Children.Add(this.NameText);
             this.Children.Add(this.Image);
@@ -50,7 +62,8 @@ namespace PurePhysicist.Views.CustomViews
             Grid.SetRow(this.Image, 0);
             Grid.SetRow(this.NameText, 1);
             Grid.SetRow(this.FamousForText, 2);
-
         }
+
+        #endregion Private Methods
     }
 }

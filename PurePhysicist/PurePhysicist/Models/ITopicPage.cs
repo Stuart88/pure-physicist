@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PurePhysicist.Helpers;
 using Xamarin.Forms;
 
 namespace PurePhysicist.Models
 {
     public interface ITopicPage
     {
-        public Color ThemeColour{ get; set; }
+        #region Public Properties
+        public Color ThemeColour { get; set; }
+
+        #endregion
+
+        
     }
 }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Xamarin.Forms;
 
 namespace PurePhysicist.Models
@@ -21,9 +18,35 @@ namespace PurePhysicist.Models
         /***/
         About
     }
+
     public class HomeMenuItem
     {
-        public HomeMenuItem(){}
+        #region Public Properties
+
+        public Frame Icon { get; set; }
+
+        public MenuItemType Id { get; set; }
+
+        public bool IsPageReference { get; set; } = true;
+
+        public bool IsTopLevel => ParentId == null;
+
+        /// <summary>
+        /// For dropdown menu items
+        /// </summary>
+        public MenuItemType? ParentId { get; set; }
+
+        public string Title { get; set; }
+
+        public Color TopicColour { get; set; }
+
+        #endregion Public Properties
+
+        #region Public Constructors
+
+        public HomeMenuItem()
+        {
+        }
 
         /// <summary>
         /// Only use this constructor for making menu items with an icon (i.e. submenus)
@@ -33,7 +56,7 @@ namespace PurePhysicist.Models
         public HomeMenuItem(MenuItemType id, string iconFile)
         {
             this.Id = id;
-            
+
             this.TopicColour = Id switch
             {
                 MenuItemType.Home => throw new NotImplementedException(),
@@ -51,22 +74,10 @@ namespace PurePhysicist.Models
 
             Icon = CreateMenuIcon(iconFile);
         }
-        public MenuItemType Id { get; set; }
 
-        public string Title { get; set; }
+        #endregion Public Constructors
 
-        /// <summary>
-        /// For dropdown menu items
-        /// </summary>
-        public MenuItemType? ParentId { get; set; }
-
-        public bool IsTopLevel => ParentId == null;
-
-        public bool IsPageReference { get; set; } = true;
-
-        public Frame Icon { get; set; }
-
-        public Color TopicColour { get; set; }
+        #region Private Methods
 
         private Frame CreateMenuIcon(string filename)
         {
@@ -84,5 +95,7 @@ namespace PurePhysicist.Models
             };
             return imageFrame;
         }
+
+        #endregion Private Methods
     }
 }

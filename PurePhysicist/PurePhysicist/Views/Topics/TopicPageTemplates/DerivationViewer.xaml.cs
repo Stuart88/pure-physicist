@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CSharpMath.Forms;
+﻿using CSharpMath.Forms;
 using PurePhysicist.Models;
 using PurePhysicist.Views.Topics.ClassicalMechanics;
+using System;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,26 +11,26 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DerivationViewer : ContentPage
     {
+        #region Public Constructors
 
         public DerivationViewer(EquationItem equationItem, string backToName = "List")
         {
-
             InitializeComponent();
 
             this.ViewerTitle.Text = equationItem.LabelText;
             this.BackButton.Text = $"Back to {backToName}";
 
-            MathView view = new MathView(){FontSize = equationItem.FontSize, HeightRequest = equationItem.HeightRequest};
+            MathView view = new MathView() { FontSize = equationItem.FontSize, HeightRequest = equationItem.HeightRequest };
             view.LaTeX = $@"{equationItem.EquationLatex}";
             this.ViewArea.Children.Add(view);
 
             BoxView boxView = new BoxView
             {
-                HeightRequest = 1, BackgroundColor = Color.FromHex("#999"), 
-                Margin = new Thickness(0,20,0,20)
+                HeightRequest = 1,
+                BackgroundColor = Color.FromHex("#999"),
+                Margin = new Thickness(0, 20, 0, 20)
             };
             this.ViewArea.Children.Add(boxView);
-
 
             foreach (var s in equationItem.DerivationStepsLatex)
             {
@@ -61,7 +58,6 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
                         Style = (Style)Application.Current.Resources["BlueButton"],
                         VerticalOptions = LayoutOptions.Center,
                         FontSize = 14,
-                       
                     };
                     infoButton.Clicked += async (sender, args) =>
                     {
@@ -78,13 +74,16 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
                 }
                 else
                 {
-
-                    MathView newview = new MathView {FontSize = s.FontSize, HeightRequest = s.HeightRequest};
+                    MathView newview = new MathView { FontSize = s.FontSize, HeightRequest = s.HeightRequest };
                     newview.LaTeX = $@"{s.Latex}";
                     this.ViewArea.Children.Add(newview);
                 }
             }
         }
+
+        #endregion Public Constructors
+
+        #region Private Methods
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
@@ -95,5 +94,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
             ((Button)sender).IsEnabled = true;
         }
+
+        #endregion Private Methods
     }
 }

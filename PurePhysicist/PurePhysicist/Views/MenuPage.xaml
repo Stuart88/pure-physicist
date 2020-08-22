@@ -9,8 +9,6 @@
 
     <ScrollView VerticalOptions="FillAndExpand">
         <StackLayout x:Name="MenuStack" VerticalOptions="FillAndExpand">
-
         </StackLayout>
     </ScrollView>
-
 </ContentPage>

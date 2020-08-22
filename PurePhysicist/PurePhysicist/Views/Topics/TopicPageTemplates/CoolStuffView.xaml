@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:topicsPageTemplates="clr-namespace:PurePhysicist.Views.Topics.TopicPageTemplates;assembly=PurePhysicist"
              x:Class="PurePhysicist.Views.Topics.TopicPageTemplates.CoolStuffView">
-  <ContentView.Content>
+    <ContentView.Content>
         <StackLayout>
-            <Label x:Name="ContentsTitle" Text="{Binding TopicTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}"/>
+            <Label x:Name="ContentsTitle" Text="{Binding TopicTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
             <ListView x:Name="CoolStuffList"
                       ItemsSource="{Binding ListItems}"
                       VerticalOptions="FillAndExpand"
@@ -18,9 +18,8 @@
                     <DataTemplate>
 
                         <ViewCell>
-                            <Label Padding="10,5,10,5" Margin="0,5,0,5" Style="{StaticResource CoolStuffListItemLabel}" Text="{Binding Label}"/>
+                            <Label Padding="10,5,10,5" Margin="0,5,0,5" Style="{StaticResource CoolStuffListItemLabel}" Text="{Binding Label}" />
                         </ViewCell>
-
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

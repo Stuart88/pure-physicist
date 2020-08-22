@@ -1,14 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace PurePhysicist.Models
 {
     public interface IItemRepository
     {
+        #region Public Methods
+
         void Add(Item item);
-        void Update(Item item);
-        Item Remove(string key);
+
         Item Get(string id);
+
         IEnumerable<Item> GetAll();
+
+        Item Remove(string key);
+
+        void Update(Item item);
+
+        #endregion Public Methods
     }
 }

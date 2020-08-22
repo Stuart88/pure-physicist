@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Thermodynamics!"
-                VerticalOptions="CenterAndExpand" 
+                VerticalOptions="CenterAndExpand"
                 HorizontalOptions="CenterAndExpand" />
             <Switch></Switch>
         </StackLayout>

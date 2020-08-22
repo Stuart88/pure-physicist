@@ -1,31 +1,30 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using PurePhysicist.Models;
 
 namespace PurePhysicist.Web
 {
     public class Startup
     {
+        #region Public Properties
+
+        public IConfiguration Configuration { get; }
+
+        #endregion Public Properties
+
+        #region Public Constructors
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        #endregion Public Constructors
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddControllers();
-            services.AddSingleton<IItemRepository, ItemRepository>();
-        }
+        #region Public Methods
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -42,5 +41,14 @@ namespace PurePhysicist.Web
                 endpoints.MapControllers();
             });
         }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllers();
+            services.AddSingleton<IItemRepository, ItemRepository>();
+        }
+
+        #endregion Public Methods
     }
 }

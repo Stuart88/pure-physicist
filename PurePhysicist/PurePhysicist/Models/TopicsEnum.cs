@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PurePhysicist.Models
 {
     [Flags]
     public enum TopicsEnum
     {
-        Astrophysics = 0,
         ClassicalMechanics = 1 << 0,
         ElectroMagnetism = 1 << 1,
         FluidDynamics = 1 << 2,
@@ -19,5 +16,6 @@ namespace PurePhysicist.Models
         ParticlePhysics = 1 << 8,
         Optics = 1 << 9,
         NanoPhysics = 1 << 10,
+        Astrophysics = 1 << 11,
     }
 }

@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PurePhysicist.Models;
+using System;
 using System.Reflection;
-using System.Text;
-using PurePhysicist.Extensions;
-using PurePhysicist.Models;
 using Xamarin.Forms;
 
 namespace PurePhysicist.Helpers
 {
     public static class ImageSourceHelpers
     {
+        #region Public Methods
+
         public static ImageSource CreateImageSource(string source, Assembly assembly)
         {
             return ImageSource.FromResource($"PurePhysicist.Images.{source}", assembly);
@@ -21,5 +20,7 @@ namespace PurePhysicist.Helpers
 
             return ImageSource.FromResource($"PurePhysicist.Images.Physicists.{PhyscistsCollection.Physicists[randomIndex].ImageFileName}", assembly);
         }
+
+        #endregion Public Methods
     }
 }

@@ -1,11 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PurePhysicist.Models
+﻿namespace PurePhysicist.Models
 {
     public class Physicist
     {
+        #region Public Properties
+
+        public string FamousFor { get; set; }
+
+        public string ImageFileName { get; set; }
+
+        public string Name { get; set; }
+
+        public TopicsEnum Topics { get; set; }
+
+        #endregion Public Properties
+
+        #region Public Constructors
+
         public Physicist(string name, string img, string famousFor, TopicsEnum topics)
         {
             this.Name = name;
@@ -14,9 +24,6 @@ namespace PurePhysicist.Models
             this.Topics = topics;
         }
 
-        public string Name { get; set; }
-        public string ImageFileName { get; set; }
-        public string FamousFor { get; set; }
-        public TopicsEnum Topics { get; set; }
+        #endregion Public Constructors
     }
 }

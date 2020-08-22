@@ -1,20 +1,11 @@
-﻿using System;
+﻿using PurePhysicist.Models;
+using PurePhysicist.Views.Topics;
+using PurePhysicist.Views.Topics.TopicPageTemplates;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using PurePhysicist.Models;
-using PurePhysicist.Views.Topics.ClassicalMechanics;
-using PurePhysicist.Views.Topics.Astrophysics;
-using PurePhysicist.Views.Topics.Electromagnetism;
-using PurePhysicist.Views.Topics.FluidDynamics;
-using PurePhysicist.Views.Topics.Mathematics;
-using PurePhysicist.Views.Topics.Thermodynamics;
-using PurePhysicist.Views.Topics.QuantumPhysics;
-using PurePhysicist.Views.Topics;
-using PurePhysicist.Views.Topics.TopicPageTemplates;
 
 namespace PurePhysicist.Views
 {
@@ -23,17 +14,28 @@ namespace PurePhysicist.Views
     [DesignTimeVisible(false)]
     public partial class MainPage : MasterDetailPage
     {
-        Dictionary<MenuItemType, NavigationPage> MenuPages = new Dictionary<MenuItemType, NavigationPage>();
+        #region Private Fields
+
+        private Dictionary<MenuItemType, NavigationPage> MenuPages = new Dictionary<MenuItemType, NavigationPage>();
+
+        #endregion Private Fields
+
+        #region Public Constructors
+
         public MainPage()
         {
             InitializeComponent();
 
             MasterBehavior = MasterBehavior.Popover;
 
-            this.Detail = new NavigationPage(new ContentPage(){Content = new UnderConstruction()});
+            this.Detail = new NavigationPage(new ContentPage() { Content = new UnderConstruction() });
 
             MenuPages.Add(MenuItemType.Topics, (NavigationPage)Detail);
         }
+
+        #endregion Public Constructors
+
+        #region Public Methods
 
         public async Task NavigateFromMenu(MenuItemType id, Color themeColour)
         {
@@ -51,10 +53,13 @@ namespace PurePhysicist.Views
 
             if (Device.RuntimePlatform == Device.Android)
                 await Task.Delay(100);
-            
-            IsPresented = false;
 
+            IsPresented = false;
         }
+
+        #endregion Public Methods
+
+        #region Private Methods
 
         private Page GetPageFromId(MenuItemType id, Color themeColour)
         {
@@ -73,6 +78,7 @@ namespace PurePhysicist.Views
                 _ => throw new NotImplementedException()
             };
         }
-        
+
+        #endregion Private Methods
     }
 }

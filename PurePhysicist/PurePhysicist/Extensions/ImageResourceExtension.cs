@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +8,13 @@ namespace PurePhysicist.Extensions
     [ContentProperty(nameof(Source))]
     public class ImageResourceExtension : IMarkupExtension
     {
+        #region Public Properties
+
         public string Source { get; set; }
+
+        #endregion Public Properties
+
+        #region Public Methods
 
         public object ProvideValue(IServiceProvider serviceProvider)
         {
@@ -19,5 +23,7 @@ namespace PurePhysicist.Extensions
 
             return ImageSource.FromResource($"PurePhysicist.Images.{Source}", typeof(ImageResourceExtension).GetTypeInfo().Assembly);
         }
+
+        #endregion Public Methods
     }
 }

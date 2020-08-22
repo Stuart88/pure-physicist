@@ -1,13 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 
 namespace PurePhysicist.Models
 {
     public class ItemRepository : IItemRepository
     {
+        #region Private Fields
+
         private static ConcurrentDictionary<string, Item> items =
             new ConcurrentDictionary<string, Item>();
+
+        #endregion Private Fields
+
+        #region Public Constructors
 
         public ItemRepository()
         {
@@ -16,10 +22,9 @@ namespace PurePhysicist.Models
             Add(new Item { Id = Guid.NewGuid().ToString(), Text = "Item 3", Description = "This is an item description." });
         }
 
-        public IEnumerable<Item> GetAll()
-        {
-            return items.Values;
-        }
+        #endregion Public Constructors
+
+        #region Public Methods
 
         public void Add(Item item)
         {
@@ -33,6 +38,11 @@ namespace PurePhysicist.Models
             return item;
         }
 
+        public IEnumerable<Item> GetAll()
+        {
+            return items.Values;
+        }
+
         public Item Remove(string id)
         {
             items.TryRemove(id, out Item item);
@@ -43,5 +53,7 @@ namespace PurePhysicist.Models
         {
             items[item.Id] = item;
         }
+
+        #endregion Public Methods
     }
 }

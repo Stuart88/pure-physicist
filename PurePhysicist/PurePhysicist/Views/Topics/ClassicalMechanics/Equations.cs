@@ -1,13 +1,12 @@
-﻿using Xamarin.Forms;
-using System;
+﻿using PurePhysicist.Models;
 using System.Collections.Generic;
-using System.Text;
-using PurePhysicist.Models;
 
 namespace PurePhysicist.Views.Topics.ClassicalMechanics
 {
     public class Equations
     {
+        #region Public Fields
+
         public static readonly List<EquationItem> EquationsList = new List<EquationItem>
         {
             new EquationItem("The SUVAT Equations", 80)
@@ -245,7 +244,6 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics
                     new DerivationStep(@"\frac{1}{2}mv^2 = \frac{G M m}{R}", 80),
                     new DerivationStep(@"v_{escape} = \sqrt{\frac{2GM}{R}}", 80),
                     new DerivationStep(@"\text{For any body mass M, at radius R}", 30, 30),
-
                 }
             },
             new EquationItem("Kepler's 1st Law", 60, 30) {EquationLatex = @"\text{All planets move in an elliptical orbit \\ with one focus about a star}"},
@@ -329,6 +327,6 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics
             },
         };
 
-
+        #endregion Public Fields
     }
 }
