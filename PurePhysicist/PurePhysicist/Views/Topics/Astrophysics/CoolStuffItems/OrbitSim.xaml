@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cocosSharp="clr-namespace:CocosSharp;assembly=CocosSharp.Forms"
+             mc:Ignorable="d"
+             x:Class="PurePhysicist.Views.Topics.Astrophysics.CoolStuffItems.OrbitSim">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" >
+
+            <Grid x:Name="PageGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PaperColour}" Padding="0,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Orbit Sim" Style="{StaticResource ContentsTitle}" VerticalTextAlignment="Center"/>
+                <Button Grid.Row="0" Grid.Column="2" x:Name="InfoButton" 
+                        Text="Info" Clicked="InfoButton_Clicked" 
+                        HorizontalOptions="Center" Style="{StaticResource BlueButton}"/>
+
+                <cocosSharp:CocosSharpView x:Name="GameView" Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="3" 
+                                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"  Text="Use your finger to 'throw' Earth into orbit!" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Green" Style="{StaticResource CoolStuffLabel}"/>
+                <Label Grid.Row="3" Grid.Column="0" Text="Time Rate" Style="{StaticResource CoolStuffLabel}"/>
+                <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <RadioButton Text="Days" GroupName="timeOptions" TextColor="Green" Margin="5,0,5,0" CheckedChanged="RadioButton_CheckedChanged"/>
+                    <RadioButton Text="Weeks" GroupName="timeOptions" TextColor="Green" Margin="5,0,5,0" CheckedChanged="RadioButton_CheckedChanged" />
+                    <RadioButton Text="Months" GroupName="timeOptions" TextColor="Green" Margin="5,0,5,0" CheckedChanged="RadioButton_CheckedChanged" IsChecked="True"/>
+                    <RadioButton Text="Years" GroupName="timeOptions" TextColor="Green" Margin="5,0,5,0" CheckedChanged="RadioButton_CheckedChanged"/>
+                </StackLayout>
+                <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" x:Name="TotalTimeLabel" Style="{StaticResource CoolStuffLabel}"/>
+                <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" x:Name="VelocityLabel" Style="{StaticResource CoolStuffLabel}"/>
+                <Label Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" x:Name="RadiusLabel" Style="{StaticResource CoolStuffLabel}"/>
+                <Label Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" x:Name="KineticEnergyLabel" Style="{StaticResource CoolStuffLabel}"/>
+                <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" x:Name="PotentialEnergyLabel" Style="{StaticResource CoolStuffLabel}"/>
+
+            </Grid>
+            <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource BlueButton}" VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

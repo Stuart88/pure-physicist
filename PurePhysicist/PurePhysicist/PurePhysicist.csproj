@@ -245,6 +245,9 @@
     <Compile Update="Views\Topics\Astrophysics\ContentsView.xaml.cs">
       <DependentUpon>ContentsView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Topics\Astrophysics\CoolStuffItems\OrbitSim.xaml.cs">
+      <DependentUpon>OrbitSim.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Topics\ClassicalMechanics\ContentsView.xaml.cs">
       <DependentUpon>ContentsView.xaml</DependentUpon>
     </Compile>
@@ -277,7 +280,6 @@
   <ItemGroup>
     <Folder Include="Images\Astrophysics\" />
     <Folder Include="Images\ClassicalMechanics\" />
-    <Folder Include="Views\Topics\Astrophysics\CoolStuffItems\" />
     <Folder Include="Views\Topics\Electromagnetism\CoolStuffItems\" />
     <Folder Include="Views\Topics\FluidDynamics\CoolStuffItems\" />
     <Folder Include="Views\Topics\Mathematics\CoolStuffItems\" />
