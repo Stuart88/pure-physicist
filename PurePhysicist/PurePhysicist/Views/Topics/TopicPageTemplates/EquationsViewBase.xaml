@@ -9,20 +9,27 @@
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.Topics.TopicPageTemplates.EquationsViewBase">
     <ContentView.Content>
-        <StackLayout>
-            <Label x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
-            <SearchBar Placeholder="Search..."
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+            <SearchBar Grid.Row="1" 
+                       Placeholder="Search..."
                        CancelButtonColor="{StaticResource NavigationPrimary}"
                        PlaceholderColor="LightGray"
                        TextColor="{StaticResource NavigationPrimary}"
                        HorizontalTextAlignment="Center"
                        FontSize="Medium"
                        TextChanged="SearchBar_TextChanged" />
-            <ListView x:Name="EquationsList"
-                            ItemsSource="{Binding EquationsFiltered}"
-                            VerticalOptions="FillAndExpand"
-                            x:DataType="topicPageTemplates:EquationsViewBase"
-                            HasUnevenRows="True">
+            <ListView Grid.Row="2" 
+                      x:Name="EquationsList"
+                      ItemsSource="{Binding EquationsFiltered}"
+                      VerticalOptions="FillAndExpand"
+                      x:DataType="topicPageTemplates:EquationsViewBase"
+                      HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
 
@@ -55,6 +62,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+        </Grid>
     </ContentView.Content>
 </ContentView>

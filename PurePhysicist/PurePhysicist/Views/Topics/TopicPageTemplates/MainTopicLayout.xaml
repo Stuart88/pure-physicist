@@ -39,9 +39,9 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <ScrollView Grid.Row="0" Grid.ColumnSpan="4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout Grid.Row="0" Grid.ColumnSpan="4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <ContentView x:Name="ContentArea" Content="{Binding ViewContent}" />
-            </ScrollView>
+            </StackLayout>
 
             <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="#999" Margin="0" />
 
