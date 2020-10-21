@@ -62,7 +62,7 @@ namespace PurePhysicist.Models
 
         #region Public Constructors
 
-        public EquationItem(string label, double heightRequest = 60, float fontSize = 40)
+        public EquationItem(string label, double heightRequest = 80, float fontSize = 40)
         {
             this.LabelText = label;
             this.HeightRequest = heightRequest;
