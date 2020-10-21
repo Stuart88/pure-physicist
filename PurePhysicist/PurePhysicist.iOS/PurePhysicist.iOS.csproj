@@ -27,6 +27,9 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <MtouchSdkVersion>14.0</MtouchSdkVersion>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <IOSDebuggerPort>10004</IOSDebuggerPort>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -140,7 +143,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\PurePhysicist\PurePhysicist.csproj">
-      <Project>{72F91600-BA78-47AB-AD54-BF9F044704C7}</Project>
+      <Project>{517626F9-300A-4E95-AA4F-2C244B6F5110}</Project>
       <Name>PurePhysicist</Name>
     </ProjectReference>
   </ItemGroup>
