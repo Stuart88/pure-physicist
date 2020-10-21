@@ -4,13 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             xmlns:forms="clr-namespace:CSharpMath.Forms;assembly=CSharpMath.Forms"
              x:Class="PurePhysicist.App">
 
     <Application.Resources>
         <ResourceDictionary>
             <!--Global Styles-->
-            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Color x:Key="NavigationPrimary">#47a2ed</Color>
+            <Color x:Key="NavigationSecondary">#2196F3</Color>
             <Color x:Key="PaperColour">AntiqueWhite</Color>
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
@@ -36,21 +36,26 @@
                 <Setter Property="Padding" Value="15" />
                 <Setter Property="Margin" Value="0" />
                 <Setter Property="BorderColor" Value="LightGray" />
+                <Setter Property="BackgroundColor" Value="{StaticResource NavigationPrimary}" />
             </Style>
             <Style TargetType="Frame" x:Key="MenuDropdownItemFrame">
                 <!--Dropdown item frame-->
                 <Setter Property="Padding" Value="10" />
-                <Setter Property="Margin" Value="20,0,20,0" />
-                <Setter Property="BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Margin" Value="5,0,5,0" />
+                <Setter Property="BackgroundColor" Value="{StaticResource NavigationSecondary}" />
             </Style>
             <Style TargetType="Label" x:Key="MenuItemLabel">
                 <!--Menu item text-->
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
             </Style>
             <Style TargetType="Label" x:Key="MenuDropdownItemLabel">
                 <!--Dropdown item text-->
-                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="TextColor" Value="White" />
             </Style>
             <Style TargetType="Image" x:Key="MenuIcon">
