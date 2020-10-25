@@ -21,7 +21,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
         private Particle _car2 = new Particle(1);
         private CCDrawNode _car2DrawNode = new CCDrawNode { Color = CCColor3B.Orange };
         private CCRect _car2Rect;
-        private float _elapsedTime = 0f;
+        private double _elapsedTime = 0f;
 
         private bool _isRunning = false;
         private CCLayer _layer = new CCLayer() { ContentSize = new CCSize((float)App.DeviceWidth, (float)App.DeviceHeight / 2) };
@@ -215,17 +215,17 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                Car1Velocity.Text = $"v: {_car1.Velocity.Y.DecimalPoints(2)} m/s";
-                Car1Displacement.Text = $"s: {_car1.Position.Y.DecimalPoints(2)} m";
-                Car2Velocity.Text = $"v: {_car2.Velocity.Y.DecimalPoints(2)} m/s";
-                Car2Displacement.Text = $"s: {_car2.Position.Y.DecimalPoints(2)} m";
+                Car1Velocity.Text = $"v: {_car1.Velocity.Y.DecimalPoints(1)} m/s";
+                Car1Displacement.Text = $"s: {_car1.Position.Y.DecimalPoints(1)} m";
+                Car2Velocity.Text = $"v: {_car2.Velocity.Y.DecimalPoints(1)} m/s";
+                Car2Displacement.Text = $"s: {_car2.Position.Y.DecimalPoints(1)} m";
 
-                Car1VelocitySliderLabel.Text = $"{Car1VelocitySlider.Value} m/s";
-                Car1AccelerationSliderLabel.Text = $"{Car1AccelerationSlider.Value} m/s/s";
-                Car2VelocitySliderLabel.Text = $"{Car2VelocitySlider.Value} m/s";
-                Car2AccelerationSliderLabel.Text = $"{Car2AccelerationSlider.Value} m/s/s";
+                Car1VelocitySliderLabel.Text = $"{Car1VelocitySlider.Value.DecimalPoints(1)} m/s";
+                Car1AccelerationSliderLabel.Text = $"{Car1AccelerationSlider.Value.DecimalPoints(1)} m/s/s";
+                Car2VelocitySliderLabel.Text = $"{Car2VelocitySlider.Value.DecimalPoints(1)} m/s";
+                Car2AccelerationSliderLabel.Text = $"{Car2AccelerationSlider.Value.DecimalPoints(1)} m/s/s";
 
-                TimerLabel.Text = $"Timer: {MathsHelpers.DecimalPoints(_elapsedTime, 2):0.00}s";
+                TimerLabel.Text = $"Timer: {_elapsedTime.DecimalPoints(2):0.00}s";
             });
         }
 
