@@ -25,7 +25,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
         private bool _isRunning = false;
         private CCLayer _layer = new CCLayer() { ContentSize = new CCSize((float)App.DeviceWidth, (float)App.DeviceHeight / 2) };
-        private CCSizeI _viewResolution = new CCSizeI(100, 110);
+        private CCSizeI _viewResolution = new CCSizeI(100, 100);
 
         #endregion Private Fields
 
