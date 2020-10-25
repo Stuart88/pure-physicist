@@ -52,7 +52,7 @@
                 <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" x:Name="PotentialEnergyLabel" Style="{StaticResource CoolStuffLabel}"/>
 
             </Grid>
-            <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource BlueButton}" VerticalOptions="End"/>
+            <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource CoolStuffBackButton}" VerticalOptions="End"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

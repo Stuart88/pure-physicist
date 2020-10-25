@@ -133,7 +133,7 @@
                             Clicked="StartStopButton_Clicked" />
                 </Grid>
             </Grid>
-            <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource BlueButton}" VerticalOptions="End" />
+            <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource CoolStuffBackButton}" VerticalOptions="End" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
