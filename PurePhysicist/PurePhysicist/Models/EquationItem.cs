@@ -46,7 +46,7 @@ namespace PurePhysicist.Models
     {
         #region Public Properties
 
-        public List<DerivationStep> DerivationStepsLatex { get; set; }
+        public List<DerivationStep> DerivationStepsLatex { get; set; } = new List<DerivationStep>();
 
         public string EquationLatex { get; set; }
 
