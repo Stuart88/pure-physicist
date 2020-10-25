@@ -180,13 +180,11 @@ namespace PurePhysicist.Views.Topics.Astrophysics.CoolStuffItems
 
                 this.TotalTimeElapsed += timeInSeconds * this.TimeRate;
 
-                _planet.AddForce_Translational(forceFelt);
+                _planet.ExternalForce = forceFelt;
                 _planet.Move(timeInSeconds * this.TimeRate);
-                _planet.ClearForce_Translational();
 
-                _star.AddForce_Translational(-forceFelt);
+                _star.ExternalForce = -forceFelt;
                 _star.Move(timeInSeconds * this.TimeRate);
-                _star.ClearForce_Translational();
 
                 _planetNode.PositionX = _planet.Position.X == 0 ? 0 : (float)(_planet.Position.X / (3f * AU)) * _viewResolution.Width / 2f + (_viewResolution.Width / 2f);
                 _planetNode.PositionY = _planet.Position.Y == 0 ? 0 : (float)(_planet.Position.Y / (3f * AU)) * _viewResolution.Height / 2f + (_viewResolution.Height / 2f);

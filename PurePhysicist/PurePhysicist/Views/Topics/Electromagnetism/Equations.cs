@@ -157,6 +157,20 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                     new DerivationStep(@"=  I_0  e^{\frac{-t}{RC}}"),
                 }
             },
+            new EquationItem("Mass Spectrometer")
+            {
+                EquationLatex = @"B = \frac{E}{v}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\text{\underline{Charge in electromagnetic fields}}", 60),
+                    new DerivationStep(@"\text{Force from B field}", 50),
+                    new DerivationStep(@"F_B = qvB"),
+                    new DerivationStep(@"\text{Force from E field}", 50),
+                    new DerivationStep(@"F_E = qE"),
+                    new DerivationStep(@"\text{Circular path in B field}", 50),
+                    new DerivationStep(@"r = \frac{mv^2}{qvB}"),
+                }
+            },
         };
 
         #endregion Public Fields

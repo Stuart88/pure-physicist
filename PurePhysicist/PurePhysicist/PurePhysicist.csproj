@@ -263,6 +263,9 @@
     <Compile Update="Views\Topics\Electromagnetism\ContentsView.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
+    <Compile Update="Views\Topics\Electromagnetism\CoolStuffItems\MassSpectrometer.xaml.cs">
+      <DependentUpon>MassSpectrometer.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Topics\FluidDynamics\ContentsView.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -280,7 +283,6 @@
   <ItemGroup>
     <Folder Include="Images\Astrophysics\" />
     <Folder Include="Images\ClassicalMechanics\" />
-    <Folder Include="Views\Topics\Electromagnetism\CoolStuffItems\" />
     <Folder Include="Views\Topics\FluidDynamics\CoolStuffItems\" />
     <Folder Include="Views\Topics\Mathematics\CoolStuffItems\" />
     <Folder Include="Views\Topics\QuantumPhysics\CoolStuffItems\" />
