@@ -241,7 +241,7 @@ namespace PurePhysicist.Views.Topics.Electromagnetism.CoolStuffItems
                 }
 
                 c.node.Position = new CCPoint((float)c.charge.Position.X, (float)c.charge.Position.Y);
-                c.node.DrawSolidCircle(new CCPoint(0, 0), 1, CCColor4B.White);
+                c.node.DrawSolidCircle(new CCPoint(0, 0), 2, CCColor4B.White);
 
             }
         }
