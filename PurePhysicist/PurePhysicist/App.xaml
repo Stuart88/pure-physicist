@@ -94,8 +94,23 @@
                 <Setter Property="Padding" Value="5,2,5,2" />
             </Style>
             <Style TargetType="Label" x:Key="CoolStuffLabel">
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="Padding" Value="5,0,5,0" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+            <Style TargetType="Button" x:Key="CoolStuffBackButton"> <!-- Same as standard BlueButton but smaller top/nbottom margins-->
+                <Setter Property="BackgroundColor" Value="CornflowerBlue" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Padding" Value="6,2,6,2" />
+                <Setter Property="Margin" Value="2,5,2,10" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="BorderColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
             </Style>
 
             <!-- Physicist Cards -->
