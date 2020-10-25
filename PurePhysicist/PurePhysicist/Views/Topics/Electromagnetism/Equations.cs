@@ -159,14 +159,14 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
             },
             new EquationItem("Velocity Selector")
             {
-                EquationLatex = @"B = \frac{E}{v}",
+                EquationLatex = @"v = \frac{E}{B}",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
-                    new DerivationStep(@"\text{\underline{Charge in electromagnetic fields}}", 60),
+                    new DerivationStep(@"\text{\underline{Charge in E and B fields}}", 60),
                     new DerivationStep(@"\text{Force from B field}", 50),
-                    new DerivationStep(@"F_B = qvB"),
+                    new DerivationStep(@"\vec{F}_B = q\vec{v} \times \vec{B}"),
                     new DerivationStep(@"\text{Force from E field}", 50),
-                    new DerivationStep(@"F_E = qE"),
+                    new DerivationStep(@"\vec{F}_E = q\vec{E}"),
                     new DerivationStep(@"\text{Circular path in B field}", 50),
                     new DerivationStep(@"r = \frac{mv^2}{qvB}"),
                 }
