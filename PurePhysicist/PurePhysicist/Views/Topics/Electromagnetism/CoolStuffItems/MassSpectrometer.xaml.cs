@@ -192,7 +192,7 @@ namespace PurePhysicist.Views.Topics.Electromagnetism.CoolStuffItems
         private async void InfoButton_Clicked(object sender, EventArgs e)
         {
             InfoButton.IsEnabled = false;
-            EquationItem equation = Equations.EquationsList.FirstOrDefault(x => x.LabelText == "Mass Spectrometer");
+            EquationItem equation = Equations.EquationsList.FirstOrDefault(x => x.LabelText == "Velocity Selector");
             await this.Navigation.PushModalAsync(new DerivationViewer(equation, "demo"));
             InfoButton.IsEnabled = true;
         }

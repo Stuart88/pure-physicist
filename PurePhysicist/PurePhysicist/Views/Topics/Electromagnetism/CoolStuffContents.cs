@@ -10,7 +10,7 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
 
         public static readonly List<CoolStuffView.CoolStuffListItem> Items = new List<CoolStuffView.CoolStuffListItem>
         {
-            new CoolStuffView.CoolStuffListItem("Mass Spectrometer", new MassSpectrometer()),
+            new CoolStuffView.CoolStuffListItem("Velocity Selector", new MassSpectrometer()),
         };
 
         #endregion Public Fields

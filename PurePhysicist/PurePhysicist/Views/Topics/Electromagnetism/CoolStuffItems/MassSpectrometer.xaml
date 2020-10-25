@@ -26,7 +26,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Mass Spectrometer" Style="{StaticResource ContentsTitle}" VerticalTextAlignment="Center"/>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Velocity Selector" Style="{StaticResource ContentsTitle}" VerticalTextAlignment="Center"/>
                 <Button Grid.Row="0" Grid.Column="1" x:Name="InfoButton" 
                         Text="Info" Clicked="InfoButton_Clicked" 
                         HorizontalOptions="End" Style="{StaticResource BlueButton}"/>
@@ -34,7 +34,7 @@
                 <cocosSharp:CocosSharpView x:Name="GameView" Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="2" 
                                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 
-                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Text="Use the sliders to change the properties of the mass spectrometer!" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Green" Style="{StaticResource CoolStuffLabel}"/>
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Text="Charged particles in a velocity selector are deflected by the electric and magnetic fields." FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Green" Style="{StaticResource CoolStuffLabel}"/>
 
                 <Label Grid.Row="3" Grid.Column="0" x:Name="EFieldSliderLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
                 <Slider Grid.Row="3" Grid.Column="1" x:Name="EFieldSlider" AutomationId="EField" Maximum="3" Minimum="0.2"  HorizontalOptions="FillAndExpand"

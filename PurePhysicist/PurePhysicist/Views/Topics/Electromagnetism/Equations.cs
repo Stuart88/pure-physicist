@@ -157,7 +157,7 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                     new DerivationStep(@"=  I_0  e^{\frac{-t}{RC}}"),
                 }
             },
-            new EquationItem("Mass Spectrometer")
+            new EquationItem("Velocity Selector")
             {
                 EquationLatex = @"B = \frac{E}{v}",
                 DerivationStepsLatex = new List<DerivationStep>
