@@ -203,7 +203,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
                 p.DrawNode.PositionY = p.GraphicalPoint.Y;
                 CCColor4B circleColour = p == _selectedParticle ? CCColor4B.Green : CCColor4B.White;
                 double mass = p == _selectedParticle ? _selectedParticle.Particle.Mass : p.Particle.Mass;
-                p.DrawNode.DrawCircle(new CCPoint(0, 0), (float)mass, circleColour);
+                p.DrawNode.DrawSolidCircle(new CCPoint(0, 0), (float)mass, circleColour);
             }
 
             _centreOfGrav.DrawNode.Clear();
