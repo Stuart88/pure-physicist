@@ -124,7 +124,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
         private void OnTouchEnded(CCTouch touch, CCEvent arg)
         {
-            _centre.RotationalAcceleration = new Vector();
+            _centre.ExternalTorque = new Vector();
         }
 
         private void OnTouchMoved(CCTouch touch, CCEvent arg2)
