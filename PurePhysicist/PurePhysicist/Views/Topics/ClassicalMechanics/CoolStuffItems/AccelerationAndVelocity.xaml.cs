@@ -68,7 +68,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
         private void Car1AccelerationSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            _car1.Acceleration = new Vector(0, e.NewValue, 0);
+            _car1.ExternalForce = _car1.Mass * new Vector(0, e.NewValue, 0);
             UpdateLabels();
         }
 
@@ -80,7 +80,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
         private void Car2AccelerationSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            _car2.Acceleration = new Vector(0, e.NewValue, 0);
+            _car2.ExternalForce = _car2.Mass * new Vector(0, e.NewValue, 0);
             UpdateLabels();
         }
 
@@ -138,8 +138,8 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
 
             _elapsedTime = 0;
 
-            _car1.Acceleration = new Vector(0, Car1AccelerationSlider.Value);
-            _car2.Acceleration = new Vector(0, Car2AccelerationSlider.Value);
+            _car1.ExternalForce = _car1.Mass * new Vector(0, Car1AccelerationSlider.Value);
+            _car2.ExternalForce = _car2.Mass * new Vector(0, Car2AccelerationSlider.Value);
             _car1.Velocity = new Vector(0, Car1VelocitySlider.Value);
             _car2.Velocity = new Vector(0, Car2VelocitySlider.Value);
 
