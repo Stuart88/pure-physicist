@@ -101,7 +101,7 @@
                         <ColumnDefinition Width="100" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Car 1" Style="{StaticResource CoolStuffLabel}" />
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Car 2" Style="{StaticResource CoolStuffLabel}" />
 
                     <Label Grid.Row="1" Grid.Column="0" Text="Start Velocity" Style="{StaticResource CoolStuffLabel}" />
                     <Slider Grid.Row="1" Grid.Column="1" x:Name="Car2VelocitySlider" Maximum="10" Minimum="0"  HorizontalOptions="FillAndExpand"
