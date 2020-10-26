@@ -207,7 +207,7 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
             {
                 RotationLabel.Text = $"Angular Velocity: {_centre.AngularVelocity.Z.DecimalPoints(2)} /s";
                 PeriodLabel.Text = $"Period: {_centre.RotationPeriod(UniversityPhysics.Enums.Axis_Cartesian.Z).DecimalPoints(2)} s";
-                MassLabel.Text = $"{_centre.Mass} kg";
+                MassLabel.Text = $"{_centre.Mass.Kilograms.DecimalPoints(0)} kg";
                 RotationalKineticEnergyLabel.Text = $"Rotational Energy: {_centre.KineticEnergy_Rotational.Z.DecimalPoints(0)} J";
                 FrictionLabel.Text = frictionText;
             });
