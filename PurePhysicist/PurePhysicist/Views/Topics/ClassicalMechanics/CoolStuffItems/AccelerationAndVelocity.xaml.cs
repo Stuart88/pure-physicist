@@ -35,6 +35,11 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
         {
             InitializeComponent();
 
+            Car1AccelerationSlider.Value = 8.5;
+            Car2AccelerationSlider.Value = 4.0;
+            Car1VelocitySlider.Value = 2.5;
+            Car2VelocitySlider.Value = 5.0;
+
             _car1Rect = new CCRect(0, 0, 5, 10) { Origin = new CCPoint(0, 0) };
             _car2Rect = new CCRect(0, 0, 5, 10) { Origin = new CCPoint(0, 0) };
 
