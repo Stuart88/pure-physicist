@@ -157,6 +157,22 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                     new DerivationStep(@"=  I_0  e^{\frac{-t}{RC}}"),
                 }
             },
+            new EquationItem("Magnetic Force")
+            {
+                EquationLatex = @"\vec{F}_B = q\vec{v} \times \vec{B}",
+            },
+            new EquationItem("Magnetic Field Lines and Flux")
+            {
+                EquationLatex = @"\Phi_B = \int \vec{B} \cdot d \vec{A}",
+            },
+            new EquationItem("Gauss' Law for Magnetism")
+            {
+                EquationLatex = @" \oint \vec{B} \cdot d \vec{A} = 0",
+            },
+            new EquationItem("Motion in a Magnetic Field")
+            {
+                EquationLatex = @" r = \frac{mv}{qB} ",
+            },
             new EquationItem("Velocity Selector")
             {
                 EquationLatex = @"v = \frac{E}{B}",
@@ -168,8 +184,28 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                     new DerivationStep(@"\text{Force from E field}", 50),
                     new DerivationStep(@"\vec{F}_E = q\vec{E}"),
                     new DerivationStep(@"\text{Circular path in B field}", 50),
-                    new DerivationStep(@"r = \frac{mv^2}{qvB}"),
+                    new DerivationStep(@"r = \frac{mv}{qB}"),
                 }
+            },
+            new EquationItem("Magnetic Force on a Conductor")
+            {
+                EquationLatex = @"\vec{F} = I \ \vec{l} \times \vec{B}",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"d\vec{F} = I \ d\vec{l} \times \vec{B}", 60),
+                }
+            },
+            new EquationItem("Magnetic Torque")
+            {
+                EquationLatex = @" \vec{\tau} = \vec{\mu} \times \vec{B} ",
+            },
+            new EquationItem("Potential of Magnetic Moment")
+            {
+                EquationLatex = @" U = - \vec{\mu} \cdot \vec{B} ",
+            },
+            new EquationItem("The Hall Effect")
+            {
+                EquationLatex = @"nq = \frac{-J_x B_y}{E_z}",
             },
         };
 
