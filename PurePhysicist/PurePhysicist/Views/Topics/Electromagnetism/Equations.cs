@@ -9,7 +9,7 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
 
         public static readonly List<EquationItem> EquationsList = new List<EquationItem>
         {
-            new EquationItem("Coulomb's Law", 80)
+            new EquationItem("Coulomb's Law")
             {
                 EquationLatex = @"F=\frac{1}{4 \pi \epsilon_0}\frac{|q_1 q_2|}{r^2}",
             },
@@ -128,12 +128,12 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
             },
             new EquationItem("Kirchoff's Rules")
             {
-                EquationLatex = @"View Details",
+                EquationLatex = @"\text{View Details}",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
-                    new DerivationStep(@"\text{Junction Rule}", 50),
+                    new DerivationStep(@"\text{Junction Rule}"),
                     new DerivationStep(@"\sum I = 0"),
-                    new DerivationStep(@"\text{Loop Rule}", 50),
+                    new DerivationStep(@"\text{Loop Rule}"),
                     new DerivationStep(@"\sum V = 0"),
                 }
             },
@@ -142,7 +142,7 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                 EquationLatex = @"q = C \xi (1 - e^{\frac{-t}{RC}})",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
-                    new DerivationStep(@"\text{Current}", 50),
+                    new DerivationStep(@"\text{Current}", 40),
                     new DerivationStep(@"i = \frac{dq}{dt} = \frac{\xi}{R} e^{\frac{-t}{RC}}"),
                     new DerivationStep(@"=  I_0  e^{\frac{-t}{RC}}"),
                 }
@@ -152,7 +152,7 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                 EquationLatex = @"q = Q_0  e^{\frac{-t}{RC}}",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
-                    new DerivationStep(@"\text{Current}", 50),
+                    new DerivationStep(@"\text{Current}", 40),
                     new DerivationStep(@"i = \frac{dq}{dt} = \frac{Q_0}{RC} e^{\frac{-t}{RC}}"),
                     new DerivationStep(@"=  I_0  e^{\frac{-t}{RC}}"),
                 }
@@ -178,12 +178,12 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                 EquationLatex = @"v = \frac{E}{B}",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
-                    new DerivationStep(@"\text{\underline{Charge in E and B fields}}", 60),
-                    new DerivationStep(@"\text{Force from B field}", 50),
+                    new DerivationStep(@"\text{\underline{Charge in E and B fields}}", 35),
+                    new DerivationStep(@"\text{Force from B field}"),
                     new DerivationStep(@"\vec{F}_B = q\vec{v} \times \vec{B}"),
-                    new DerivationStep(@"\text{Force from E field}", 50),
+                    new DerivationStep(@"\text{Force from E field}"),
                     new DerivationStep(@"\vec{F}_E = q\vec{E}"),
-                    new DerivationStep(@"\text{Circular path in B field}", 50),
+                    new DerivationStep(@"\text{Circular path in B field}"),
                     new DerivationStep(@"r = \frac{mv}{qB}"),
                 }
             },
@@ -192,7 +192,7 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                 EquationLatex = @"\vec{F} = I \ \vec{l} \times \vec{B}",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
-                    new DerivationStep(@"d\vec{F} = I \ d\vec{l} \times \vec{B}", 60),
+                    new DerivationStep(@"d\vec{F} = I \ d\vec{l} \times \vec{B}", 40),
                 }
             },
             new EquationItem("Magnetic Torque")
@@ -228,9 +228,9 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                 EquationLatex = @"\text{View Details}",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
-                    new DerivationStep(@"\text{Single Loop}", 50),
+                    new DerivationStep(@"\text{Single Loop}"),
                     new DerivationStep(@"B_x = \frac{\mu_0 I a^2}{2(x^2 + a^2)^{\frac{3}{2}}}"),
-                    new DerivationStep(@"\text{Centre of N loops}", 50),
+                    new DerivationStep(@"\text{Centre of N loops}"),
                     new DerivationStep(@"B_x = \frac{\mu_0 N I}{2a}"),
                 }
             },
@@ -255,15 +255,16 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                 EquationLatex = @"\text{View Details}",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
-                    new DerivationStep(@"\text{\underline{Displacement Current}}", 50),
+                    new DerivationStep(@"\text{\underline{Displacement Current}}", 35),
                     new DerivationStep(@"i_D = \epsilon \frac{d \Phi_E}{dt}"),
-                    new DerivationStep(@"\text{\underline{Gauss's Law for E Fields}}", 50),
+                    new DerivationStep(@"\text{\underline{Gauss's Law for E Fields}}"),
                     new DerivationStep(@"\Phi_E = \frac{Q_{enclosed}}{\epsilon_0}"),
-                    new DerivationStep(@"\text{\underline{Gauss's Law for B Fields}}", 50),
+                    new DerivationStep(@"\text{\underline{Gauss's Law for B Fields}}"),
                     new DerivationStep(@"\oint \vec{B} \cdot d \vec{A} = 0"),
-                    new DerivationStep(@"\text{\underline{Ampere's Law + Displacement Current}}", 50),
+                    new DerivationStep(@"\text{\underline{Ampere's Law}}", 40),
+                    new DerivationStep(@"\text{\underline{with Displacement Current}}", 40),
                     new DerivationStep(@"\oint \vec{B} \cdot d\vec{l} = \mu_0(i_C + \epsilon_0 \frac{d\Phi_E}{dt})_{enclosed}"),
-                    new DerivationStep(@"\text{\underline{Faraday's Law}}", 50),
+                    new DerivationStep(@"\text{\underline{Faraday's Law}}"),
                     new DerivationStep(@"\oint \vec{E} \cdot d \vec{l} = - \frac{d\Phi_B}{dt}"),
                 }
             },
@@ -289,11 +290,11 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                 EquationLatex = @"U = \frac{1}{2} L I2",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
-                    new DerivationStep(@"\text{\underline{In Vacuum}}", 50),
+                    new DerivationStep(@"\text{\underline{In Vacuum}}", 35),
                     new DerivationStep(@"u = \frac{B^2}{2 \mu_0}"),
-                    new DerivationStep(@"\text{\underline{In a material}}", 50),
+                    new DerivationStep(@"\text{\underline{In a material}}", 35),
                     new DerivationStep(@"u = \frac{B^2}{2 \mu}"),
-                    new DerivationStep(@"(\text{with magnetic permeability} \ \mu)", 50),
+                    new DerivationStep(@"(\text{with magnetic permeability} \ \mu)"),
                 }
             },
             new EquationItem("RL Circuit")
@@ -309,9 +310,9 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                 EquationLatex = @"\omega' = \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
-                    new DerivationStep(@"\text{Differential equation for LRC circuit}", 50),
-                    new DerivationStep(@"\text{is the same format as the equation}", 50),
-                    new DerivationStep(@"\text{for mechanical oscillation}", 50),
+                    new DerivationStep(@"\text{Differential equation for LRC circuit}", 30, 25),
+                    new DerivationStep(@"\text{is the same format as the equation}", 30, 25),
+                    new DerivationStep(@"\text{for mechanical oscillation}", 30, 25),
                     new DerivationStep(@"\frac{d^2 q}{dt^2} + \frac{R}{L}\frac{dq}{dt} + \frac{1}{LC}q=0"),
                 }
             },
@@ -359,11 +360,11 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
                 EquationLatex = @"c= \frac{1}{\sqrt{\epsilon_0 \mu_0}}",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
-                    new DerivationStep(@"\text{Faraday's and Ampere's Laws}", 50),
-                    new DerivationStep(@"\text{relate E and B}", 50),
+                    new DerivationStep(@"\text{Faraday's and Ampere's Laws}"),
+                    new DerivationStep(@"\text{relate E and B}"),
                     new DerivationStep(@"E = cB"),
                     new DerivationStep(@"B = \epsilon_0 \mu_0 cE"),
-                    new DerivationStep(@"\text{Therefore:}", 50),
+                    new DerivationStep(@"\text{Therefore:}"),
                     new DerivationStep(@"c= \frac{1}{\sqrt{\epsilon_0 \mu_0}}"),
                 }
             },
