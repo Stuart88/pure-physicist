@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -245,6 +245,9 @@
     <Compile Update="Views\Topics\Astrophysics\ContentsView.xaml.cs">
       <DependentUpon>ContentsView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Topics\FluidDynamics\CoolStuffItems\FlowSim.xaml.cs">
+      <DependentUpon>FlowSim.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Topics\Astrophysics\CoolStuffItems\OrbitSim.xaml.cs">
       <DependentUpon>OrbitSim.xaml</DependentUpon>
     </Compile>
@@ -290,6 +293,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\C#\University Physics\University Physics\UniversityPhysics.csproj" />
+    <ProjectReference Include="..\..\..\..\C#\University Physics\University Physics\UniversityPhysics.csproj" />
   </ItemGroup>
 </Project>

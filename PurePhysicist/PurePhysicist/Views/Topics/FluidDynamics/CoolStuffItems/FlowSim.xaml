@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cocosSharp="clr-namespace:CocosSharp;assembly=CocosSharp.Forms"
+             mc:Ignorable="d"
+             x:Class="PurePhysicist.Views.Topics.FluidDynamics.CoolStuffItems.FlowSim">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" >
+
+            <Grid x:Name="PageGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PaperColour}" Padding="0,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Flow Sim" Style="{StaticResource ContentsTitle}" VerticalTextAlignment="Center"/>
+                <Button Grid.Row="0" Grid.Column="1" x:Name="InfoButton" 
+                        Text="Info" Clicked="InfoButton_Clicked" 
+                        HorizontalOptions="End" Style="{StaticResource BlueButton}"/>
+
+                <cocosSharp:CocosSharpView x:Name="GameView" Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="2" 
+                                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Text="Charged particles in a velocity selector are deflected by the electric and magnetic fields." FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Green" Style="{StaticResource CoolStuffLabel}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" x:Name="EFieldSliderLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
+                <Slider Grid.Row="3" Grid.Column="1" x:Name="EFieldSlider" AutomationId="EField" Maximum="3" Minimum="0.2"  HorizontalOptions="FillAndExpand"
+                        ValueChanged="FieldSlider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green"/>
+
+                <Label Grid.Row="4" Grid.Column="0" x:Name="BFieldSliderLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
+                <Slider Grid.Row="4" Grid.Column="1" x:Name="BFieldSlider" AutomationId="BField" Maximum="1.1" Minimum="0.9"  HorizontalOptions="FillAndExpand"
+                       ValueChanged="FieldSlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green" />
+
+                <Label Grid.Row="5" Grid.Column="0" x:Name="MassSliderLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
+                <Slider Grid.Row="5" Grid.Column="1" x:Name="MassSlider" AutomationId="Mass" Maximum="7" Minimum="3"  HorizontalOptions="FillAndExpand"
+                        ValueChanged="FieldSlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green" />
+
+                <Label Grid.Row="6" Grid.Column="0" x:Name="VelocitySliderLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
+                <Slider Grid.Row="6" Grid.Column="1" x:Name="VelocitySlider" AutomationId="EMF" Maximum="0.05" Minimum="0.02"  HorizontalOptions="FillAndExpand"
+                        ValueChanged="FieldSlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green" />
+
+
+            </Grid>
+            <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource CoolStuffBackButton}" VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
