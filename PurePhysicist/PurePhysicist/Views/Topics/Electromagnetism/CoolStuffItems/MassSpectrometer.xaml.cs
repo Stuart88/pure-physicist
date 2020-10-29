@@ -200,7 +200,9 @@ namespace PurePhysicist.Views.Topics.Electromagnetism.CoolStuffItems
         private void RedrawBFieldPoints()
         {
             _bFieldPoints.Clear();
-            _staticLayer.AddChild(_bFieldPoints);
+
+            if(!_sceneLoaded)
+                _staticLayer.AddChild(_bFieldPoints);
 
             int screenDivisionW = _viewResolution.Width / 10;
             int screenDivisionH = _viewResolution.Height / 10;
