@@ -18,7 +18,6 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -34,28 +33,31 @@
                 <cocosSharp:CocosSharpView x:Name="GameView" Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="2" 
                                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 
-                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Text="Charged particles in a velocity selector are deflected by the electric and magnetic fields." FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Green" Style="{StaticResource CoolStuffLabel}"/>
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Text="Select different flows from the options below." FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Green" Style="{StaticResource CoolStuffLabel}"/>
 
-                <Label Grid.Row="3" Grid.Column="0" x:Name="FlowStrengthLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
-                <Slider Grid.Row="3" Grid.Column="1" x:Name="FlowStrengthSlider" AutomationId="FlowRate" Maximum="30" Minimum="0"  HorizontalOptions="FillAndExpand"
-                        ValueChanged="FieldSlider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green"/>
-
-                <Label Grid.Row="4" Grid.Column="0" x:Name="RadiusLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
-                <Slider Grid.Row="4" Grid.Column="1" x:Name="RadiusSlider" AutomationId="Radius" Maximum="70" Minimum="0"  HorizontalOptions="FillAndExpand"
-                       ValueChanged="FieldSlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green" />
-
-                <Label Grid.Row="5" Grid.Column="0" x:Name="RotationLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
-                <Slider Grid.Row="5" Grid.Column="1" x:Name="RotationSlider" AutomationId="Rotation" Maximum="10000" Minimum="-10000"  HorizontalOptions="FillAndExpand"
-                        ValueChanged="FieldSlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green" />
-
-                <Picker Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" x:Name="FlowPicker"  HorizontalOptions="FillAndExpand"
+                <Picker Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="FlowPicker" 
+                        HorizontalOptions="FillAndExpand"
                         Title="Select a Velocity Field"
+                        Margin="5"
                         ItemsSource="{Binding VelocityFields}"
                         ItemDisplayBinding="{Binding Name}"
+                        BackgroundColor="Transparent"
+                        TextColor="Green"
                         SelectedIndexChanged="FlowPicker_SelectedIndexChanged"
-                        />
+                />
 
+                <Label Grid.Row="4" Grid.Column="0" x:Name="FlowStrengthLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
+                <Slider Grid.Row="4" Grid.Column="1" x:Name="FlowStrengthSlider" AutomationId="FlowRate" Maximum="30" Minimum="15"  HorizontalOptions="FillAndExpand"
+                        ValueChanged="FieldSlider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green"/>
 
+                <Label Grid.Row="5" Grid.Column="0" x:Name="RadiusLabel" IsVisible="False" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
+                <Slider Grid.Row="5" Grid.Column="1" x:Name="RadiusSlider" IsVisible="False" AutomationId="Radius" Maximum="70" Minimum="0"  HorizontalOptions="FillAndExpand"
+                       ValueChanged="FieldSlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green" />
+
+                <Label Grid.Row="6" Grid.Column="0" x:Name="RotationLabel" IsVisible="False" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
+                <Slider Grid.Row="6" Grid.Column="1" x:Name="RotationSlider" IsVisible="False" AutomationId="Rotation" Maximum="10000" Minimum="-10000"  HorizontalOptions="FillAndExpand"
+                        ValueChanged="FieldSlider_ValueChanged"  MinimumTrackColor="Green" MaximumTrackColor="Green" />
+                
             </Grid>
             <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource CoolStuffBackButton}" VerticalOptions="End"/>
         </StackLayout>
