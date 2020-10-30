@@ -1,4 +1,5 @@
-﻿using PurePhysicist.Helpers;
+﻿using System;
+using PurePhysicist.Helpers;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
@@ -38,7 +39,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         private async void CoolStuffList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            await Navigation.PushModalAsync(((CoolStuffListItem)e.Item).ModalItem);
+            await Navigation.PushModalAsync(((CoolStuffListItem)e.Item).ModalItem.Value);
         }
 
         #endregion Private Methods
@@ -51,13 +52,13 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
             public string Label { get; set; }
 
-            public ContentPage ModalItem { get; set; }
+            public Lazy<ContentPage> ModalItem { get; set; }
 
             #endregion Public Properties
 
             #region Public Constructors
 
-            public CoolStuffListItem(string label, ContentPage modalItem)
+            public CoolStuffListItem(string label, Lazy<ContentPage> modalItem)
             {
                 Label = label;
                 ModalItem = modalItem;
