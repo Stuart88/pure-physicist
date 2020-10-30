@@ -483,6 +483,7 @@ namespace PurePhysicist.Views.Topics.FluidDynamics.CoolStuffItems
                     .ThenByDescending(x => x.LifeTime)
                     .First();
 
+                p.LifeTime = 0;
                 p.Particle.Position = new Vector(this.TouchLocation.X, this.TouchLocation.Y);
                 p.Node.Position = this.TouchLocation;
                 p.Node.Visible = true;
