@@ -35,10 +35,12 @@
 
                 <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Text="Select different flows from the options below." FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Green" Style="{StaticResource CoolStuffLabel}"/>
 
-                <Picker Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="FlowPicker" 
+                <Label Grid.Row="3" Grid.Column="0" Text="Selected Flow" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
+                <Picker Grid.Row="3" Grid.Column="1" x:Name="FlowPicker" 
                         HorizontalOptions="FillAndExpand"
                         Title="Select a Velocity Field"
-                        Margin="5"
+                        FontSize="14"
+                        Margin="5,0,5,0"
                         ItemsSource="{Binding VelocityFields}"
                         ItemDisplayBinding="{Binding Name}"
                         BackgroundColor="Transparent"
