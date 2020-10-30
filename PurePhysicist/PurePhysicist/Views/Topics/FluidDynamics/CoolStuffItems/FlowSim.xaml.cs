@@ -1,9 +1,9 @@
 ﻿using CocosSharp;
+using PurePhysicist.Models;
+using PurePhysicist.Views.Topics.TopicPageTemplates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using PurePhysicist.Models;
-using PurePhysicist.Views.Topics.TopicPageTemplates;
 using UniversityPhysics.FluidDynamics;
 using UniversityPhysics.Maths;
 using UniversityPhysics.PhysicsObjects;
@@ -17,11 +17,6 @@ namespace PurePhysicist.Views.Topics.FluidDynamics.CoolStuffItems
     {
         #region Private Fields
 
-        /// <summary>
-        /// Small visible nodule added to spinning wheel to give spinning effect.
-        /// </summary>
-        private readonly CCDrawNode _spinningWheelNode = new CCDrawNode {Color = CCColor3B.White, Visible = false};
-
         private readonly CCDrawNode _centreWheelNode = new CCDrawNode { Color = CCColor3B.Blue, Visible = false };
 
         private readonly CCLayer _layer = new CCLayer { ContentSize = new CCSize((float)App.DeviceWidth, (float)App.DeviceHeight / 2) };
@@ -31,6 +26,11 @@ namespace PurePhysicist.Views.Topics.FluidDynamics.CoolStuffItems
         private readonly List<FluidSimParticle> _particles = new List<FluidSimParticle>();
 
         private readonly int _particlesAmount = 650;
+
+        /// <summary>
+        /// Small visible nodule added to spinning wheel to give spinning effect.
+        /// </summary>
+        private readonly CCDrawNode _spinningWheelNode = new CCDrawNode { Color = CCColor3B.White, Visible = false };
 
         /// <summary>
         ///     These will appear when user touches screen
