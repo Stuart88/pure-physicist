@@ -65,5 +65,4 @@
 #################################################
 # linguist settings for showing language percentages in github
 
-*/license.html linguist-detectable=false
-*/license_1*.htm inguist-detectable=false
+PurePhysicist/PurePhysicist/Images/Icons/license/* linguist-vendored
