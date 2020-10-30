@@ -61,3 +61,9 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+#################################################
+# linguist settings for showing language percentages in github
+
+*/Icons/license/license.html linguist-detectable=false
+*/Icons/license/license_1.html inguist-detectable=false
