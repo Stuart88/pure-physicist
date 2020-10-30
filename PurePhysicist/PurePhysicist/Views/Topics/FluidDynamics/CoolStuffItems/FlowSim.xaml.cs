@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using PurePhysicist.Models;
+using PurePhysicist.Views.Topics.TopicPageTemplates;
 using UniversityPhysics.FluidDynamics;
 using UniversityPhysics.Maths;
 using UniversityPhysics.PhysicsObjects;
@@ -218,10 +220,10 @@ namespace PurePhysicist.Views.Topics.FluidDynamics.CoolStuffItems
 
         private async void InfoButton_Clicked(object sender, EventArgs e)
         {
-            //InfoButton.IsEnabled = false;
-            //EquationItem equation = Equations.EquationsList.FirstOrDefault(x => x.LabelText == "Velocity Selector");
-            //await this.Navigation.PushModalAsync(new DerivationViewer(equation, "demo"));
-            //InfoButton.IsEnabled = true;
+            InfoButton.IsEnabled = false;
+            EquationItem equation = Equations.EquationsList.FirstOrDefault(x => x.LabelText == "Common Flows");
+            await this.Navigation.PushModalAsync(new DerivationViewer(equation, "demo"));
+            InfoButton.IsEnabled = true;
         }
 
         private bool OnTouchBegan(CCTouch touch, CCEvent arg)
