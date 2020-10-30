@@ -197,7 +197,8 @@ namespace PurePhysicist.Views.Topics.FluidDynamics.CoolStuffItems
                 {
                     p.LifeTime = rand.Next(0, _maxLifeTime);
 
-                    if (this.SelectedVelocityField == CommonVelocityFields.UniformStream || this.SelectedVelocityField == CommonVelocityFields.ShearFlow || this.SelectedVelocityField == CommonVelocityFields.FlowPast_Sphere)
+                    if (this.SelectedVelocityField == CommonVelocityFields.UniformStream || this.SelectedVelocityField == CommonVelocityFields.ShearFlow
+                            || this.SelectedVelocityField == CommonVelocityFields.RotatingCylinder || this.SelectedVelocityField == CommonVelocityFields.FlowPast_Sphere)
                     {
                         // Rightward motion only so reset points on left
                         p.Particle.Position = new Vector(0, rand.Next(0, _viewResolution.Height));
