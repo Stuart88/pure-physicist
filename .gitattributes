@@ -65,6 +65,5 @@
 #################################################
 # linguist settings for showing language percentages in github
 
-*/Icons/license/license.html linguist-detectable=false
-*/Icons/license/license_1.html inguist-detectable=false
-
+license.html linguist-detectable=false
+license_1*.htm inguist-detectable=false
