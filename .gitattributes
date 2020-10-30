@@ -67,3 +67,5 @@
 
 */Icons/license/license.html linguist-detectable=false
 */Icons/license/license_1.html inguist-detectable=false
+*.html linguist-detectable=false
+*.htm inguist-detectable=false
