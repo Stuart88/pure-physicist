@@ -386,14 +386,14 @@ namespace PurePhysicist.Views.Topics.FluidDynamics.CoolStuffItems
                     _spinningWheelNode.Visible = true;
 
                     ResetSlider(RadiusSlider);
-                    RadiusSlider.Minimum = 0;
+                    RadiusSlider.Minimum = 5;
                     RadiusSlider.Maximum = 40;
                     RadiusSlider.Value = 10;
 
                     ResetSlider(RotationSlider);
                     RotationSlider.Minimum = -10000;
                     RotationSlider.Maximum = 10000;
-                    RotationSlider.Value = 5000;
+                    RotationSlider.Value = 2800;
                 }
             });
         }
@@ -491,8 +491,8 @@ namespace PurePhysicist.Views.Topics.FluidDynamics.CoolStuffItems
 
             if (_spinningWheelNode.Visible)
             {
-                float x = (float)(_centreWheelNode.Position.X + (RadiusSlider.Value * 0.9) * Math.Cos(this.ElapsedTime * RotationSlider.Value / 500));
-                float y = (float)(_centreWheelNode.Position.Y + (RadiusSlider.Value * 0.9) * Math.Sin(this.ElapsedTime * RotationSlider.Value / 500));
+                float x = (float)(_centreWheelNode.Position.X + (RadiusSlider.Value * 0.9) * Math.Cos(this.ElapsedTime * RotationSlider.Value / 250));
+                float y = (float)(_centreWheelNode.Position.Y + (RadiusSlider.Value * 0.9) * Math.Sin(this.ElapsedTime * RotationSlider.Value / 250));
                 _spinningWheelNode.Position = new CCPoint(x, y);
             }
 
