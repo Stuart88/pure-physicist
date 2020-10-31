@@ -1,4 +1,5 @@
-﻿using PurePhysicist.Views;
+﻿using CSharpMath.Forms;
+using PurePhysicist.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -35,11 +36,20 @@ namespace PurePhysicist
             {
                 DeviceHeight = DeviceDisplay.MainDisplayInfo.Height;
                 DeviceWidth = DeviceDisplay.MainDisplayInfo.Width;
+                InitMathView();
             });
 
             InitializeComponent();
 
+
             MainPage = new MainPage();
+        }
+
+        private static async void InitMathView()
+        {
+            // MathView is really slow on first load, so arbitrarily initialise one in the background now. 
+            // After this, others load at acceptable speed.
+            MathView initialiser = new MathView {LaTeX = @"\text{whatever}"};
         }
 
         #endregion Public Constructors
