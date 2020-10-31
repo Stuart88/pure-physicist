@@ -7,6 +7,11 @@
              xmlns:topicPageTemplates="clr-namespace:PurePhysicist.Views.Topics.TopicPageTemplates;assembly=PurePhysicist"
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.Topics.TopicPageTemplates.MainTopicLayout" x:DataType="topicPageTemplates:MainTopicLayout">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0" />
+        </OnPlatform>
+    </ContentPage.Padding>
     <ContentPage.Resources>
         <Style TargetType="Frame" x:Key="ButtonFrame">
             <Setter Property="Padding" Value="0" />
