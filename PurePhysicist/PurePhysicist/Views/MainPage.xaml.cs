@@ -28,7 +28,9 @@ namespace PurePhysicist.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            this.Detail = new NavigationPage(new ContentPage() { Content = new UnderConstruction() });
+            NavigationPage.SetHasNavigationBar(this, false);
+
+            this.Detail = new NavigationPage(new HomePage());
 
             MenuPages.Add(MenuItemType.Topics, (NavigationPage)Detail);
         }
@@ -65,7 +67,7 @@ namespace PurePhysicist.Views
         {
             return id switch
             {
-                MenuItemType.Home => throw new NotImplementedException(),
+                MenuItemType.Home => new HomePage(),
                 MenuItemType.Topics => throw new NotImplementedException(),
                 MenuItemType.Astrophysics => new MainTopicLayout(new Topics.Astrophysics.LayoutConstructor(themeColour)),
                 MenuItemType.ClassicalMechanics => new MainTopicLayout(new Topics.ClassicalMechanics.LayoutConstructor(themeColour)),

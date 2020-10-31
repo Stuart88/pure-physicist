@@ -28,19 +28,20 @@ namespace PurePhysicist
             Device.SetFlags(new[] {
                 "RadioButton_Experimental",
                 //"AppTheme_Experimental",
-                //"Markup_Experimental",
+                "Markup_Experimental",
                 "Expander_Experimental"
             });
 
             MainThread.BeginInvokeOnMainThread(() =>    // iOS required this to invoke on main thread. See: https://docs.microsoft.com/en-us/xamarin/essentials/device-display?tabs=ios#platform-differences
             {
-                DeviceHeight = DeviceDisplay.MainDisplayInfo.Height;
-                DeviceWidth = DeviceDisplay.MainDisplayInfo.Width;
+                DeviceHeight = DeviceDisplay.MainDisplayInfo.Height / DeviceDisplay.MainDisplayInfo.Density;
+                DeviceWidth = DeviceDisplay.MainDisplayInfo.Width / DeviceDisplay.MainDisplayInfo.Density;
                 InitMathView();
             });
 
             InitializeComponent();
 
+            NavigationPage.SetHasNavigationBar(this, false);
 
             MainPage = new MainPage();
         }

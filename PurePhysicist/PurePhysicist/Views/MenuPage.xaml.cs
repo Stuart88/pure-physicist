@@ -13,8 +13,8 @@ namespace PurePhysicist.Views
     {
         #region Private Fields
 
-        private List<HomeMenuItem> menuItems;
-        private HomeMenuItem selectedItem;
+        private readonly List<HomeMenuItem> _menuItems = Helpers.Functions.GetMenuItems();
+        public static HomeMenuItem SelectedItem;
 
         #endregion Private Fields
 
@@ -25,7 +25,7 @@ namespace PurePhysicist.Views
         /// </summary>
         private List<(HomeMenuItem itemRef, Frame frame)> MenuUiItems { get; set; } = new List<(HomeMenuItem itemRef, Frame frame)>();
 
-        private MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+        private MainPage RootPage => Application.Current.MainPage as MainPage;
 
         #endregion Private Properties
 
@@ -35,25 +35,17 @@ namespace PurePhysicist.Views
         {
             InitializeComponent();
 
-            menuItems = new List<HomeMenuItem>
-            {
-                new HomeMenuItem {Id = MenuItemType.Home, Title="Home"},
-                new HomeMenuItem {Id = MenuItemType.Topics, Title="Topics", IsPageReference = false},
-                new HomeMenuItem(MenuItemType.Astrophysics, "astro.png") { Title="Astrophysics", ParentId = MenuItemType.Topics},
-                new HomeMenuItem(MenuItemType.ClassicalMechanics, "classical.png") {Title="Classical Mechanics", ParentId = MenuItemType.Topics},
-                new HomeMenuItem(MenuItemType.Electromagnetism,"electromag.png") { Title="Electromagnetism", ParentId = MenuItemType.Topics },
-                new HomeMenuItem(MenuItemType.FluidDynamics, "fluid.png") { Title="Fluid Dynamics", ParentId = MenuItemType.Topics },
-                new HomeMenuItem(MenuItemType.Mathematics, "maths.png") {Title="Mathematics", ParentId = MenuItemType.Topics },
-                new HomeMenuItem(MenuItemType.QuantumPhysics, "quantum.png") {Title="Quantum Physics", ParentId = MenuItemType.Topics },
-                new HomeMenuItem(MenuItemType.Thermodynamics,"thermo.png") { Title="Thermodynamics", ParentId = MenuItemType.Topics},
-                new HomeMenuItem {Id = MenuItemType.About, Title="About"}
-            };
-
             this.BackgroundColor = Color.FromRgba(255d, 255d, 255d, 0.5);
 
             SetupMenuItems();
-            selectedItem = menuItems[0];
+            SelectedItem = _menuItems[0];
             ApplySelectedItemStyling();
+        }
+
+        protected override void OnAppearing()
+        {
+            ApplySelectedItemStyling();
+            base.OnAppearing();
         }
 
         #endregion Public Constructors
@@ -64,11 +56,11 @@ namespace PurePhysicist.Views
         {
             foreach (var item in this.MenuUiItems)
             {
-                if (item.itemRef == selectedItem)
+                if (item.itemRef == SelectedItem)
                 {
                     item.frame.BorderColor = Color.White;
                 }
-                else if (item.itemRef.IsTopLevel && selectedItem.ParentId == item.itemRef.Id) // is parent of selected item
+                else if (item.itemRef.IsTopLevel && SelectedItem.ParentId == item.itemRef.Id) // is parent of selected item
                 {
                     item.frame.BorderColor = Color.Black;
                 }
@@ -96,7 +88,7 @@ namespace PurePhysicist.Views
             return new Expander
             {
                 Header = CreateMenuItem(item),
-                Content = CreateDropdownItems(menuItems.Where(i => i.ParentId == item.Id))
+                Content = CreateDropdownItems(_menuItems.Where(i => i.ParentId == item.Id))
             };
         }
 
@@ -108,7 +100,7 @@ namespace PurePhysicist.Views
             {
                 if (item.IsPageReference)
                 {
-                    selectedItem = item;
+                    SelectedItem = item;
                     ApplySelectedItemStyling();
                     await RootPage.NavigateFromMenu(item.Id, item.TopicColour);
                 }
@@ -158,7 +150,7 @@ namespace PurePhysicist.Views
 
         private void SetupMenuItems()
         {
-            foreach (HomeMenuItem item in menuItems.Where(item => item.ParentId == null))
+            foreach (HomeMenuItem item in _menuItems.Where(item => item.ParentId == null))
             {
                 if (item.IsTopLevel)
                 {

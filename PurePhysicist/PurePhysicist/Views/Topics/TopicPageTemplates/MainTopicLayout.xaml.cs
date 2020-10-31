@@ -1,5 +1,6 @@
 ﻿using PurePhysicist.Models;
 using System;
+using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,7 +16,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
         public ContentView ViewContent { get; set; }
 
         #endregion Public Properties
-
+        private MainPage RootPage => Application.Current.MainPage as MainPage;
         #region Private Properties
 
         private LayoutConstructorBase ConstructorBase { get; set; }
@@ -32,6 +33,8 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
             InitializeComponent();
 
+            NavigationPage.SetHasNavigationBar(this, false);
+
             SetupFromBase(constructor);
 
             SetButtonSizes();
@@ -41,13 +44,16 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         #region Public Methods
 
-        public void Button1_Pressed(object sender, EventArgs e)
+        public async void Button1_Pressed(object sender, EventArgs e)
         {
-            ((MasterDetailPage)Application.Current.MainPage).IsPresented = true;
+            this.AnimateButtonPress(this.Button1);
+            await Task.Delay(140); // Let button animation happen for a bit
+            await RootPage.NavigateFromMenu(MenuItemType.Home, Color.Transparent); // Colour not important here
         }
 
         public void Button2_Pressed(object sender, EventArgs e)
         {
+            this.AnimateButtonPress(this.Button2);
             this.ViewContent = this.ConstructorBase.ContentsPage;
             OnPropertyChanged(nameof(this.ViewContent));
             SetButtonColours(this.Button2);
@@ -56,6 +62,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         public void Button3_Pressed(object sender, EventArgs e)
         {
+            this.AnimateButtonPress(this.Button3);
             this.ViewContent = this.ConstructorBase.EquationsPage;
             OnPropertyChanged(nameof(this.ViewContent));
             SetButtonColours(this.Button3);
@@ -64,6 +71,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         public void Button4_Pressed(object sender, EventArgs e)
         {
+            this.AnimateButtonPress(this.Button4);
             this.ViewContent = this.ConstructorBase.CoolStuffPage;
             OnPropertyChanged(nameof(this.ViewContent));
             SetButtonColours(this.Button4);
@@ -112,6 +120,12 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         #region Private Methods
 
+        private async void AnimateButtonPress(Frame img)
+        {
+            await img.ScaleTo(0.9, 80, Easing.CubicInOut);
+            await img.ScaleTo(1, 80, Easing.CubicInOut);
+        }
+
         private void SetButtonColours(Frame selectedButton)
         {
             this.Button1.BackgroundColor = this.Button1 == selectedButton
@@ -136,7 +150,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
         /// </summary>
         private void SetButtonSizes()
         {
-            double size = (DeviceDisplay.MainDisplayInfo.Width / 4d) / DeviceDisplay.MainDisplayInfo.Density;
+            double size = App.DeviceWidth / 4d;
 
             this.Button1.WidthRequest = size;
             this.Button2.WidthRequest = size;
