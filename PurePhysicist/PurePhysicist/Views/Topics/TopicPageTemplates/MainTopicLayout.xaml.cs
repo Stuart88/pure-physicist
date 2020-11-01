@@ -1,7 +1,6 @@
 ﻿using PurePhysicist.Models;
 using System;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,17 +9,24 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainTopicLayout : ContentPage
     {
+        #region Private Fields
+
+        private readonly object _lock = new object();
+
+        #endregion Private Fields
+
         #region Public Properties
 
         public Color ThemeColour { get; set; }
-        public ContentView ViewContent { get; set; }
         public Frame ThemeIcon { get; set; }
+        public ContentView ViewContent { get; set; }
 
         #endregion Public Properties
-        private MainPage RootPage => Application.Current.MainPage as MainPage;
+
         #region Private Properties
 
         private LayoutConstructorBase ConstructorBase { get; set; }
+        private MainPage RootPage => Application.Current.MainPage as MainPage;
 
         #endregion Private Properties
 
@@ -47,7 +53,6 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
             SetupFromBase(constructor);
 
             SetButtonSizes();
-
         }
 
         #endregion Public Constructors
@@ -59,6 +64,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
             this.AnimateButtonPress(this.Button1);
             await Task.Delay(140); // Let button animation happen for a bit
             await RootPage.Navigation.PushModalAsync(new HomePage(true));
+            StopPhysicistsImageCycle();
         }
 
         public void Button2_Pressed(object sender, EventArgs e)
@@ -90,15 +96,18 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         public void StartPhysicistsImagesCycle()
         {
-            if (this.ContentArea.Content is IPhysicistFetcher physicistFetcher && !physicistFetcher.IsShowing)
+            lock (_lock) // ensure whole process completes before anything else sets it going. Prevents multiple timers from being set off.
             {
-                Device.StartTimer(TimeSpan.FromSeconds(3), () =>
+                if (this.ContentArea.Content is IPhysicistFetcher physicistFetcher && !physicistFetcher.IsShowing)
                 {
-                    Device.BeginInvokeOnMainThread(() => { physicistFetcher.SetPhysicistView(); });
-                    return physicistFetcher.IsShowing;
-                });
+                    physicistFetcher.IsShowing = true;
 
-                physicistFetcher.IsShowing = true;
+                    Device.StartTimer(TimeSpan.FromSeconds(3), () =>
+                    {
+                        Device.BeginInvokeOnMainThread(() => { physicistFetcher.SetPhysicistView(); });
+                        return physicistFetcher.IsShowing;
+                    });
+                }
             }
         }
 
@@ -126,8 +135,6 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
                 this.ThemeIcon.FadeTo(1, 300);
             });
         }
-
-
 
         protected override void OnDisappearing()
         {
@@ -226,7 +233,6 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
             else
             {
                 this.ViewContent = ConstructorBase.ContentsPage;
-
 
                 SetButtonColours(this.Button2); // Button2 is Contents View
             }
