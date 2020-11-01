@@ -113,7 +113,7 @@ namespace PurePhysicist.Views.Topics.Mathematics
             {
                 EquationLatex = @"\int u \frac{dv}{dx} \ dx = uv - \int v \frac{du}{dx} \ dx"
             },
-            new EquationItem("Fourier Wave Equation")
+            new EquationItem("Fourier Wave Equation", 80, 25)
             {
                 EquationLatex = @"f(x) = \frac{1}{2} A_0 + \ \sum_{n=1}^{\infty}[A_n cos(\frac{2 \pi n}{L} x) + B_n sin(\frac{2 \pi n}{L} x)]",
                 DerivationStepsLatex = new List<DerivationStep>
@@ -159,7 +159,7 @@ namespace PurePhysicist.Views.Topics.Mathematics
             {
                 EquationLatex = @"\nabla \cdot \vec{a} = \frac{\partial a_x}{\partial x} + \frac{\partial a_y}{\partial y} + \frac{\partial a_z}{\partial z}"
             },
-            new EquationItem("Curl of a Vector")
+            new EquationItem("Curl of a Vector",120)
             {
                 EquationLatex = @"\nabla \times \vec{F} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ F_x & F_y & F_z \end{vmatrix}"
             },
