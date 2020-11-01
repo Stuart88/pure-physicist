@@ -123,6 +123,20 @@ namespace PurePhysicist.Views
             scroller.Content = flexLayout;
             stackLayout.Children.Add(topSection);
             stackLayout.Children.Add(scroller);
+
+            if (this.IsModal)
+            {
+                //Add back button!
+                Button backBtn = new Button
+                {
+                    Style = Application.Current.Resources["CoolStuffBackButton"] as Style,
+                    Text = "Back",
+                    HorizontalOptions = LayoutOptions.Center
+                };
+                backBtn.Clicked += (e, s) => { this.Navigation.PopModalAsync(); };
+                stackLayout.Children.Add(backBtn);
+            }
+
             this.Content = stackLayout;
         }
     }
