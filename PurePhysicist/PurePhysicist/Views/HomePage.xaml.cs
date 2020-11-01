@@ -15,9 +15,12 @@ namespace PurePhysicist.Views
     {
         private List<HomeMenuItem> MenuItems { get; set; }
         private MainPage RootPage => Application.Current.MainPage as MainPage;
+        private bool IsModal {get;set;}
 
-        public HomePage()
+        public HomePage(bool isModal = false)
         {
+            this.IsModal = isModal;
+
             NavigationPage.SetHasNavigationBar(this, false);
 
             this.MenuItems = Helpers.Functions.GetMenuItems()
@@ -83,7 +86,7 @@ namespace PurePhysicist.Views
                 });
 
                 TapGestureRecognizer tapGesture = new TapGestureRecognizer();
-
+                bool isModal = this.IsModal;
                 tapGesture.Tapped += async (s, e) =>
                 {
                     if (item.IsPageReference)
@@ -92,7 +95,10 @@ namespace PurePhysicist.Views
 
                         await item.Icon.ScaleTo(0.8, 80, Easing.CubicInOut);
                         await item.Icon.ScaleTo(1, 80, Easing.CubicInOut);
-                        
+
+                        if (isModal)
+                            RootPage.Navigation.PopModalAsync();
+
                         await RootPage.NavigateFromMenu(item.Id, item.TopicColour);
                         
                         item.Icon.FadeTo(1);

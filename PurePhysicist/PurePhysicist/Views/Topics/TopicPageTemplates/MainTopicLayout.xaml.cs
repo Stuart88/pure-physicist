@@ -48,7 +48,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
         {
             this.AnimateButtonPress(this.Button1);
             await Task.Delay(140); // Let button animation happen for a bit
-            await RootPage.NavigateFromMenu(MenuItemType.Home, Color.Transparent); // Colour not important here
+            await RootPage.Navigation.PushModalAsync(new HomePage(true));
         }
 
         public void Button2_Pressed(object sender, EventArgs e)
@@ -122,8 +122,10 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         private async void AnimateButtonPress(Frame img)
         {
+            img.IsEnabled = false; // Prevent clicking again
             await img.ScaleTo(0.9, 80, Easing.CubicInOut);
             await img.ScaleTo(1, 80, Easing.CubicInOut);
+            img.IsEnabled = true;
         }
 
         private void SetButtonColours(Frame selectedButton)
