@@ -124,7 +124,7 @@ namespace PurePhysicist.Views.Topics.Mathematics
                     new DerivationStep(@"\underline{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }"),
                     new DerivationStep(@"\text{Examples:}", 60, 45),
                     new DerivationStep(@"\text{Square Wave}"),
-                    new DerivationStep( @"f(x) = \frac{h}{2} + \sum_{n=1}^{\infty}[\frac{2 h}{n \pi} \ sin(\frac{n \pi}{2}) \ cos(\frac{2 \pi n}{L} x)]"),
+                    new DerivationStep(@"f(x) = \frac{h}{2} + \sum_{n=1}^{\infty}[\frac{2 h}{n \pi} \ sin(\frac{n \pi}{2}) \ cos(\frac{2 \pi n}{L} x)]"),
                     new DerivationStep(@"\text{Sawtooth Wave}"),
                     new DerivationStep(@"f(x) = \frac{h}{2} - \frac{h}{\pi} \sum_{n=1}^{\infty}[\frac{1}{n} \ sin(\frac{n \pi}{L} x)]"),
                     new DerivationStep(@"\text{Triangle Wave}"),
@@ -149,9 +149,63 @@ namespace PurePhysicist.Views.Topics.Mathematics
             },
             new EquationItem("Vector Cross Product")
             {
-                EquationLatex = @"\vec{u} \times \vec{v} = \begin{bmatrix} \hat{i} & \hat{j} & \hat{k} \\  u_x & u_y & u_z \\ v_x & v_y & v_z \end{bmatrix}"
+                EquationLatex = @"\vec{u} \times \vec{v} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\  u_x & u_y & u_z \\ v_x & v_y & v_z \end{vmatrix}"
             },
-
+            new EquationItem("Gradient of Scalar Field")
+            {
+                EquationLatex = @"\nabla \phi(x,y,z) = (\frac{\partial \phi}{\partial x}, \frac{\partial \phi}{\partial y}, \frac{\partial \phi}{\partial z})"
+            },
+            new EquationItem("Divergence of a Vector Field")
+            {
+                EquationLatex = @"\nabla \cdot \vec{a} = \frac{\partial a_x}{\partial x} + \frac{\partial a_y}{\partial y} + \frac{\partial a_z}{\partial z}"
+            },
+            new EquationItem("Curl of a Vector")
+            {
+                EquationLatex = @"\nabla \times \vec{F} = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ F_x & F_y & F_z \end{vmatrix}"
+            },
+            new EquationItem("Stokes' Theorom")
+            {
+                EquationLatex = @"\int_C \vec{F} \cdot d \vec{r} = \iint_S \nabla \times \vec{F} \cdot d \vec{S}"
+            },
+            new EquationItem("Matrix Inner Product", 160)
+            {
+                EquationLatex = @"\vec{u}\cdot \vec{v} \\ = (u_x \ u_y \ u_z) \cdot \begin{pmatrix} v_x \\ v_y \\ v_z \end{pmatrix} \\ \\ = u_x v_x + u_y v_y + u_z v_z"
+            },
+            new EquationItem("Rotation Matrix (2D)", 100)
+            {
+                EquationLatex = @"\begin{pmatrix} v'_x \\ v'_y \end{pmatrix} = \begin{pmatrix} cos(\theta) & sin(\theta) \\ -sin(\theta) & cos(\theta) \end{pmatrix} \begin{pmatrix} v_x \\ v_y \end{pmatrix}"
+            },
+            new EquationItem("Matrix Transpose", 100)
+            {
+                EquationLatex = @"A \rightarrow A^T  \ \ , \ \ \begin{pmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \end{pmatrix} \rightarrow \begin{pmatrix} a_1 & b_1 \\ a_2 & b_2 \\ a_3 & b_3 \end{pmatrix}"
+            },
+            new EquationItem("Complex Conjugate")
+            {
+                EquationLatex = @"A = \begin{pmatrix} e^{i \theta} & 0 \\ 0 & e^{-i \theta} \end{pmatrix} \rightarrow A^* =  \begin{pmatrix} 0 & e^{-i \theta} \ \\ e^{i \theta} \ & 0 \end{pmatrix}",
+            },
+            new EquationItem("Hermitian Conjugate")
+            {
+                EquationLatex = @"A^{\dagger} = (A^*)^T",
+                DerivationStepsLatex = new List<DerivationStep>
+                {
+                    new DerivationStep(@"\text{Take transpose and complex conjugate}"),
+                    new DerivationStep(@"\text{If }A^{\dagger} = A"),
+                    new DerivationStep(@"A = \begin{pmatrix} 0 & e^{i \theta} \ \\ e^{-i \theta} & 0 \end{pmatrix} \ , \  A^{\dagger} = \begin{pmatrix} 0 & e^{-i \theta} \\ e^{i \theta} \ & 0  \end{pmatrix}"),
+                    new DerivationStep(@"\text{Matrix is Hermitian}"),
+                }
+            },
+            new EquationItem("Eigenvalue Equation")
+            {
+                EquationLatex = @"Ax = \lambda x",
+            },
+            new EquationItem("Fourier Transform (forward)")
+            {
+                EquationLatex = @"F(k) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(t) e^{ikt} \ dt",
+            },
+            new EquationItem("Fourier Transform (back)")
+            {
+                EquationLatex = @"F(t) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(k) e^{ikt} \ dk",
+            },
         };
 
         #endregion Public Fields
