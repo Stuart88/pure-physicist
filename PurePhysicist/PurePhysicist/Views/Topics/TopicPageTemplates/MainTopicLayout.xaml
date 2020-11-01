@@ -31,7 +31,7 @@
         </Style>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid x:Name="ContentGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
@@ -44,9 +44,9 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <StackLayout Grid.Row="0" Grid.ColumnSpan="4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <AbsoluteLayout x:Name="ContentAbsoluteLayout" Grid.Row="0" Grid.ColumnSpan="4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <ContentView x:Name="ContentArea" Content="{Binding ViewContent}" />
-            </StackLayout>
+            </AbsoluteLayout>
 
             <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="#999" Margin="0" />
 

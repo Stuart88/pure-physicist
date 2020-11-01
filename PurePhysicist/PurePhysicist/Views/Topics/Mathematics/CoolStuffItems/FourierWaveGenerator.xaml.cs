@@ -43,7 +43,7 @@ namespace PurePhysicist.Views.Topics.Mathematics.CoolStuffItems
 
         private bool IsTouchingScreen { get; set; }
 
-        private int NValue { get; set; } = 1;
+        private int NValue { get; set; } = 3;
 
         private float Period { get; set; } = 50f;
 
@@ -80,6 +80,7 @@ namespace PurePhysicist.Views.Topics.Mathematics.CoolStuffItems
             PeriodSlider.Value = this.Period;
 
             WaveTypePicker.ItemsSource = this.WaveTypeOptions;
+            WaveTypePicker.SelectedItem = WaveTypeOptions.First(); // Square wave
 
             SetupPoints();
 
@@ -240,9 +241,9 @@ namespace PurePhysicist.Views.Topics.Mathematics.CoolStuffItems
 
                         this.NValue = (int)Math.Round(e.NewValue);
 
-                        if (this.SelectedWaveType == WaveType.Triangle && this.NValue % 2 == 0)
+                        if (this.SelectedWaveType == WaveType.Triangle || this.SelectedWaveType == WaveType.Square && this.NValue % 2 == 0)
                         {
-                            // Triangle wave only works for n = 1, 3, 5, 7, etc.
+                            // Triangle wave and square wave only give value for n = 1, 3, 5, 7, etc.
                             // This if block catches the case where NValue is even number. So... just increment it by 1.
                             this.NValue += 1;
                         }

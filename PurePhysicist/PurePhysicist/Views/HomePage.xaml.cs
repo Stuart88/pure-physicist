@@ -93,15 +93,13 @@ namespace PurePhysicist.Views
                     {
                         MenuPage.SelectedItem = item;
 
-                        await item.Icon.ScaleTo(0.8, 80, Easing.CubicInOut);
-                        await item.Icon.ScaleTo(1, 80, Easing.CubicInOut);
+                        item.Icon.FadeTo(0, 300, Easing.CubicInOut);
+                        await item.Icon.ScaleTo(0, 300, Easing.CubicInOut);
 
                         if (isModal)
                             RootPage.Navigation.PopModalAsync();
 
                         await RootPage.NavigateFromMenu(item.Id, item.TopicColour);
-                        
-                        item.Icon.FadeTo(1);
                     }
                 };
 

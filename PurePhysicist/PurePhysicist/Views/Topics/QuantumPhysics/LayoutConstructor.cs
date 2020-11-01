@@ -11,6 +11,7 @@ namespace PurePhysicist.Views.Topics.QuantumPhysics
 
         public LayoutConstructor(Color themeColour) : base(themeColour)
         {
+            this.Icon = Functions.CreateMenuIcon(MenuItemType.QuantumPhysics, themeColour);
             this.ContentsPage = new ContentsView(themeColour);
             this.EquationsPage = new EquationsViewBase(Constants.TopicTitles.QuantumPhysics, themeColour, Equations.EquationsList);
             this.CoolStuffPage = new CoolStuffView(Constants.TopicTitles.QuantumPhysics, themeColour, CoolStuffContents.Items);

@@ -11,6 +11,7 @@ namespace PurePhysicist.Views.Topics.Electromagnetism
 
         public LayoutConstructor(Color themeColour) : base(themeColour)
         {
+            this.Icon = Functions.CreateMenuIcon(MenuItemType.Electromagnetism, themeColour);
             this.ContentsPage = new ContentsView(themeColour);
             this.EquationsPage = new EquationsViewBase(Constants.TopicTitles.Electromagnetism, themeColour, Equations.EquationsList);
             this.CoolStuffPage = new CoolStuffView(Constants.TopicTitles.Electromagnetism, themeColour, CoolStuffContents.Items);

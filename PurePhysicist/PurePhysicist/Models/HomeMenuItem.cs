@@ -72,30 +72,10 @@ namespace PurePhysicist.Models
                 _ => throw new NotImplementedException(),
             };
 
-            Icon = CreateMenuIcon(iconFile);
+            Icon = Helpers.Functions.CreateMenuIcon(this.Id, this.TopicColour);
         }
 
         #endregion Public Constructors
 
-        #region Private Methods
-
-        private Frame CreateMenuIcon(string filename)
-        {
-            Frame imageFrame = new Frame()
-            {
-                Content = new Image
-                {
-                    Source = Helpers.Functions.CreateImageSource($"Icons.{filename}"),
-                    Style = (Style)Application.Current.Resources["MenuIcon"],
-                    BackgroundColor = this.TopicColour
-                },
-                BackgroundColor = Color.White,
-                BorderColor = Color.Transparent,
-                Padding = 2,
-            };
-            return imageFrame;
-        }
-
-        #endregion Private Methods
     }
 }

@@ -1,4 +1,5 @@
-﻿using PurePhysicist.Models;
+﻿using System;
+using PurePhysicist.Models;
 using System.Collections.Generic;
 using System.Reflection;
 using Xamarin.Forms;
@@ -41,6 +42,35 @@ namespace PurePhysicist.Helpers
                 new HomeMenuItem {Id = MenuItemType.About, Title = "About"}
             };
         }
+
+        public static Frame CreateMenuIcon(MenuItemType id, Color topicColour)
+        {
+            string filename = id switch
+            {
+                MenuItemType.Astrophysics => "astro.png",
+                MenuItemType.ClassicalMechanics => "classical.png",
+                MenuItemType.Electromagnetism => "electromag.png",
+                MenuItemType.FluidDynamics => "fluid.png",
+                MenuItemType.Mathematics => "maths.png",
+                MenuItemType.Thermodynamics => "thermo.png",
+                MenuItemType.QuantumPhysics => "quantum.png",
+                _ => throw new ArgumentOutOfRangeException(nameof(id), id, null)
+            };
+            Frame imageFrame = new Frame()
+            {
+                Content = new Image
+                {
+                    Source = CreateImageSource($"Icons.{filename}"),
+                    Style = (Style)Application.Current.Resources["MenuIcon"],
+                    BackgroundColor = topicColour
+                },
+                BackgroundColor = Color.White,
+                BorderColor = Color.Transparent,
+                Padding = 2,
+            };
+            return imageFrame;
+        }
+
 
         #endregion Public Methods
     }

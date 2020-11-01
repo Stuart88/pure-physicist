@@ -11,6 +11,7 @@ namespace PurePhysicist.Views.Topics.Astrophysics
 
         public LayoutConstructor(Color themeColour) : base(themeColour)
         {
+            this.Icon = Functions.CreateMenuIcon(MenuItemType.Astrophysics, themeColour);
             this.ContentsPage = new ContentsView(themeColour);
             this.EquationsPage = new EquationsViewBase(Constants.TopicTitles.Astrophysics, themeColour, Equations.EquationsList);
             this.CoolStuffPage = new CoolStuffView(Constants.TopicTitles.Astrophysics, themeColour, CoolStuffContents.Items);

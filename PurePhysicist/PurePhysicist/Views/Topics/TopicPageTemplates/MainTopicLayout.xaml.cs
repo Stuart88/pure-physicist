@@ -14,6 +14,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         public Color ThemeColour { get; set; }
         public ContentView ViewContent { get; set; }
+        public Frame ThemeIcon { get; set; }
 
         #endregion Public Properties
         private MainPage RootPage => Application.Current.MainPage as MainPage;
@@ -34,6 +35,14 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
             InitializeComponent();
 
             NavigationPage.SetHasNavigationBar(this, false);
+
+            this.ThemeIcon = constructor.Icon;
+            this.ThemeIcon = constructor.Icon;
+            this.ThemeIcon.Margin = 5;
+            this.ThemeIcon.Scale = 0;
+            this.ThemeIcon.Opacity = 0;
+            AbsoluteLayout.SetLayoutBounds(ThemeIcon, new Rectangle(0, 0, 50, 50));
+            ContentAbsoluteLayout.Children.Add(ThemeIcon);
 
             SetupFromBase(constructor);
 
@@ -107,13 +116,28 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
             StartPhysicistsImagesCycle();
+
+            Device.InvokeOnMainThreadAsync(() =>
+            {
+                this.ThemeIcon.ScaleTo(1, 300);
+                this.ThemeIcon.FadeTo(1, 300);
+            });
         }
+
+
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             StopPhysicistsImageCycle();
+
+            Device.InvokeOnMainThreadAsync(() =>
+            {
+                this.ThemeIcon.Scale = 0;
+                this.ThemeIcon.Opacity = 0;
+            });
         }
 
         #endregion Protected Methods
