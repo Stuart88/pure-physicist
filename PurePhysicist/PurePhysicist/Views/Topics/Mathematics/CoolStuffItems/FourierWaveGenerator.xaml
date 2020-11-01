@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cocosSharp="clr-namespace:CocosSharp;assembly=CocosSharp.Forms"
+             mc:Ignorable="d"
+             x:Class="PurePhysicist.Views.Topics.Mathematics.CoolStuffItems.FourierWaveGenerator">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" >
+
+            <Grid x:Name="PageGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PaperColour}" Padding="0,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Fourier Waves" Style="{StaticResource ContentsTitle}" VerticalTextAlignment="Center"/>
+                <Button Grid.Row="0" Grid.Column="1" x:Name="InfoButton" 
+                        Text="Info" Clicked="InfoButton_Clicked" 
+                        HorizontalOptions="End" Style="{StaticResource BlueButton}"/>
+
+                <cocosSharp:CocosSharpView x:Name="GameView" Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="2" 
+                                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  Text="Here you can manipulate various Fourier series waves" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Green" Style="{StaticResource CoolStuffLabel}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Selected Wave" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
+                <Picker Grid.Row="3" Grid.Column="1" x:Name="WaveTypePicker" 
+                        HorizontalOptions="FillAndExpand"
+                        Title="Select a Wave Type"
+                        FontSize="14"
+                        Margin="5,0,5,0"
+                        ItemDisplayBinding="{Binding Name}"
+                        BackgroundColor="Transparent"
+                        TextColor="Green"
+                        SelectedIndexChanged="WaveTypePicker_SelectedIndexChanged"
+                />
+
+                <Label Grid.Row="4" Grid.Column="0" x:Name="nLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
+                <Slider Grid.Row="4" Grid.Column="1" x:Name="nSlider" AutomationId="NValue" Maximum="50" Minimum="1"  HorizontalOptions="FillAndExpand"
+                        ValueChanged="Slider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green"/>
+
+                <Label Grid.Row="5" Grid.Column="0" x:Name="HeightLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
+                <Slider Grid.Row="5" Grid.Column="1" x:Name="HeightSlider" AutomationId="Height" Maximum="45" Minimum="1"  HorizontalOptions="FillAndExpand"
+                        ValueChanged="Slider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green"/>
+
+                <Label Grid.Row="6" Grid.Column="0" x:Name="PeriodLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="120" />
+                <Slider Grid.Row="6" Grid.Column="1" x:Name="PeriodSlider" AutomationId="Period" Maximum="100" Minimum="25"  HorizontalOptions="FillAndExpand"
+                        ValueChanged="Slider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green"/>
+                
+            </Grid>
+            <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource CoolStuffBackButton}" VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

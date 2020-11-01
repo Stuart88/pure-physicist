@@ -31,13 +31,13 @@ namespace PurePhysicist.Helpers
             {
                 new HomeMenuItem {Id = MenuItemType.Home, Title = "Home"},
                 new HomeMenuItem {Id = MenuItemType.Topics, Title = "Topics", IsPageReference = false},
-                new HomeMenuItem(MenuItemType.Astrophysics, "astro.png") {Title = "Astrophysics", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.Astrophysics, "astro.png") {Title = "Astro", ParentId = MenuItemType.Topics},
                 new HomeMenuItem(MenuItemType.ClassicalMechanics, "classical.png") {Title = "Classical Mechanics", ParentId = MenuItemType.Topics},
-                new HomeMenuItem(MenuItemType.Electromagnetism, "electromag.png") {Title = "Electromagnetism", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.Electromagnetism, "electromag.png") {Title = "Electromag", ParentId = MenuItemType.Topics},
                 new HomeMenuItem(MenuItemType.FluidDynamics, "fluid.png") {Title = "Fluid Dynamics", ParentId = MenuItemType.Topics},
-                new HomeMenuItem(MenuItemType.Mathematics, "maths.png") {Title = "Mathematics", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.Mathematics, "maths.png") {Title = "Maths", ParentId = MenuItemType.Topics},
                 new HomeMenuItem(MenuItemType.QuantumPhysics, "quantum.png") {Title = "Quantum Physics", ParentId = MenuItemType.Topics},
-                new HomeMenuItem(MenuItemType.Thermodynamics, "thermo.png") {Title = "Thermodynamics", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.Thermodynamics, "thermo.png") {Title = "Thermo", ParentId = MenuItemType.Topics},
                 new HomeMenuItem {Id = MenuItemType.About, Title = "About"}
             };
         }

@@ -17,7 +17,6 @@ namespace PurePhysicist
 
         public static double DeviceHeight;
         public static double DeviceWidth;
-        public static bool UseMockDataStore = true;
 
         #endregion Public Fields
 
