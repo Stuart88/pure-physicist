@@ -16,9 +16,18 @@
                       ItemTapped="CoolStuffList_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-
                         <ViewCell>
-                            <Label Padding="10,5,10,5" Margin="0,5,0,5" Style="{StaticResource CoolStuffListItemLabel}" Text="{Binding Label}" />
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame Grid.Column="0" Padding="10,5,10,5" Margin="0,5,0,5" Content="{Binding Icon}" IsVisible="{Binding IconVisible}"/>
+                                <Label Grid.Column="1" Padding="10,5,10,5" Margin="0,5,0,5" Style="{StaticResource CoolStuffListItemLabel}" Text="{Binding Label}" />
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

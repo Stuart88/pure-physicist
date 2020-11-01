@@ -14,7 +14,7 @@ namespace PurePhysicist.Views.Topics.FluidDynamics
             this.Icon = Functions.CreateMenuIcon(MenuItemType.FluidDynamics, themeColour);
             this.ContentsPage = new ContentsView(themeColour);
             this.EquationsPage = new EquationsViewBase(Constants.TopicTitles.FluidDynamics, themeColour, Equations.EquationsList);
-            this.CoolStuffPage = new CoolStuffView(Constants.TopicTitles.FluidDynamics, themeColour, CoolStuffContents.Items);
+            this.CoolStuffPage = new CoolStuffView(Constants.TopicTitles.FluidDynamics, themeColour, CoolStuffContents.GetItems(MenuItemType.FluidDynamics));
         }
 
         #endregion Public Constructors

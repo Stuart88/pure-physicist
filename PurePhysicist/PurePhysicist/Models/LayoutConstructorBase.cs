@@ -16,13 +16,11 @@ namespace PurePhysicist.Models
         public TapGestureRecognizer Button4Tap { get; set; } = new TapGestureRecognizer();
 
         public Color ButtonsColour { get; set; }
-        public Frame Icon { get; set; }
-
         public ContentView ContentsPage { get; set; } = new UnderConstruction();
-
         public ContentView CoolStuffPage { get; set; } = new UnderConstruction();
-
         public ContentView EquationsPage { get; set; } = new UnderConstruction();
+        public Frame Icon { get; set; }
+        public bool IsCoolStuffPage { get; set; } = false;
 
         #endregion Public Properties
 

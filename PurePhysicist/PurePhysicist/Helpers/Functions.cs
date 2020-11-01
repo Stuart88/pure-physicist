@@ -1,5 +1,5 @@
-﻿using System;
-using PurePhysicist.Models;
+﻿using PurePhysicist.Models;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Xamarin.Forms;
@@ -26,23 +26,6 @@ namespace PurePhysicist.Helpers
             return ImageSource.FromResource($"PurePhysicist.Images.{filename}", currentAssembly);
         }
 
-        public static List<HomeMenuItem> GetMenuItems()
-        {
-            return new List<HomeMenuItem>
-            {
-                new HomeMenuItem {Id = MenuItemType.Home, Title = "Home"},
-                new HomeMenuItem {Id = MenuItemType.Topics, Title = "Topics", IsPageReference = false},
-                new HomeMenuItem(MenuItemType.Astrophysics, "astro.png") {Title = "Astro", ParentId = MenuItemType.Topics},
-                new HomeMenuItem(MenuItemType.ClassicalMechanics, "classical.png") {Title = "Classical Mechanics", ParentId = MenuItemType.Topics},
-                new HomeMenuItem(MenuItemType.Electromagnetism, "electromag.png") {Title = "Electromag", ParentId = MenuItemType.Topics},
-                new HomeMenuItem(MenuItemType.FluidDynamics, "fluid.png") {Title = "Fluid Dynamics", ParentId = MenuItemType.Topics},
-                new HomeMenuItem(MenuItemType.Mathematics, "maths.png") {Title = "Maths", ParentId = MenuItemType.Topics},
-                new HomeMenuItem(MenuItemType.QuantumPhysics, "quantum.png") {Title = "Quantum Physics", ParentId = MenuItemType.Topics},
-                new HomeMenuItem(MenuItemType.Thermodynamics, "thermo.png") {Title = "Thermo", ParentId = MenuItemType.Topics},
-                new HomeMenuItem {Id = MenuItemType.About, Title = "About"}
-            };
-        }
-
         public static Frame CreateMenuIcon(MenuItemType id, Color topicColour)
         {
             string filename = id switch
@@ -54,6 +37,7 @@ namespace PurePhysicist.Helpers
                 MenuItemType.Mathematics => "maths.png",
                 MenuItemType.Thermodynamics => "thermo.png",
                 MenuItemType.QuantumPhysics => "quantum.png",
+                MenuItemType.CoolStuff => "cool.png",
                 _ => throw new ArgumentOutOfRangeException(nameof(id), id, null)
             };
             Frame imageFrame = new Frame()
@@ -71,6 +55,42 @@ namespace PurePhysicist.Helpers
             return imageFrame;
         }
 
+        public static List<HomeMenuItem> GetMenuItems()
+        {
+            return new List<HomeMenuItem>
+            {
+                new HomeMenuItem {Id = MenuItemType.Home, Title = "Home"},
+                new HomeMenuItem {Id = MenuItemType.Topics, Title = "Topics", IsPageReference = false},
+                new HomeMenuItem(MenuItemType.Astrophysics) {Title = "Astro", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.ClassicalMechanics) {Title = "Classical Mechanics", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.Electromagnetism) {Title = "Electromag", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.FluidDynamics) {Title = "Fluid Dynamics", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.Mathematics) {Title = "Maths", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.QuantumPhysics) {Title = "Quantum Physics", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.Thermodynamics) {Title = "Thermo", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.CoolStuff) {Title = "Cool Stuff", ParentId = MenuItemType.Topics},
+                new HomeMenuItem {Id = MenuItemType.About, Title = "About"}
+            };
+        }
+
+        public static Color GetThemeColour(MenuItemType id)
+        {
+            return id switch
+            {
+                MenuItemType.Home => throw new NotImplementedException(),
+                MenuItemType.Topics => throw new NotImplementedException(),
+                MenuItemType.Astrophysics => Color.Red,
+                MenuItemType.ClassicalMechanics => Color.Orange,
+                MenuItemType.Electromagnetism => Color.Yellow,
+                MenuItemType.FluidDynamics => Color.LightGreen,
+                MenuItemType.Mathematics => Color.CornflowerBlue,
+                MenuItemType.Thermodynamics => Color.Indigo,
+                MenuItemType.QuantumPhysics => Color.Violet,
+                MenuItemType.CoolStuff => Color.LightGray,
+                MenuItemType.About => throw new NotImplementedException(),
+                _ => throw new NotImplementedException(),
+            };
+        }
 
         #endregion Public Methods
     }

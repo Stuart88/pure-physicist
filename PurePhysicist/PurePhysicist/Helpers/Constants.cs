@@ -19,6 +19,7 @@
             public const string Optics = "Optics";
             public const string QuantumPhysics = "Quantum Physics";
             public const string Thermodynamics = "Thermodynamics";
+            public const string CoolStuff = "Cool Stuff";
 
             #endregion Public Fields
         }

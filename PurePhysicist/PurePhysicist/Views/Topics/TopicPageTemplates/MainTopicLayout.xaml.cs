@@ -47,6 +47,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
             SetupFromBase(constructor);
 
             SetButtonSizes();
+
         }
 
         #endregion Public Constructors
@@ -215,11 +216,22 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
             this.Button3.GestureRecognizers.Add(ConstructorBase.Button3Tap);
             this.Button4.GestureRecognizers.Add(ConstructorBase.Button4Tap);
 
-            this.ViewContent = ConstructorBase.ContentsPage;
+            if (constructor.IsCoolStuffPage)
+            {
+                this.Button2.IsVisible = false;
+                this.Button3.IsVisible = false;
+                this.Button4.IsVisible = false;
+                this.ViewContent = constructor.CoolStuffPage;
+            }
+            else
+            {
+                this.ViewContent = ConstructorBase.ContentsPage;
+
+
+                SetButtonColours(this.Button2); // Button2 is Contents View
+            }
 
             OnPropertyChanged(nameof(this.ViewContent));
-
-            SetButtonColours(this.Button2); // Button2 is Contents View
         }
 
         #endregion Private Methods

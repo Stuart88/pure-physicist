@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PurePhysicist.Helpers;
+using System;
 using Xamarin.Forms;
 
 namespace PurePhysicist.Models
@@ -16,6 +17,7 @@ namespace PurePhysicist.Models
         Thermodynamics,
         QuantumPhysics,
         /***/
+        CoolStuff,
         About
     }
 
@@ -52,27 +54,13 @@ namespace PurePhysicist.Models
         /// Only use this constructor for making menu items with an icon (i.e. submenus)
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="iconFile"></param>
-        public HomeMenuItem(MenuItemType id, string iconFile)
+        public HomeMenuItem(MenuItemType id)
         {
             this.Id = id;
 
-            this.TopicColour = Id switch
-            {
-                MenuItemType.Home => throw new NotImplementedException(),
-                MenuItemType.Topics => throw new NotImplementedException(),
-                MenuItemType.Astrophysics => Color.Red,
-                MenuItemType.ClassicalMechanics => Color.Orange,
-                MenuItemType.Electromagnetism => Color.Yellow,
-                MenuItemType.FluidDynamics => Color.LightGreen,
-                MenuItemType.Mathematics => Color.CornflowerBlue,
-                MenuItemType.Thermodynamics => Color.Indigo,
-                MenuItemType.QuantumPhysics => Color.Violet,
-                MenuItemType.About => throw new NotImplementedException(),
-                _ => throw new NotImplementedException(),
-            };
+            this.TopicColour = Functions.GetThemeColour(this.Id);
 
-            Icon = Helpers.Functions.CreateMenuIcon(this.Id, this.TopicColour);
+            this.Icon = Functions.CreateMenuIcon(this.Id, this.TopicColour);
         }
 
         #endregion Public Constructors

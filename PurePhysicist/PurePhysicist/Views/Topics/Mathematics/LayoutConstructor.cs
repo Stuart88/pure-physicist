@@ -14,7 +14,7 @@ namespace PurePhysicist.Views.Topics.Mathematics
             this.Icon = Functions.CreateMenuIcon(MenuItemType.Mathematics, themeColour);
             this.ContentsPage = new ContentsView(themeColour);
             this.EquationsPage = new EquationsViewBase(Constants.TopicTitles.Mathematics, themeColour, Equations.EquationsList);
-            this.CoolStuffPage = new CoolStuffView(Constants.TopicTitles.Mathematics, themeColour, CoolStuffContents.Items);
+            this.CoolStuffPage = new CoolStuffView(Constants.TopicTitles.Mathematics, themeColour, CoolStuffContents.GetItems(MenuItemType.Mathematics));
         }
 
         #endregion Public Constructors

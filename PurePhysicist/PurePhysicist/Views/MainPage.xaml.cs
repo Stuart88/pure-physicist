@@ -1,5 +1,4 @@
 ﻿using PurePhysicist.Models;
-using PurePhysicist.Views.Topics;
 using PurePhysicist.Views.Topics.TopicPageTemplates;
 using System;
 using System.Collections.Generic;
@@ -41,12 +40,14 @@ namespace PurePhysicist.Views
 
         public async Task NavigateFromMenu(MenuItemType id, Color themeColour)
         {
-            if (!MenuPages.ContainsKey(id))
+            if (!MenuPages.ContainsKey(id) && id != MenuItemType.CoolStuff) // never add CoolStuff. Reset each time so icons are correct...
             {
                 MenuPages.Add(id, new NavigationPage(GetPageFromId(id, themeColour)));
             }
 
-            var newPage = MenuPages[id];
+            var newPage = id == MenuItemType.CoolStuff
+            ? GetPageFromId(id, themeColour)
+            : MenuPages[id];
 
             if (newPage != null && Detail != newPage)
             {
@@ -76,6 +77,7 @@ namespace PurePhysicist.Views
                 MenuItemType.Mathematics => new MainTopicLayout(new Topics.Mathematics.LayoutConstructor(themeColour)),
                 MenuItemType.QuantumPhysics => new MainTopicLayout(new Topics.QuantumPhysics.LayoutConstructor(themeColour)),
                 MenuItemType.Thermodynamics => new MainTopicLayout(new Topics.Thermodynamics.LayoutConstructor(themeColour)),
+                MenuItemType.CoolStuff => new MainTopicLayout(new Topics.AllCoolStuff.LayoutConstructor(themeColour)),
                 MenuItemType.About => throw new NotImplementedException(),
                 _ => throw new NotImplementedException()
             };

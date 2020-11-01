@@ -14,7 +14,7 @@ namespace PurePhysicist.Views.Topics.Thermodynamics
             this.Icon = Functions.CreateMenuIcon(MenuItemType.Thermodynamics, themeColour);
             this.ContentsPage = new ContentsView(themeColour);
             this.EquationsPage = new EquationsViewBase(Constants.TopicTitles.Thermodynamics, themeColour, Equations.EquationsList);
-            this.CoolStuffPage = new CoolStuffView(Constants.TopicTitles.Thermodynamics, themeColour, CoolStuffContents.Items);
+            this.CoolStuffPage = new CoolStuffView(Constants.TopicTitles.Thermodynamics, themeColour, CoolStuffContents.GetItems(MenuItemType.Thermodynamics));
         }
 
         #endregion Public Constructors

@@ -1,5 +1,6 @@
-﻿using System;
-using PurePhysicist.Helpers;
+﻿using PurePhysicist.Helpers;
+using PurePhysicist.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
@@ -14,23 +15,37 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         public ObservableCollection<CoolStuffListItem> ListItems { get; set; }
         public string PageTitle { get; set; }
+        public bool TappedItem { get; set; }
         public Color ThemeColour { get; set; }
 
         #endregion Public Properties
+
+        #region Private Properties
+
+        private bool SingleTopicList { get; set; }
+
+        #endregion Private Properties
 
         #region Public Constructors
 
         public CoolStuffView(string topicTitle, Color themeColour, List<CoolStuffListItem> items)
         {
-            PageTitle = topicTitle;
-            ThemeColour = themeColour;
-            ListItems = new ObservableCollection<CoolStuffListItem>(items);
+            this.PageTitle = topicTitle;
+            this.ThemeColour = themeColour;
+            this.ListItems = new ObservableCollection<CoolStuffListItem>(items);
+            this.SingleTopicList = topicTitle != Constants.TopicTitles.CoolStuff;
 
-            BindingContext = this;
+            foreach (var item in this.ListItems)
+            {
+                item.IconVisible = !this.SingleTopicList;
+            }
+
+            this.BindingContext = this;
             InitializeComponent();
+            OnPropertyChanged(nameof(this.ListItems));
 
             if (this.PageTitle == Constants.TopicTitles.Thermodynamics)
-                this.ContentsTitle.TextColor = Color.White;
+                ContentsTitle.TextColor = Color.White;
         }
 
         #endregion Public Constructors
@@ -39,7 +54,12 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         private async void CoolStuffList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            await Navigation.PushModalAsync(((CoolStuffListItem)e.Item).ModalItem.Value);
+            if (!this.TappedItem)
+            {
+                this.TappedItem = true;
+                await this.Navigation.PushModalAsync(((CoolStuffListItem)e.Item).ModalItem.Value);
+                this.TappedItem = false;
+            }
         }
 
         #endregion Private Methods
@@ -50,18 +70,22 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
         {
             #region Public Properties
 
+            public Frame Icon { get; set; } = new Frame();
+            public bool IconVisible { get; set; }
             public string Label { get; set; }
-
             public Lazy<ContentPage> ModalItem { get; set; }
+            public MenuItemType Topic { get; set; }
 
             #endregion Public Properties
 
             #region Public Constructors
 
-            public CoolStuffListItem(string label, Lazy<ContentPage> modalItem)
+            public CoolStuffListItem(MenuItemType topic, string label, Lazy<ContentPage> modalItem)
             {
-                Label = label;
-                ModalItem = modalItem;
+                this.Icon = Functions.CreateMenuIcon(topic, Functions.GetThemeColour(topic));
+                this.Topic = topic;
+                this.Label = label;
+                this.ModalItem = modalItem;
             }
 
             #endregion Public Constructors
