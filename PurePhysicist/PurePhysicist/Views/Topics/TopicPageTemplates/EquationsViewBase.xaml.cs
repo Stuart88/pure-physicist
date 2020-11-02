@@ -65,11 +65,12 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         private void FilterEquationsList(string query)
         {
-            var queryWords = query.Split(' ', '-').Where(s => !string.IsNullOrEmpty(s));
+            char[] splitChars = {' ', '-', '(', ')'};
+            var queryWords = query.Split(splitChars).Where(s => !string.IsNullOrEmpty(s));
 
             var filtered = (from item in this.Equations
                             let label = item.LabelText.ToLower().Replace("\'", "").Trim()
-                            let labelWords = label.Split(' ', '-').Where(s => !string.IsNullOrEmpty(s))
+                            let labelWords = label.Split(splitChars).Where(s => !string.IsNullOrEmpty(s))
                             where string.IsNullOrEmpty(query)
                                   || labelWords.Intersect(queryWords).Any()
                                   || labelWords.Any(w => queryWords.Any(q => w.StartsWith(q)))
