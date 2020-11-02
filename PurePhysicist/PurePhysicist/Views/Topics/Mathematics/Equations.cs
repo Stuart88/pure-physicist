@@ -96,14 +96,14 @@ namespace PurePhysicist.Views.Topics.Mathematics
                 EquationLatex = @"R_n = \lim_{n \to \infty}\frac{U_{n+1}}{U_n}",
                 DerivationStepsLatex = new List<DerivationStep>
                 {
-                    new DerivationStep(@"R_n < 1 \ \rightarrow \ Convergent Series"),
-                    new DerivationStep(@"R_n > 1 \ \rightarrow \ Divergent Series"),
-                    new DerivationStep(@"R_n = 1 \ \rightarrow \ Unknown"),
+                    new DerivationStep(@"R_n < 1 \ \rightarrow \ \text{Convergent Series}"),
+                    new DerivationStep(@"R_n > 1 \ \rightarrow \ \text{Divergent Series}"),
+                    new DerivationStep(@"R_n = 1 \ \rightarrow \ \text{Unknown}"),
                 }
             },
             new EquationItem("Taylor Series")
             {
-                EquationLatex = @"\sum_{n-0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n"
+                EquationLatex = @"f(x) = \sum_{n-0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n"
             },
             new EquationItem("Euler's Formula")
             {
