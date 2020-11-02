@@ -58,10 +58,10 @@ namespace PurePhysicist.Views.Topics.QuantumPhysics.CoolStuffItems
         {
             InitializeComponent();
 
-            Tunnel = new UniversityPhysics.QuantumMechanics.QuantumTunnel(new Energy(5, EnergyMeasure.eV), new Energy(2, EnergyMeasure.eV), 0.4E-9, UniversityPhysics.UnitsAndConstants.Constants.Common.M_e);
+            Tunnel = new UniversityPhysics.QuantumMechanics.QuantumTunnel(new Energy(4, EnergyMeasure.eV), new Energy(1.5, EnergyMeasure.eV), 0.3E-9, UniversityPhysics.UnitsAndConstants.Constants.Common.M_e);
 
             BarrierVoltageSlider.Value = this.Tunnel.BarrierEnergy.ElectronVolts;
-            BarrierWidthSlider.Value = this.Tunnel.BarrierWidth * 10E9;
+            BarrierWidthSlider.Value = this.Tunnel.BarrierWidth * 1E9;
             ElectronEnergySlider.Value = this.Tunnel.ParticleEnergy.ElectronVolts;
 
             SetupDrawNodes();
@@ -250,7 +250,7 @@ namespace PurePhysicist.Views.Topics.QuantumPhysics.CoolStuffItems
                         break;
 
                     case "Width":
-                        this.Tunnel.BarrierWidth = e.NewValue * 10E-10;
+                        this.Tunnel.BarrierWidth = e.NewValue * 1E-9;
                         break;
 
                     case "Energy":
