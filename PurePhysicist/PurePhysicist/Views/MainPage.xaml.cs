@@ -76,6 +76,7 @@ namespace PurePhysicist.Views
                 MenuItemType.FluidDynamics => new MainTopicLayout(new Topics.FluidDynamics.LayoutConstructor(themeColour)),
                 MenuItemType.Mathematics => new MainTopicLayout(new Topics.Mathematics.LayoutConstructor(themeColour)),
                 MenuItemType.QuantumPhysics => new MainTopicLayout(new Topics.QuantumPhysics.LayoutConstructor(themeColour)),
+                MenuItemType.ModernPhysics => new MainTopicLayout(new Topics.ModernPhysics.LayoutConstructor(themeColour)),
                 MenuItemType.Thermodynamics => new MainTopicLayout(new Topics.Thermodynamics.LayoutConstructor(themeColour)),
                 MenuItemType.CoolStuff => new MainTopicLayout(new Topics.AllCoolStuff.LayoutConstructor(themeColour)),
                 MenuItemType.About => throw new NotImplementedException(),

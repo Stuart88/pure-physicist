@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:extensions="clr-namespace:PurePhysicist.Extensions;assembly=PurePhysicist"
              mc:Ignorable="d"
-             x:Class="PurePhysicist.Views.Topics.Thermodynamics.ContentsView">
+             x:Class="PurePhysicist.Views.Topics.ModernPhysics.ContentsView">
     <ContentView.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
             <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">

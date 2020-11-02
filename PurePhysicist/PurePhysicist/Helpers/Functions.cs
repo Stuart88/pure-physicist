@@ -35,6 +35,7 @@ namespace PurePhysicist.Helpers
                 MenuItemType.Electromagnetism => "electromag.png",
                 MenuItemType.FluidDynamics => "fluid.png",
                 MenuItemType.Mathematics => "maths.png",
+                MenuItemType.ModernPhysics => "circles.png",
                 MenuItemType.Thermodynamics => "thermo.png",
                 MenuItemType.QuantumPhysics => "quantum.png",
                 MenuItemType.CoolStuff => "cool.png",
@@ -67,6 +68,7 @@ namespace PurePhysicist.Helpers
                 new HomeMenuItem(MenuItemType.FluidDynamics) {Title = "Fluid Dynamics", ParentId = MenuItemType.Topics},
                 new HomeMenuItem(MenuItemType.Mathematics) {Title = "Maths", ParentId = MenuItemType.Topics},
                 new HomeMenuItem(MenuItemType.QuantumPhysics) {Title = "Quantum Physics", ParentId = MenuItemType.Topics},
+                new HomeMenuItem(MenuItemType.ModernPhysics) {Title = "Modern Physics", ParentId = MenuItemType.Topics},
                 new HomeMenuItem(MenuItemType.Thermodynamics) {Title = "Thermo", ParentId = MenuItemType.Topics},
                 new HomeMenuItem(MenuItemType.CoolStuff) {Title = "Cool Stuff", ParentId = MenuItemType.Topics},
                 new HomeMenuItem {Id = MenuItemType.About, Title = "About"}
@@ -84,9 +86,10 @@ namespace PurePhysicist.Helpers
                 MenuItemType.Electromagnetism => Color.Yellow,
                 MenuItemType.FluidDynamics => Color.LightGreen,
                 MenuItemType.Mathematics => Color.CornflowerBlue,
-                MenuItemType.Thermodynamics => Color.Indigo,
+                MenuItemType.ModernPhysics => Color.LightPink,
+                MenuItemType.Thermodynamics => Color.MediumPurple,
                 MenuItemType.QuantumPhysics => Color.Violet,
-                MenuItemType.CoolStuff => Color.LightGray,
+                MenuItemType.CoolStuff => Color.White,
                 MenuItemType.About => throw new NotImplementedException(),
                 _ => throw new NotImplementedException(),
             };

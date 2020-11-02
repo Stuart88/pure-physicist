@@ -14,6 +14,7 @@ namespace PurePhysicist.Models
         Electromagnetism,
         FluidDynamics,
         Mathematics,
+        ModernPhysics,
         Thermodynamics,
         QuantumPhysics,
         /***/

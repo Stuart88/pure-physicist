@@ -20,6 +20,7 @@
   <ItemGroup>
     <None Remove="Images\ClassicalMechanics\newton.jpg" />
     <None Remove="Images\Icons\astro.png" />
+    <None Remove="Images\Icons\circles.png" />
     <None Remove="Images\Icons\classical.png" />
     <None Remove="Images\Icons\contents.png" />
     <None Remove="Images\Icons\cool.png" />
@@ -112,6 +113,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\Icons\circles.png" />
     <EmbeddedResource Include="Images\Physicists\abdussalam.jpg" />
     <EmbeddedResource Include="Images\Physicists\ahmedzewali.jpg" />
     <EmbeddedResource Include="Images\Physicists\alberteinstein.jpg" />
@@ -281,6 +283,9 @@
     <Compile Update="Views\Topics\Mathematics\CoolStuffItems\FourierWaveGenerator.xaml.cs">
       <DependentUpon>FourierWaveGenerator.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Topics\ModernPhysics\ContentsView.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
     <Compile Update="Views\Topics\QuantumPhysics\ContentsView.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -293,6 +298,7 @@
     <Folder Include="Images\Astrophysics\" />
     <Folder Include="Images\ClassicalMechanics\" />
     <Folder Include="Views\Topics\FluidDynamics\CoolStuffItems\" />
+    <Folder Include="Views\Topics\ModernPhysics\CoolStuffItems\" />
     <Folder Include="Views\Topics\QuantumPhysics\CoolStuffItems\" />
     <Folder Include="Views\Topics\Thermodynamics\CoolStuffItems\" />
   </ItemGroup>
