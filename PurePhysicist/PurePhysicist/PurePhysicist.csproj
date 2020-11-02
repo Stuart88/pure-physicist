@@ -289,6 +289,9 @@
     <Compile Update="Views\Topics\QuantumPhysics\ContentsView.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
+    <Compile Update="Views\Topics\QuantumPhysics\CoolStuffItems\QuantumTunnel.xaml.cs">
+      <DependentUpon>QuantumTunnel.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Topics\Thermodynamics\ContentsView.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -299,7 +302,6 @@
     <Folder Include="Images\ClassicalMechanics\" />
     <Folder Include="Views\Topics\FluidDynamics\CoolStuffItems\" />
     <Folder Include="Views\Topics\ModernPhysics\CoolStuffItems\" />
-    <Folder Include="Views\Topics\QuantumPhysics\CoolStuffItems\" />
     <Folder Include="Views\Topics\Thermodynamics\CoolStuffItems\" />
   </ItemGroup>
 

@@ -20,6 +20,7 @@ namespace PurePhysicist.Helpers
             new CoolStuffView.CoolStuffListItem(MenuItemType.Electromagnetism, "Velocity Selector", new Lazy<ContentPage>(() => new Views.Topics.Electromagnetism.CoolStuffItems.MassSpectrometer())),
             new CoolStuffView.CoolStuffListItem(MenuItemType.FluidDynamics, "Flow Sim", new Lazy<ContentPage>(() => new Views.Topics.FluidDynamics.CoolStuffItems.FlowSim())),
             new CoolStuffView.CoolStuffListItem(MenuItemType.Mathematics, "Fourier Waves", new Lazy<ContentPage>(() => new Views.Topics.Mathematics.CoolStuffItems.FourierWaveGenerator())),
+            new CoolStuffView.CoolStuffListItem(MenuItemType.QuantumPhysics, "Quantum Tunnelling", new Lazy<ContentPage>(() => new Views.Topics.QuantumPhysics.CoolStuffItems.QuantumTunnel())),
         };
 
         public static List<CoolStuffView.CoolStuffListItem> GetItems(MenuItemType topic)
