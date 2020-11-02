@@ -93,8 +93,9 @@ namespace PurePhysicist.Views
                     {
                         MenuPage.SelectedItem = item;
 
-                        item.Icon.FadeTo(0, 150, Easing.CubicInOut);
-                        await item.Icon.ScaleTo(0, 150, Easing.CubicInOut);
+                        item.Icon.FadeTo(0.5, 100, Easing.CubicInOut);
+                        await item.Icon.ScaleTo(0.6, 50, Easing.CubicInOut);
+                        await item.Icon.ScaleTo(1, 50, Easing.CubicInOut);
 
                         if (isModal)
                             RootPage.Navigation.PopModalAsync();
