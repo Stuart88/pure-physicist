@@ -10,12 +10,21 @@
         <Grid VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
-            <ListView Grid.Row="1"
+            <SearchBar Grid.Row="1" 
+                       Placeholder="Search..."
+                       CancelButtonColor="{StaticResource NavigationPrimary}"
+                       PlaceholderColor="LightGray"
+                       TextColor="{StaticResource NavigationPrimary}"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Medium"
+                       TextChanged="SearchBar_TextChanged" />
+            <ListView Grid.Row="2"
                       x:Name="CoolStuffList"
-                      ItemsSource="{Binding ListItems}"
+                      ItemsSource="{Binding ItemsFiltered}"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="True"
                       ItemTapped="CoolStuffList_ItemTapped">
