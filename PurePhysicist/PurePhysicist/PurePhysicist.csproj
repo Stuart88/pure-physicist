@@ -286,6 +286,9 @@
     <Compile Update="Views\Topics\ModernPhysics\ContentsView.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
+    <Compile Update="Views\Topics\ModernPhysics\CoolStuffItems\ComptonScattering.xaml.cs">
+      <DependentUpon>ComptonScattering.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Topics\QuantumPhysics\ContentsView.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -301,7 +304,6 @@
     <Folder Include="Images\Astrophysics\" />
     <Folder Include="Images\ClassicalMechanics\" />
     <Folder Include="Views\Topics\FluidDynamics\CoolStuffItems\" />
-    <Folder Include="Views\Topics\ModernPhysics\CoolStuffItems\" />
     <Folder Include="Views\Topics\Thermodynamics\CoolStuffItems\" />
   </ItemGroup>
 

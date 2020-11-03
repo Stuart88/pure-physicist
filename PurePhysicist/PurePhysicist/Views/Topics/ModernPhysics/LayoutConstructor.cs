@@ -13,8 +13,8 @@ namespace PurePhysicist.Views.Topics.ModernPhysics
         {
             this.Icon = Functions.CreateMenuIcon(MenuItemType.QuantumPhysics, themeColour);
             this.ContentsPage = new ContentsView(themeColour);
-            this.EquationsPage = new EquationsViewBase(Constants.TopicTitles.QuantumPhysics, themeColour, Equations.EquationsList);
-            this.CoolStuffPage = new CoolStuffView(Constants.TopicTitles.QuantumPhysics, themeColour, CoolStuffContents.GetItems(MenuItemType.QuantumPhysics));
+            this.EquationsPage = new EquationsViewBase(Constants.TopicTitles.ModernPhysics, themeColour, Equations.EquationsList);
+            this.CoolStuffPage = new CoolStuffView(Constants.TopicTitles.ModernPhysics, themeColour, CoolStuffContents.GetItems(MenuItemType.ModernPhysics));
         }
 
         #endregion Public Constructors

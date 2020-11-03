@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cocosSharp="clr-namespace:CocosSharp;assembly=CocosSharp.Forms"
+             mc:Ignorable="d"
+             x:Class="PurePhysicist.Views.Topics.ModernPhysics.CoolStuffItems.ComptonScattering">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand">
+
+            <Grid x:Name="PageGrid" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource PaperColour}" Padding="0,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Compton Scattering" Style="{StaticResource ContentsTitle}" VerticalTextAlignment="Center" />
+                <Button Grid.Row="0" Grid.Column="3" x:Name="InfoButton"
+                        Text="Info" Clicked="InfoButton_Clicked"
+                        HorizontalOptions="Center" Style="{StaticResource BlueButton}" />
+
+                <cocosSharp:CocosSharpView x:Name="GameView" Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="4"
+                                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"  Text="Fire a photon to see it scatter randomly against the electron" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Green" Style="{StaticResource CoolStuffLabel}"/>
+  
+                <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="ResetButton" Text="Reset" Clicked="ResetButton_Clicked" HorizontalOptions="End" Style="{StaticResource BlueButton}" BackgroundColor="DimGray" />
+                <Button Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" x:Name="StartButton" Text="Fire!" Clicked="StartButton_Clicked" HorizontalOptions="Start" Style="{StaticResource BlueButton}" />
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Wavelength: " Style="{StaticResource CoolStuffLabel}"  HorizontalTextAlignment="End"/>
+                <Slider Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" x:Name="WavelengthSlider" Maximum="1" Minimum="0.1"  HorizontalOptions="FillAndExpand"
+                        ValueChanged="WavelengthSlider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green"/>
+
+                <Label Text="Photon λ: " Grid.Row="5" Grid.Column="0" FontAttributes="Bold" TextColor="Green" Style="{StaticResource CoolStuffLabel}" HorizontalTextAlignment="End"/>
+                <Label x:Name="LambdaBeforeLabel" Grid.Row="5" Grid.Column="1"/>
+                <Label Text="Photon λ': " Grid.Row="5" Grid.Column="2" FontAttributes="Bold" TextColor="Green" Style="{StaticResource CoolStuffLabel}" HorizontalTextAlignment="End"/>
+                <Label x:Name="LambdaAfterLabel" Grid.Row="5" Grid.Column="3"/>
+
+                <Label Text="Photon Scatter θ: " Grid.Row="6" Grid.Column="0" FontAttributes="Bold" TextColor="Green" Style="{StaticResource CoolStuffLabel}" HorizontalTextAlignment="End"/>
+                <Label x:Name="PhotonAngleLabel" Grid.Row="6" Grid.Column="1"/>
+                <Label Text="Electron Scatter φ: " Grid.Row="6" Grid.Column="2" FontAttributes="Bold" TextColor="Green" Style="{StaticResource CoolStuffLabel}" HorizontalTextAlignment="End"/>
+                <Label x:Name="ElectronAngleLabel" Grid.Row="6" Grid.Column="3"/>
+
+                <Label Text="Electron V: " Grid.Row="7" Grid.Column="2" FontAttributes="Bold" TextColor="Green" Style="{StaticResource CoolStuffLabel}" HorizontalTextAlignment="End"/>
+                <Label x:Name="ElectronVLabel" Grid.Row="7" Grid.Column="3"/>
+
+            </Grid>
+            <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource CoolStuffBackButton}" VerticalOptions="End" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
