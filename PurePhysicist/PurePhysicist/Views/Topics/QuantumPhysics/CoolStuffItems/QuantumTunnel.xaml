@@ -41,17 +41,17 @@
                 <Label Grid.Row="4" Grid.Column="0" Text="Barrier Voltage" Style="{StaticResource CoolStuffLabel}"  />
                 <Slider Grid.Row="4" Grid.Column="1" x:Name="BarrierVoltageSlider" AutomationId="Voltage" Maximum="5" Minimum="3"  HorizontalOptions="FillAndExpand"
                         ValueChanged="Slider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green"/>
-                <Label Grid.Row="4" Grid.Column="2" x:Name="BarrierVoltageLabel" Style="{StaticResource CoolStuffLabel}" WidthRequest="65"  />
+                <Label Grid.Row="4" Grid.Column="2" x:Name="BarrierVoltageLabel" Style="{StaticResource CoolStuffLabel}" WidthRequest="50"  />
 
                 <Label Grid.Row="5" Grid.Column="0" Text="Barrier Width" Style="{StaticResource CoolStuffLabel}" />
                 <Slider Grid.Row="5" Grid.Column="1" x:Name="BarrierWidthSlider" AutomationId="Width" Maximum="0.5" Minimum="0.2"  HorizontalOptions="FillAndExpand"
                         ValueChanged="Slider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green"/>
-                <Label Grid.Row="5" Grid.Column="2" x:Name="BarrierWidthLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="65"/>
+                <Label Grid.Row="5" Grid.Column="2" x:Name="BarrierWidthLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="50"/>
 
                 <Label Grid.Row="6" Grid.Column="0" Text="Electron Energy" Style="{StaticResource CoolStuffLabel}"  />
                 <Slider Grid.Row="6" Grid.Column="1" x:Name="ElectronEnergySlider" AutomationId="Energy" Maximum="2" Minimum="1"  HorizontalOptions="FillAndExpand"
                         ValueChanged="Slider_ValueChanged" MinimumTrackColor="Green" MaximumTrackColor="Green"/>
-                <Label Grid.Row="6" Grid.Column="2" x:Name="ElectronEnergyLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="65"/>
+                <Label Grid.Row="6" Grid.Column="2" x:Name="ElectronEnergyLabel" Style="{StaticResource CoolStuffLabel}"  WidthRequest="50"/>
                 
             </Grid>
             <Button x:Name="BackButton" Text="Back" Clicked="BackButton_Clicked" Style="{StaticResource CoolStuffBackButton}" VerticalOptions="End"/>

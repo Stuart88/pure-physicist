@@ -31,7 +31,10 @@ namespace PurePhysicist.Views.Topics.QuantumPhysics.CoolStuffItems
 
         #region Public Properties
 
-        private float BarrierWidth => (float)(this.Tunnel.BarrierWidth * 10E9);
+        /// <summary>
+        /// Visual width of barrier on device
+        /// </summary>
+        private float BarrierWidth => (float)(this.Tunnel.BarrierWidth * 10E9) * 3; // scale by 3 just so it's more visually noticable as width changes
 
         #endregion Public Properties
 
