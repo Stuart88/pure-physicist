@@ -39,7 +39,7 @@ namespace PurePhysicist.Views.Topics.QuantumPhysics.CoolStuffItems
 
         private CCColor4B ParticleLineColour { get; set; } = CCColor4B.White;
         private Random Rand { get; set; } = new Random();
-        private double ScaleAfterTunnelling => this.Tunnel.BarrierEnergy.ElectronVolts + this.BarrierWidth;
+        //private double ScaleAfterTunnelling => this.Tunnel.BarrierEnergy.ElectronVolts + this.BarrierWidth;
         private int StandardMoveRate { get; } = 50;
         private UniversityPhysics.QuantumMechanics.QuantumTunnel Tunnel { get; set; }
 
@@ -120,7 +120,7 @@ namespace PurePhysicist.Views.Topics.QuantumPhysics.CoolStuffItems
             double l = this.BarrierWidth;
             xPos = xPos - (float)_viewResolution.Width / 2;
             double h = 10 * this.Tunnel.ParticleEnergy.ElectronVolts;
-            double hAfter = h / ScaleAfterTunnelling; // Not real physics. Just for visualising how hAfter varies with barrier voltage and width
+            double hAfter = h * this.Tunnel.TunnelProbability; // Scales down for smaller wave after barrier
             double k = -Math.Log(hAfter / h) / l;
 
             float yAdjust = (float)h + 2; // for shifting line up a bit from base
@@ -292,7 +292,7 @@ namespace PurePhysicist.Views.Topics.QuantumPhysics.CoolStuffItems
                         //jump to other side and reduce speed
                         p.Node.Color = CCColor3B.Green;
                         p.Node.Position = new CCPoint((float)_viewResolution.Width / 2 + this.BarrierWidth / 2, p.Node.Position.Y);
-                        p.MoveRate = 1 / ScaleAfterTunnelling;
+                        p.MoveRate = this.Tunnel.TunnelProbability < 0.05 ? 0.05 : this.Tunnel.TunnelProbability;
                     }
                     else
                     {
