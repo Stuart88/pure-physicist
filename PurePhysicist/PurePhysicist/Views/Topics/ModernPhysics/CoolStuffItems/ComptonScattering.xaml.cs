@@ -1,8 +1,8 @@
 ﻿using CocosSharp;
-using System;
-using System.Linq;
 using PurePhysicist.Models;
 using PurePhysicist.Views.Topics.TopicPageTemplates;
+using System;
+using System.Linq;
 using UniversityPhysics.Maths;
 using UniversityPhysics.ModernPhysics;
 using Xamarin.Forms;
@@ -25,15 +25,18 @@ namespace PurePhysicist.Views.Topics.ModernPhysics.CoolStuffItems
 
         private CCDrawNode ElectronNode { get; set; } = new CCDrawNode();
         private CCPoint ElectronStartPos { get; set; } = new CCPoint(0, 0);
+
+        /// <summary>
+        /// In nanometres
+        /// </summary>
+        private double InitialWavelength { get; set; } = 0.24;
+
         private CCDrawNode PhotonNode { get; set; } = new CCDrawNode();
         private float PhotonSpeed { get; set; } = 1;
 
         private Random Rand { get; set; } = new Random();
 
-        /// <summary>
-        /// In nanometres
-        /// </summary>
-        private double InitialWavelength { get; set; } = 0.24; //nm
+        //nm
 
         private ComptonScatter Scatter { get; set; }
 
@@ -170,7 +173,7 @@ namespace PurePhysicist.Views.Topics.ModernPhysics.CoolStuffItems
             if (_isRunning)
                 ResetPositions();
 
-            ScatterResult = Scatter.PerformScatter(Rand.NextDouble() * 2 * Math.PI); // Random angle
+            ScatterResult = Scatter.PerformScatter(MathsHelpers.ToRadians(Rand.Next(-180, 181)));
 
             UpdateLabels();
 
@@ -208,7 +211,6 @@ namespace PurePhysicist.Views.Topics.ModernPhysics.CoolStuffItems
 
                     ElectronNode.Position = new CCPoint(ElectronNode.Position.X + (float)ScatterResult.ElectronVelocity.X / 3E7f, ElectronNode.Position.Y + (float)ScatterResult.ElectronVelocity.Y / 3E7f);
                 }
-
             }
         }
 
@@ -216,22 +218,13 @@ namespace PurePhysicist.Views.Topics.ModernPhysics.CoolStuffItems
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                LambdaBeforeLabel.Text = $"{Scatter.IncidentPhotonWavelength*1E9:G3}nm";
-                LambdaAfterLabel.Text = $"{ScatterResult.ResultantPhotonWavelength*1E9:G3}nm";
+                LambdaBeforeLabel.Text = $"{Scatter.IncidentPhotonWavelength * 1E9:G3}nm";
+                LambdaAfterLabel.Text = $"{ScatterResult.ResultantPhotonWavelength * 1E9:G3}nm";
                 PhotonAngleLabel.Text = $"{MathsHelpers.ToDegrees(ScatterResult.ResultantPhotonAngle).DecimalPoints(0)}°";
-                ElectronAngleLabel.Text = $"{MathsHelpers.ToDegrees(ScatterResult.ElectronAngle).DecimalPoints(0)}°";
+                ElectronAngleLabel.Text = $"{-MathsHelpers.ToDegrees(ScatterResult.ElectronAngle).DecimalPoints(0)}°";
                 ElectronVLabel.Text = $"{(ScatterResult.ElectronVelocity.Abs() / 3E8):G3}c";
             });
         }
-
-        private bool WithinGameArea(CCPoint p)
-        {
-            return p.Y >= 0 &&
-                   p.X <= _viewResolution.Width &&
-                   p.Y <= _viewResolution.Height;
-        }
-
-        #endregion Private Methods
 
         private void WavelengthSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
@@ -246,5 +239,14 @@ namespace PurePhysicist.Views.Topics.ModernPhysics.CoolStuffItems
                 ElectronVLabel.Text = "";
             });
         }
+
+        private bool WithinGameArea(CCPoint p)
+        {
+            return p.Y >= 0 &&
+                   p.X <= _viewResolution.Width &&
+                   p.Y <= _viewResolution.Height;
+        }
+
+        #endregion Private Methods
     }
 }
