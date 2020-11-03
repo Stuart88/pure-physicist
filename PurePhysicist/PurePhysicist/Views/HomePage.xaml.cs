@@ -81,7 +81,9 @@ namespace PurePhysicist.Views
                 {
                     Text = item.Title.Replace(" ", "\n"),
                     HorizontalTextAlignment = TextAlignment.Center,
+                    VerticalTextAlignment = TextAlignment.Start,
                     FontAttributes = FontAttributes.Bold,
+                    FontSize = 15,
                     HeightRequest = 40
                 });
 
