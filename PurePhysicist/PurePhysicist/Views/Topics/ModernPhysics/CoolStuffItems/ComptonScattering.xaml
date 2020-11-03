@@ -51,9 +51,9 @@
                 <Label Text="Photon λ': " Grid.Row="5" Grid.Column="2" FontAttributes="Bold" TextColor="Green" Style="{StaticResource CoolStuffLabel}" HorizontalTextAlignment="End"/>
                 <Label x:Name="LambdaAfterLabel" Grid.Row="5" Grid.Column="3"/>
 
-                <Label Text="Photon Scatter θ: " Grid.Row="6" Grid.Column="0" FontAttributes="Bold" TextColor="Green" Style="{StaticResource CoolStuffLabel}" HorizontalTextAlignment="End"/>
+                <Label Text="Photon θ: " Grid.Row="6" Grid.Column="0" FontAttributes="Bold" TextColor="Green" Style="{StaticResource CoolStuffLabel}" HorizontalTextAlignment="End"/>
                 <Label x:Name="PhotonAngleLabel" Grid.Row="6" Grid.Column="1"/>
-                <Label Text="Electron Scatter φ: " Grid.Row="6" Grid.Column="2" FontAttributes="Bold" TextColor="Green" Style="{StaticResource CoolStuffLabel}" HorizontalTextAlignment="End"/>
+                <Label Text="Electron φ: " Grid.Row="6" Grid.Column="2" FontAttributes="Bold" TextColor="Green" Style="{StaticResource CoolStuffLabel}" HorizontalTextAlignment="End"/>
                 <Label x:Name="ElectronAngleLabel" Grid.Row="6" Grid.Column="3"/>
 
                 <Label Text="Electron V: " Grid.Row="7" Grid.Column="2" FontAttributes="Bold" TextColor="Green" Style="{StaticResource CoolStuffLabel}" HorizontalTextAlignment="End"/>
