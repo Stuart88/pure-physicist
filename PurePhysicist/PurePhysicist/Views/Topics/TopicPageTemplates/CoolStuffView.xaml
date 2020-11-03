@@ -7,9 +7,14 @@
              xmlns:topicsPageTemplates="clr-namespace:PurePhysicist.Views.Topics.TopicPageTemplates;assembly=PurePhysicist"
              x:Class="PurePhysicist.Views.Topics.TopicPageTemplates.CoolStuffView">
     <ContentView.Content>
-        <StackLayout>
-            <Label x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
-            <ListView x:Name="CoolStuffList"
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+            <ListView Grid.Row="1"
+                      x:Name="CoolStuffList"
                       ItemsSource="{Binding ListItems}"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="True"
@@ -32,6 +37,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+        </Grid>
     </ContentView.Content>
 </ContentView>
