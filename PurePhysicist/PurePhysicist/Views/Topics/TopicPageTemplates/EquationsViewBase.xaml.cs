@@ -65,11 +65,12 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         private void FilterEquationsList(string query)
         {
+            query = query.MakeNicerQueryString();
             char[] splitChars = {' ', '-', '(', ')'};
             var queryWords = query.Split(splitChars).Where(s => !string.IsNullOrEmpty(s));
 
             var filtered = (from item in this.Equations
-                            let label = item.LabelText.ToLower().Replace("\'", "").Trim()
+                            let label = item.LabelText.ToLower().MakeNicerQueryString().Trim()
                             let labelWords = label.Split(splitChars).Where(s => !string.IsNullOrEmpty(s))
                             where string.IsNullOrEmpty(query)
                                   || labelWords.Intersect(queryWords).Any()
@@ -84,10 +85,10 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
             EquationsFiltered = new ObservableCollection<EquationItem>(filtered);
             OnPropertyChanged(nameof(EquationsFiltered));
         }
-
+        
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string query = ((SearchBar)sender).Text.ToLower().Replace("\'", "").Trim(); //remove apostrophes for lazy searching
+            string query = ((SearchBar)sender).Text.ToLower().Trim(); //remove apostrophes for lazy searching
 
             this.FilterEquationsList(query);
         }

@@ -166,7 +166,7 @@ namespace PurePhysicist.Views.Topics.QuantumPhysics.CoolStuffItems
         private async void InfoButton_Clicked(object sender, EventArgs e)
         {
             InfoButton.IsEnabled = false;
-            EquationItem equation = Equations.EquationsList.FirstOrDefault(x => x.LabelText == "Fourier Wave Equation");
+            EquationItem equation = Equations.EquationsList.FirstOrDefault(x => x.LabelText == "Quantum Tunnelling Probability");
             await this.Navigation.PushModalAsync(new DerivationViewer(equation, "demo"));
             InfoButton.IsEnabled = true;
         }

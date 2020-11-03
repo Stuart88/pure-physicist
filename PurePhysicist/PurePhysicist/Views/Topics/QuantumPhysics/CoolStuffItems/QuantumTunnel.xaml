@@ -26,7 +26,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Quantum Tunnel" Style="{StaticResource ContentsTitle}" VerticalTextAlignment="Center"/>
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Quantum Tunnelling" Style="{StaticResource ContentsTitle}" VerticalTextAlignment="Center"/>
                 <Button Grid.Row="0" Grid.Column="2" x:Name="InfoButton" 
                         Text="Info" Clicked="InfoButton_Clicked" 
                         HorizontalOptions="End" Style="{StaticResource BlueButton}"/>

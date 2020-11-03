@@ -95,6 +95,17 @@ namespace PurePhysicist.Helpers
             };
         }
 
+        /// <summary>
+        /// Replaces unusual or similar characters in string such that querying can be done in a more generalised way
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static string MakeNicerQueryString(this string s)
+        {
+            return s.Replace("ö", "o")
+                .Replace("\'", "");
+        }
+
         #endregion Public Methods
     }
 }
