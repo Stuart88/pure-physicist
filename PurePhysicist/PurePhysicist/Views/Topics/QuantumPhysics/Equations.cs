@@ -9,9 +9,13 @@ namespace PurePhysicist.Views.Topics.QuantumPhysics
 
         public static readonly List<EquationItem> EquationsList = new List<EquationItem>
         {
-            new EquationItem("Heisenberg Uncertainty Principle")
+            new EquationItem("Heisenberg Uncertainty Principle\n(Position, Momentum)")
             {
-                EquationLatex = @"\sigma_x \sigma_p \geq \frac{\hbar}{2}"
+                EquationLatex = @"\Delta x \Delta p_x \geq \frac{\hbar}{2}"
+            },
+            new EquationItem("Heisenberg Uncertainty Principle\n(Energy, Time)")
+            {
+                EquationLatex = @"\Delta t \Delta E \geq \geq \frac{\hbar}{2}"
             },
             new EquationItem("Probability Density")
             {
