@@ -135,7 +135,21 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
             var w = _wheel.Position;
             var dForce = new Vector(d.X, d.Y);
 
-            _centre.AddForce_OffCentre(dForce, new Vector(l.X - w.X, l.Y - w.Y));
+            Vector t = dForce.Cross(new Vector(l.X - w.X, l.Y - w.Y)); // torque applied =  F x d
+
+            Vector rotationalAcceleration = new Vector(0, 0, t.Z / _centre.MomentOfInertia.Z); // T = Iw (x, y set to 0 here because rotation is known to only be about Z)
+
+            _centre.AngularVelocity += (rotationalAcceleration);
+
+            if (_centre.AngularVelocity.Z > 10)
+            {
+                _centre.AngularVelocity.Z = 10; // rotational speed limits!
+            }
+
+            if (_centre.AngularVelocity.Z < -10)
+            {
+                _centre.AngularVelocity.Z = -10;
+            }
         }
 
         private void RedrawGameScene()
@@ -176,16 +190,6 @@ namespace PurePhysicist.Views.Topics.ClassicalMechanics.CoolStuffItems
             _centre.AddRotationalKineticEnergy(new Vector(0, 0, -energyToRemove));
 
             _centre.Move(timeInSeconds);
-
-            if (_centre.AngularVelocity.Z > 10)
-            {
-                _centre.AngularVelocity.Z = 10; // rotational speed limits!
-            }
-
-            if (_centre.AngularVelocity.Z < -10)
-            {
-                _centre.AngularVelocity.Z = -10;
-            }
 
             _wheel.Rotation = (float)_centre.RotationAsDegreesPerSecond().Z;
 
