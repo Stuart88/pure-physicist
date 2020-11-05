@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PurePhysicist.Web", "PurePh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PurePhysicist", "PurePhysicist\PurePhysicist\PurePhysicist.csproj", "{517626F9-300A-4E95-AA4F-2C244B6F5110}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniversityPhysics", "..\..\..\C#\University Physics\University Physics\UniversityPhysics.csproj", "{2B1CE1EF-14C3-43B8-9F2C-9AC8B932EFD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniversityPhysics", "..\..\..\C#\University Physics\University Physics\UniversityPhysics.csproj", "{584ED052-4F14-4628-A056-713B15C8ACD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
