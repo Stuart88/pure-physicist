@@ -308,6 +308,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\C#\University Physics\University Physics\UniversityPhysics.csproj" />
+    <ProjectReference Include="..\..\..\..\C#\University Physics\University Physics\UniversityPhysics.csproj" />
   </ItemGroup>
 </Project>
