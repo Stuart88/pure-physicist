@@ -26,12 +26,24 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         private bool SingleTopicList { get; set; }
 
+        /// <summary>
+        /// Set to true to bypass 'Item clicked' event for on 'coming soon' item in empty list
+        /// </summary>
+        private bool ListEmpty { get; set; }
+
         #endregion Private Properties
 
         #region Public Constructors
 
         public CoolStuffView(string topicTitle, Color themeColour, List<CoolStuffListItem> items)
         {
+            if (items.Count == 0)
+            {
+                items.Add(new CoolStuffListItem(MenuItemType.CoolStuff, "More Coming Soon!", null));
+                ListEmpty = true;
+            }
+
+
             this.PageTitle = topicTitle;
             this.ThemeColour = themeColour;
             this.ListItems = new List<CoolStuffListItem>(items);
@@ -58,7 +70,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         private async void CoolStuffList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            if (!this.TappedItem)
+            if (!this.TappedItem && !this.ListEmpty)
             {
                 this.TappedItem = true;
                 await this.Navigation.PushModalAsync(((CoolStuffListItem)e.Item).ModalItem.Value);
@@ -68,6 +80,9 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
         private void FilterEquationsList(string query)
         {
+            if (this.ListEmpty)
+                return;
+
             query = query.MakeNicerQueryString();
             char[] splitChars = { ' ', '-', '(', ')' };
             var queryWords = query.Split(splitChars).Where(s => !string.IsNullOrEmpty(s));
