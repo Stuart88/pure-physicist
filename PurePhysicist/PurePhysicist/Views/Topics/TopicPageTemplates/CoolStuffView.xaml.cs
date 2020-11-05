@@ -58,6 +58,7 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
 
             this.BindingContext = this;
             InitializeComponent();
+
             OnPropertyChanged(nameof(this.ListItems));
 
             if (this.PageTitle == Constants.TopicTitles.Thermodynamics)

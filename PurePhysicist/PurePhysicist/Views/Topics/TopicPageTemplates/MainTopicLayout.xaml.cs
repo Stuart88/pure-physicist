@@ -1,4 +1,5 @@
-﻿using PurePhysicist.Models;
+﻿using PurePhysicist.Helpers;
+using PurePhysicist.Models;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -184,7 +185,8 @@ namespace PurePhysicist.Views.Topics.TopicPageTemplates
         /// </summary>
         private void SetButtonSizes()
         {
-            double size = App.DeviceWidth / 4d;
+            double fullWidth = App.DeviceWidth > 360 ? 360 : App.DeviceWidth;
+            double size = fullWidth / 4d;
 
             this.Button1.WidthRequest = size;
             this.Button2.WidthRequest = size;

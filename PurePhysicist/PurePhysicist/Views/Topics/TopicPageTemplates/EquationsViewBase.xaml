@@ -9,7 +9,7 @@
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.Topics.TopicPageTemplates.EquationsViewBase">
     <ContentView.Content>
-        <Grid VerticalOptions="FillAndExpand">
+        <Grid x:Name="PageArea" VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>

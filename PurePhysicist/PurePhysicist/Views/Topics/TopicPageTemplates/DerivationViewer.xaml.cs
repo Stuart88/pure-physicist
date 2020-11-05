@@ -1,4 +1,5 @@
 ﻿using CSharpMath.Forms;
+using PurePhysicist.Helpers;
 using PurePhysicist.Models;
 using PurePhysicist.Views.Topics.ClassicalMechanics;
 using System;

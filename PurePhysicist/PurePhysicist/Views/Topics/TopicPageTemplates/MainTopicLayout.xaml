@@ -16,6 +16,7 @@
         <Style TargetType="Frame" x:Key="ButtonFrame">
             <Setter Property="Padding" Value="0" />
             <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="Center" />
         </Style>
         <Style TargetType="Image" x:Key="FooterButtonImage">
             <Setter Property="Margin" Value="0" />

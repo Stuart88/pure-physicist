@@ -71,7 +71,7 @@ namespace PurePhysicist.Helpers
                 new HomeMenuItem(MenuItemType.ModernPhysics) {Title = "Modern Physics", ParentId = MenuItemType.Topics},
                 new HomeMenuItem(MenuItemType.Thermodynamics) {Title = "Thermo", ParentId = MenuItemType.Topics},
                 new HomeMenuItem(MenuItemType.CoolStuff) {Title = "Cool Stuff", ParentId = MenuItemType.Topics},
-                new HomeMenuItem {Id = MenuItemType.About, Title = "About"}
+                //new HomeMenuItem {Id = MenuItemType.About, Title = "About"}
             };
         }
 
@@ -107,5 +107,6 @@ namespace PurePhysicist.Helpers
         }
 
         #endregion Public Methods
+
     }
 }

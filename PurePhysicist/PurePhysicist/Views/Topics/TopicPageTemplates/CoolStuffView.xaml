@@ -7,7 +7,7 @@
              xmlns:topicsPageTemplates="clr-namespace:PurePhysicist.Views.Topics.TopicPageTemplates;assembly=PurePhysicist"
              x:Class="PurePhysicist.Views.Topics.TopicPageTemplates.CoolStuffView">
     <ContentView.Content>
-        <Grid VerticalOptions="FillAndExpand">
+        <Grid x:Name="PageArea" VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
