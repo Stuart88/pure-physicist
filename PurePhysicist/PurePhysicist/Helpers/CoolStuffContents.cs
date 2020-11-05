@@ -12,7 +12,7 @@ namespace PurePhysicist.Helpers
     {
         private static readonly List<CoolStuffView.CoolStuffListItem> Items = new List<CoolStuffView.CoolStuffListItem>
         {
-            new CoolStuffView.CoolStuffListItem(MenuItemType.Astrophysics, "Orbit Sim", new Lazy<ContentPage>(() => new Views.Topics.Astrophysics.CoolStuffItems.OrbitSim())),
+            //new CoolStuffView.CoolStuffListItem(MenuItemType.Astrophysics, "Orbit Sim", new Lazy<ContentPage>(() => new Views.Topics.Astrophysics.CoolStuffItems.OrbitSim())),
             new CoolStuffView.CoolStuffListItem(MenuItemType.ClassicalMechanics, "Simple Pendulum", new Lazy<ContentPage>(() => new Views.Topics.ClassicalMechanics.CoolStuffItems.SimplePendulum())),
             new CoolStuffView.CoolStuffListItem(MenuItemType.ClassicalMechanics, "Centre of Mass",new Lazy<ContentPage>(() => new Views.Topics.ClassicalMechanics.CoolStuffItems.CentreOfGravity())),
             new CoolStuffView.CoolStuffListItem(MenuItemType.ClassicalMechanics, "Acceleration and Velocity",new Lazy<ContentPage>(() => new Views.Topics.ClassicalMechanics.CoolStuffItems.AccelerationAndVelocity())),
