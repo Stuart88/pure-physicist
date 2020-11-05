@@ -7,15 +7,40 @@
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.Topics.Mathematics.ContentsView">
     <ContentView.Content>
-        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label  Grid.Row="0" x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+            <ScrollView  Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
 
-                <Label x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+                    <ContentView x:Name="PhysicistView" />
 
-                <ContentView x:Name="PhysicistView" />
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
 
-                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
-            </StackLayout>
-        </StackLayout>
+                    <Label Style="{StaticResource MainContentsViewLabel}" BackgroundColor="{StaticResource PaperColour}">
+
+Mathematics sets the foundation for all areas of physics.
+
+Topics include:
+
+&#x2022; Multivariable Calculus
+&#x2022; Vector Calculus
+&#x2022; Differential Equations
+&#x2022; Equations of Waves
+&#x2022; Fourier Analysis
+&#x2022; Linear Algebra
+&#x2022; Eigenvalue Equations
+
+Advanced Topics Include:
+
+&#x2022; Set Theory
+&#x2022; Topology
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
     </ContentView.Content>
 </ContentView>

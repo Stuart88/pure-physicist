@@ -7,15 +7,40 @@
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.Topics.Astrophysics.ContentsView">
     <ContentView.Content>
-        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label  Grid.Row="0" x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+            <ScrollView  Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
 
-            <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
-                <Label x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+                <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
 
-                <ContentView x:Name="PhysicistView" />
+                    <ContentView x:Name="PhysicistView" />
 
-                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
-            </StackLayout>
-        </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
+
+                    <Label Style="{StaticResource MainContentsViewLabel}" BackgroundColor="{StaticResource PaperColour}">
+Astrophysics is the area of physics focused exclusively on the rigorous understanding and description of stars and other celestial bodies.
+
+Topics include:
+
+&#x2022; Equations of Gravitation
+&#x2022; Kepler's Laws
+&#x2022; Blackbody Radiation
+&#x2022; Lagrangian Points of Gravitation
+&#x2022; Stellar Lifecycle and Evolution
+&#x2022; Dark Matter
+&#x2022; Cosmology
+&#x2022; Gas Dynamics in Astrophysics
+
+Advanced Topics Include:
+
+&#x2022; Gravitational Waves
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
     </ContentView.Content>
 </ContentView>

@@ -76,6 +76,13 @@
                 <Setter Property="Padding" Value="5,10,5,10" />
                 <Setter Property="Margin" Value="0" />
             </Style>
+            <Style TargetType="Label" x:Key="MainContentsViewLabel">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="TextColor" Value="#444" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="Padding" Value="20, 30, 20, 40" />
+            </Style>
+            
 
             <!-- Equations-->
             <Style TargetType="Label" x:Key="EquationLabel">
@@ -120,6 +127,7 @@
                 <Setter Property="Margin" Value="0" />
                 <Setter Property="WidthRequest" Value="250" />
                 <Setter Property="HeightRequest" Value="250" />
+                <Setter Property="MinimumHeightRequest" Value="400" />
             </Style>
             <Style TargetType="Label" x:Key="NameText">
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />

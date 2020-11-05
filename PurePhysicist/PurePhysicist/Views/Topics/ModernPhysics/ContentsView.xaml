@@ -7,15 +7,42 @@
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.Topics.ModernPhysics.ContentsView">
     <ContentView.Content>
-        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label  Grid.Row="0" x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+            <ScrollView  Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
 
-                <Label x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+                    <ContentView x:Name="PhysicistView" />
 
-                <ContentView x:Name="PhysicistView" />
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
 
-                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
-            </StackLayout>
-        </StackLayout>
+                    <Label Style="{StaticResource MainContentsViewLabel}" BackgroundColor="{StaticResource PaperColour}">
+
+Modern Physics has set the basis for much of what we take for granted in the modern world. Starting with the ideas of Planck and Einstein in the early 1900s, society advanced faster than ever before.
+
+Topics include:
+
+&#x2022; Special Relativity
+&#x2022; The Photoelectric Effect
+&#x2022; Wave-Particle Duality
+&#x2022; Wave-Particle Interaction
+&#x2022; Fermi-Dirac Statistics
+&#x2022; Bose-Einstein Statistics
+&#x2022; Semiconductor Physics
+&#x2022; Nuclear Physics
+&#x2022; Radioactivity
+
+Advanced Topics Include:
+
+&#x2022; General Relativity
+&#x2022; Superconductivity
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
     </ContentView.Content>
 </ContentView>

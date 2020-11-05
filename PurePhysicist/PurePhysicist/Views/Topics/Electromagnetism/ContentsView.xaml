@@ -7,15 +7,40 @@
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.Topics.Electromagnetism.ContentsView">
     <ContentView.Content>
-        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-                <Label x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+            <Label Grid.Row="0" x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+            <ScrollView Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
 
-                <ContentView x:Name="PhysicistView" />
+                    <ContentView x:Name="PhysicistView" />
 
-                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
-            </StackLayout>
-        </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
+
+                    <Label Style="{StaticResource MainContentsViewLabel}" BackgroundColor="{StaticResource PaperColour}">
+
+Electromagnetism covers all major discoveries relating to electric and magnetic forces and their interaction with the world.
+
+Topics include:
+
+&#x2022; Electric Charge
+&#x2022; Gauss' Law
+&#x2022; Electric Potential
+&#x2022; Capacitance
+&#x2022; Current, Resistance
+&#x2022; Electromotive Force
+&#x2022; Direct and Alternating Current
+&#x2022; Magnetic Fields and Forces
+&#x2022; Electromagnetic Induction
+&#x2022; Electromagnetic Waves
+&#x2022; The Maxwell Equations
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
     </ContentView.Content>
 </ContentView>

@@ -7,15 +7,40 @@
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.Topics.QuantumPhysics.ContentsView">
     <ContentView.Content>
-        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label  Grid.Row="0" x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+            <ScrollView  Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
 
-                <Label x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+                    <ContentView x:Name="PhysicistView" />
 
-                <ContentView x:Name="PhysicistView" />
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
 
-                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
-            </StackLayout>
-        </StackLayout>
+                    <Label Style="{StaticResource MainContentsViewLabel}" BackgroundColor="{StaticResource PaperColour}">
+
+Quantum Physics describes the world at its most fundamental level, where all measurable physical entities can be quantised into discrete numerical values. However, the wave nature of matter means there is an inherent uncertainty in every system.
+
+Topics include:
+
+&#x2022; Wave Functions
+&#x2022; Probability and Uncertainty
+&#x2022; Particle in a Box
+&#x2022; Potential Energy Wells
+&#x2022; The Schrödinger Equation
+&#x2022; The Quantum Harmonic Oscillator
+&#x2022; The Hydrogen Atom
+
+Advanced Topics Include:
+
+&#x2022; Quantum Tunnelling
+&#x2022; Quantum Computing
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
     </ContentView.Content>
 </ContentView>

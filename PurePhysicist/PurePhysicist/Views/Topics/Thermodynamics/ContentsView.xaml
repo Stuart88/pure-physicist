@@ -7,15 +7,35 @@
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.Topics.Thermodynamics.ContentsView">
     <ContentView.Content>
-        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+            <ScrollView Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
 
-                <Label x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+                    <ContentView x:Name="PhysicistView" />
 
-                <ContentView x:Name="PhysicistView" />
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
 
-                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
-            </StackLayout>
-        </StackLayout>
+                    <Label Style="{StaticResource MainContentsViewLabel}" BackgroundColor="{StaticResource PaperColour}">
+
+Thermodynamics is the area of physics used to describe heat energy and temperature, and how these properties relate to the physical world.
+
+Topics include:
+
+&#x2022; Heat and Temperature
+&#x2022; Equations of State
+&#x2022; Temperature, Pressure and Volume
+&#x2022; Kinetic Energy of Gases
+&#x2022; The Laws of Thermodynamics
+&#x2022; Heat Engines and the Carnot Cycle
+&#x2022; Entropy
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
     </ContentView.Content>
 </ContentView>

@@ -7,15 +7,50 @@
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.Topics.FluidDynamics.ContentsView">
     <ContentView.Content>
-        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+            <ScrollView Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
 
-                <Label x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
 
-                <ContentView x:Name="PhysicistView" />
+                    <ContentView x:Name="PhysicistView" />
 
-                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
-            </StackLayout>
-        </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
+
+                    <Label Style="{StaticResource MainContentsViewLabel}" BackgroundColor="{StaticResource PaperColour}">
+
+ Fluid Dynamics is the area of physics where continuum motion is mathematically described. 'Continuum' motion is that of a large set of connected particles which due to sheer number cannot be described using independent equations for each.
+
+ Topics include:
+
+ &#x2022; Pathlines, Streamlines and Streaklines
+ &#x2022; The Material Derivative
+ &#x2022; The Continuity Equation
+ &#x2022; Stream Functions
+ &#x2022; Velocity Potential and Velocity Fields
+ &#x2022; Fluid Vorticity
+ &#x2022; The Navier-Stokes Equation
+ &#x2022; The Kutta-Joukowski Lift Theorem
+ &#x2022; The Reynolds Number
+
+ Advanced Topics Include:
+
+ &#x2022; Conformal Mapping
+ &#x2022; Flow on a Rotating Body
+ &#x2022; Planetary Fluid Dynamics
+ &#x2022; Internal Gravity Waves
+ &#x2022; The Shallow Water Equations
+ &#x2022; Geostrophic Flow
+ &#x2022; Rossby Waves
+ &#x2022; Wind Driven Ocean Circulation
+ &#x2022; Mathematics of Turbulence
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
     </ContentView.Content>
 </ContentView>

@@ -7,15 +7,44 @@
              mc:Ignorable="d"
              x:Class="PurePhysicist.Views.Topics.ClassicalMechanics.ContentsView">
     <ContentView.Content>
-        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-            <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
 
-                <Label x:Name="ContentsTitle" Text="{Binding PageTitle}" Style="{StaticResource ContentsTitle}" BackgroundColor="{Binding ThemeColour}" />
+            <ScrollView Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="{StaticResource ContentsViewBackgroundColour}">
 
-                <ContentView x:Name="PhysicistView" />
+                    <ContentView x:Name="PhysicistView" />
 
-                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
-            </StackLayout>
-        </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" HeightRequest="4" BackgroundColor="{Binding ThemeColour}" />
+
+                    <Label Style="{StaticResource MainContentsViewLabel}" BackgroundColor="{StaticResource PaperColour}">
+
+Classical Mechanics is one of the largest and most fundamental areas of physics.
+
+Topics include:
+
+&#x2022; Equations of Motion
+&#x2022; Newton's Laws
+&#x2022; Work and Kinetic Energy
+&#x2022; Potential Energy
+&#x2022; Conservation of Energy
+&#x2022; Rotation
+&#x2022; Periodic Motion
+&#x2022; Basic Gravitation
+
+Advanced topics include:
+
+&#x2022; Gyroscopic Motion
+&#x2022; Lagrangian Mechanics
+&#x2022; Hamiltonian Mechanics 
+&#x2022; Non-Inertial Reference Frames
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
     </ContentView.Content>
 </ContentView>
